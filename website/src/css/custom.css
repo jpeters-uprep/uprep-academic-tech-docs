@@ -26,6 +26,11 @@
   --uprep-neutral: #d5e0e5; /* Light neutral */
   --uprep-black: #2d2926; /* Brand black */
 
+  --ifm-font-family-base:
+    "Frutiger LT Std", "Frutiger", "Helvetica Neue", Arial, sans-serif;
+  --ifm-font-family-monospace:
+    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
