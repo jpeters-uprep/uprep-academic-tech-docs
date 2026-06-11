@@ -1,0 +1,44 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+  /* Primary brand (UPREP) - use the official dark blue as the site primary */
+  --ifm-color-primary: #00395d; /* PMS 302 */
+  --ifm-color-primary-dark: #002f4b;
+  --ifm-color-primary-darker: #00263b;
+  --ifm-color-primary-darkest: #001a2a;
+  --ifm-color-primary-light: #2f6a8a;
+  --ifm-color-primary-lighter: #67b346; /* PMS 368 (secondary green) */
+  --ifm-color-primary-lightest: #d5e0e5; /* PMS 538 (neutral light) */
+
+  /* UPREP branded colors */
+  --uprep-primary-1: #00395d; /* Primary dark blue */
+  --uprep-primary-2: #67b346; /* Green */
+  --uprep-primary-3: #007f65; /* Teal */
+  --uprep-accent-1: #008db1; /* Accent cyan */
+  --uprep-accent-2: #f1b828; /* Accent yellow */
+  --uprep-accent-3: #f38b3c; /* Accent orange */
+  --uprep-accent-4: #6e6993; /* Accent purple */
+  --uprep-accent-5: #c8102e; /* Accent red */
+  --uprep-neutral: #d5e0e5; /* Light neutral */
+  --uprep-black: #2d2926; /* Brand black */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  /* In dark mode, use a brighter/greener primary for contrast */
+  --ifm-color-primary: #67b346; /* lighter brand green */
+  --ifm-color-primary-dark: #5aa63f;
+  --ifm-color-primary-darker: #4b8f36;
+  --ifm-color-primary-darkest: #356826;
+  --ifm-color-primary-light: #7ccb5b;
+  --ifm-color-primary-lighter: #9fe07f;
+  --ifm-color-primary-lightest: #cfefd0;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
