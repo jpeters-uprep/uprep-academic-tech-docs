@@ -10,6 +10,7 @@ const config: Config = {
   title: title,
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
+  trailingSlash: true,
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -17,15 +18,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://jpeters-uprep.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/uprep-academic-tech-docs/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "UPrep", // Usually your GitHub org/user name.
-  projectName: "Academic Tech Docs", // Usually your repo name.
+  organizationName: "jpeters-uprep", // Usually your GitHub org/user name.
+  projectName: "uprep-academic-tech-docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
 
