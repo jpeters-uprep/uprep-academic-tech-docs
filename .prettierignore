@@ -1,0 +1,9 @@
+node_modules
+.docusaurus
+build
+dist
+out
+coverage
+*.log
+.cache
+**/node_modules

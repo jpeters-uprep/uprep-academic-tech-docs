@@ -43,7 +43,7 @@ const config: Config = {
       {
         docs: {
           routeBasePath: "/",
-          sidebarPath: "./sidebars.ts",
+          // sidebarPath: "./sidebars.ts",
         },
         blog: false,
         theme: {
@@ -64,12 +64,6 @@ const config: Config = {
         src: "img/logo.png",
       },
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
         {
           href: "https://github.com/jpeters-uprep/uprep-academic-tech-docs",
           label: "GitHub",
