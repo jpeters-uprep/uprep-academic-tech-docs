@@ -8,8 +8,7 @@ const title = "UPrep Academic Tech Docs";
 
 const config: Config = {
   title: title,
-  tagline: "Dinosaurs are cool",
-  favicon: "img/favicon.ico",
+  favicon: "img/TreesLogoFavicon.png",
   trailingSlash: true,
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -43,10 +42,8 @@ const config: Config = {
       "classic",
       {
         docs: {
+          routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/jpeters-uprep/uprep-academic-tech-docs",
         },
         blog: false,
         theme: {
@@ -57,8 +54,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -84,17 +79,6 @@ const config: Config = {
     },
     footer: {
       style: "dark",
-      links: [
-        {
-          title: "More",
-          items: [
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} UPrep`,
     },
     prism: {
