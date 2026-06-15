@@ -73,7 +73,29 @@ const config: Config = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} UPrep`,
+      links: [
+        {
+          title: `Copyright © ${new Date().getFullYear()} UPrep`,
+        },
+        {
+          title: "Feedback or Questions?",
+          items: [
+            {
+              label: "Email June Peters",
+              href: "mailto:jpeters@universityprep.org",
+            },
+          ],
+        },
+        {
+          title: "Links",
+          items: [
+            {
+              label: "Schoology",
+              href: "https://schoology.com",
+            },
+          ],
+        },
+      ],
     },
     prism: {
       theme: prismThemes.github,
