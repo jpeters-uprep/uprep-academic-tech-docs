@@ -81,8 +81,12 @@ const config: Config = {
           title: "Feedback or Questions?",
           items: [
             {
-              label: "Email June Peters",
+              label: "Email June",
               href: "mailto:jpeters@universityprep.org",
+            },
+            {
+              label: "Meet with June",
+              href: "https://outlook.office.com/bookwithme/user/e2af8d4993df4d598f17a7a09eeb0ee6@universityprep.org?anonymous&ismsaljsauthenabled&ep=plink",
             },
           ],
         },
