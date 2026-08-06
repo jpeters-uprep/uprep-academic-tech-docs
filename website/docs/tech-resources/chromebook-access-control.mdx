@@ -6,30 +6,38 @@ title: Chromebook Access Control
 
 Owner: Brian Johnson; Author: June Peters; Reviewers: Amy Spivey, John Brooks
 
-## Summary:
+## Summary
 
-This page is intended to inform IT, Academic Technology, school leadership,
-teachers, and parents of the layers of control for the Chrome browser and
-Chromebook devices along with who controls each layer in each context. It is
+This page explains who controls what on a Chromebook or in the Chrome browser —
+for IT, Academic Technology, school leadership, teachers, and parents. It's
 written as a collaboration between IT, Academic Technology, and school
-leadership. While the subject is deeply technical, it is intended to be
-understood by anyone.
+leadership, and while the subject is technical, it's meant to be understood by
+anyone.
 
-There are 3 primary layers of control for internet and app access- 1\) wifi
-network controls such as firewalls 2\) device controls such as guest accounts
-and location permissions 3\) account controls such as allowed and blocked
-websites and apps.
+Control happens in layers, and each layer only governs what's inside it:
 
-These work in order \- if a network blocks a certain website, device and account
-controls cannot override the network and allow that website. Conversely, if a
-device allows guest accounts, account controls can be bypassed by using the
-guest account instead. This page will cover these 3 layers in detail.
+1. **Network** — the wifi or cellular connection the device is using
+2. **Device** — settings owned by whoever set up the Chromebook first (the
+   "owner")
+3. **Account** — settings tied to whichever account is signed in
 
-## Network Controls
+These layers are strictly ordered: a network-level block can't be overridden by
+device or account settings, and a device-level allowance (like guest mode being
+on) can let someone bypass account-level controls entirely.
 
-Before any internet traffic reaches a device, it goes through the wifi network
-it’s connected to. Possible networks include school, home, cellular, and public
-(e.g. Starbucks) networks.
+The account layer has an important split that trips people up: **a Chromebook
+can have a personal account and a school (UPrep) account signed in side by side,
+and each is controlled independently.** A parent managing the personal account
+through Google Family Link does not thereby gain control over the UPrep account,
+and UPrep does not gain any control over the personal account. The rest of this
+page covers each layer, with the account layer split into personal and school
+accounts.
+
+## 1. Network Controls
+
+Before traffic reaches a device, it passes through whatever network the device
+is connected to — school wifi, home wifi, cellular, or a public network (like a
+coffee shop).
 
 |                 | Controller | Control Method                  |
 | :-------------- | :--------- | :------------------------------ |
@@ -38,150 +46,180 @@ it’s connected to. Possible networks include school, home, cellular, and publi
 | **Cellular**    | Family     | Cell-Provider Parental Controls |
 | **Public Wifi** | None       | None                            |
 
-### UPrep Network Controls
+**School wifi** is managed by UPrep IT using a category filter on the school
+firewall. For a list of blocked content categories, contact [IT](/it-support).
 
-UPrep wifi settings are owned by IT. We use Category Filter through the
-firewall. If you require a list of content types that are blocked, reach out to
-[IT](/it-support).
+**Home and cellular networks** are managed by whatever router or cell plan a
+family uses. Capabilities vary by provider — check with your manufacturer or
+carrier for specifics.
 
-### Home and Cellular Network Controls
+**Public networks** have no controls at all. Unless a device is restricted to
+only known networks (school and home), a student can bypass every other
+network-level control simply by connecting to public wifi elsewhere.
 
-Internet access on home networks, cell phones, or through cell phone tethering
-is managed by controls on each such network. Each wifi device and cellular
-provider has different capabilities regarding access control. Please refer to
-your manufacturer or cell provider for more information.
+**VPNs** are a network back door: they tunnel traffic past a firewall in
+encrypted form, so the firewall can see that a VPN is in use but not what's
+being accessed through it. UPrep does not block VPN use.
 
-### Public Networks
+**Recommendation:** combine network-level filtering with account-level controls
+(below) for meaningful protection — network controls alone can be bypassed by
+switching networks.
 
-Unless a device is locked to only certain known networks (like school and home),
-students may bypass school and home networks by using a public network at a
-coffee shop or other location.
+## 2. Device Owner Controls
 
-### Network Back Door (VPN)
+The first account signed in to a new Chromebook becomes its **owner account**,
+with permissions no other account on that device has. UPrep student Chromebooks
+are family-owned, so this should usually be a parent, who should be the first
+account to log in to a new device.
 
-Technical users (including some students) can get around school or home network
-controls by using a Virtual Private Network. VPNs provide a ‘tunnel’ through a
-firewall, where traffic is encrypted and invisible to the firewall. A firewall
-can only see the VPN, not what sites are being accessed through it. UPrep IT
-does not block VPNs.
+**What the owner can control**, per
+[Google's documentation](https://support.google.com/chromebook/answer/1059256?hl=en):
 
-### Recommendations for Network Controls
+- Time zone
+- Sign-in permissions — who can add or use an account on the device, and whether
+  guest browsing is allowed
+- Wi-Fi network preferences
 
-Networks outside UPrep should be restricted to meet the families needs. A
-combined approach of blocking adult content and distracting content at the
-network and device account level (see below) is recommended for optimum
-protection.
+That's the complete list. The owner **cannot** set screen time limits, block
+apps, filter content, or supervise activity inside any account's session — those
+live at the account layer, covered below. An owner's reach is limited to
+deciding who and what is allowed on the device, not what happens once someone's
+signed in.
 
-## Device Controls
+### Recommended Setup
 
-Once internet traffic passes through the network layer, it reaches the device
-itself. This second layer of control manages the physical capabilities of the
-Chromebook or computer, regardless of who is logging into it. Common
-device-level settings include permission for guest accounts and location
-services.
+- **Make sure a parent is the device owner.** Whoever signs in first during
+  setup becomes the owner, and ownership can't be transferred afterward — the
+  only way to change it is to
+  [factory reset](https://support.google.com/chromebook/answer/183084) and set
+  the device up again with the parent's account first. Back up anything
+  important before doing this.
+- **Disable guest browsing and restrict sign-in to known accounts**, using
+  [Google's instructions](https://support.google.com/chromebook/answer/1059252?hl=en).
+  Without this, a student can sidestep every account-level control just by using
+  the guest profile or a second, unmanaged account.
+- **Add the student's personal Google account, then add their UPrep account as a
+  secondary account under it**. See
+  [Personal Accounts and Family Link](#3-personal-accounts-and-family-link)
+  below for how.
+- **Add the student's UPrep account** so they can use school approved apps
+  easily. This account is outside parental controls, as noted below. If you
+  require strict parental controls, do not set up the UPrep account; instead you
+  must be ready to approve UPrep-required apps quickly to avoid disrupting
+  class.
+- **Consider blocking unknown networks** on the device. This removes the
+  public-wifi back door, at the cost of making it harder for the student to work
+  from anywhere other than school or home.
 
-### Family-Owned Devices
+### Third-Party Parental Control Apps
 
-Most student Chromebooks and other devices at UPrep are owned by the student’s
-family. For Chromebooks, the first account created on the device is the ‘owner
-account’. This account has final control for all device settings, including
-disabling guest accounts. If a family sets up a Chromebook using a parent
-account before giving the device to the student, the parent can manage device
-settings. If the family gives the Chromebook to the student to set up first, the
-student has full control of the device, and can create secondary accounts
-outside parental controls or simply use the Guest account built into Chromebook.
-
-#### Recommended Controls
-
-- Ensure a parent is the first user to log in to a new Chromebook. This makes
-  them the device ‘owner’.
-  - If a current account has a student as the first user, the device must be
-    factory reset and then set up as new with a parent as the owner. Be sure to
-    save all important information in the cloud or a local hard drive before
-    doing this.
-    - Factory reset the Chromebook to remove the student account as primary
-    - Setup the Chromebook using a parent’s account
-- Disable the guest account and the ability to create new accounts
-  ([instructions](https://support.google.com/chromebook/answer/1059252?hl=en))
-- Add the student’s gmail account, then add their UPrep account using the
-  instructions under Google Family Link (see [below](#google-family-link)). It
-  is critical that the UPrep account is added as a secondary account to the
-  student account, not as its own account.
-  - For more information, see the
-    [Google Help page](https://support.google.com/chromebook/answer/7680868?hl=en)
-- Consider disabling access to unknown networks, which removes the public
-  network back door, but also makes it harder for students to work outside
-  school/home.
-
-#### Third-Party Parental Control Apps
-
-If you are the device owner, you're welcome to install any additional safety or
-parental control app (e.g. Qustodio, Net Nanny) you feel is necessary. UPrep
-does not endorse a specific product. Note that our tech team cannot
-troubleshoot login or app issues these tools cause at school — those will need
-to be resolved at home. See the
-[FAQ](/tech-resources/student-laptops/faq/parental-control-apps) for details.
+As the device owner, you're welcome to install any additional safety or
+parental-control app (Qustodio, Net Nanny, or similar) that you feel is
+necessary — UPrep doesn't endorse a specific product, and the choice is entirely
+up to your family. One caveat: our tech team can't troubleshoot login or app
+problems these tools cause while a student is using their UPrep account at
+school. Any conflicts from a third-party app will need to be resolved at home.
+See
+[Parental Control Apps?](/tech-resources/student-laptops/faq/parental-control-apps)
+for more.
 
 ### Loaner Devices
 
-UPrep has loaner devices available for checkout. For loaner devices, the school
-manages device controls through the onsite firewall. Loaners are not intended
-for long term use or extensive use off campus. Students should return borrowed
-devices the same day unless a longer loan period is required because a student’s
-device is damaged or not functioning. Arrangements should be made with the IT
-department to extend the time frame of the loaner device. Families are expected
-to repair/replace student devices in a timely manner.
+UPrep loaner Chromebooks work differently: the school is the device owner, and
+device controls run through the on-site firewall rather than a family setup.
+Loaners aren't meant for long-term or heavy off-campus use — students should
+return them the same day unless a longer loan is arranged with IT because their
+own device is broken or unavailable. Families are expected to repair or replace
+their own devices promptly.
 
-## Account Controls
+## 3. Personal Accounts and Family Link
 
-On Chromebook and Chrome browser, the logged in user may have specific abilities
-depending on their account type and the controls set up on that account.
-Accounts can be Google accounts, UPrep accounts, or guest accounts. Google and
-UPrep accounts can be further separated into adult and child accounts. Personal
-Google accounts are considered “adult” accounts unless they are under parent
-controls.
+A student's personal Google account (a `@gmail.com` address, or any personal
+address) is entirely under the family's control. UPrep has no visibility or
+authority over it whatsoever.
 
-|                              | Email                 | Parental Controls                                         | UPrep Controls       |
-| :--------------------------- | :-------------------- | :-------------------------------------------------------- | :------------------- |
-| Child Google Account         | \*@gmail.com          | Google Family Link                                        | None                 |
-| Adult/Default Google Account | \*@gmail.com          | None                                                      | None                 |
-| Child UPrep Account          | \*@universityprep.org | Some via Google Family Link if secondary to gmail account | Yes                  |
-| Adult UPrep Account          | \*@universityprep.org | None                                                      | Yes                  |
-| Guest Account                | None                  | Device controls only                                      | Device controls only |
+Parents manage this account using
+[Google Family Link](https://families.google/familylink/). Family Link is
+account-based, not device-based, so it only works if the device is also set up
+correctly — specifically, a parent needs to be the device owner (see above),
+otherwise a student can dodge Family Link entirely by creating an unsupervised
+second account or using guest mode.
 
-As you can see, this is a somewhat complex matrix. The key points are:
+With Family Link on the personal account, a parent can set screen time limits
+and downtime schedules, filter or block websites and content, and control which
+apps and Play Store content the account can access. UPrep has no recommendation
+on how a family should configure any of this — it's entirely up to each family's
+judgment.
 
-- For Gmail accounts, UPrep has no control. Parental controls must be enabled
-  with Google Family Link (see [below](#google-family-link)).
-- For UPrep accounts, UPrep has primary control. Parental controls still apply
-  when the account is part of Family Link, but can be bypassed for
-  school-required apps to force install those apps on every Chromebook with a
-  UPrep account.
-- For Guest accounts, there are few controls, so Guest accounts should be
-  disabled by the device owner. To enforce this, a parent must be the first
-  person to use a Chromebook.
+## 4. The UPrep (School) Account
 
-### Google Family Link
+A student's UPrep account (`@universityprep.org`) is a Google Workspace for
+Education account. Whatever Google services and apps a student can use while
+signed in to it is determined entirely by UPrep's Workspace admin console — not
+by any setting the family controls.
 
-Parental controls for Chromebook and Chrome browser are managed in
-[Google Family Link](https://families.google/familylink/). They work at the
-account level, so the device must also be ‘owned’ by a parent (see
-[Device Controls](#device-controls) above). Otherwise account controls can
-easily be avoided by using a separate account.
+This matters because UPrep can, and does, **force-install** apps required for
+class onto every Chromebook signed in with a UPrep account, and can otherwise
+manage the account's app catalog and settings directly. If a required app is
+missing or broken, contact IT rather than troubleshooting Family Link settings —
+the UPrep account isn't something Family Link reaches, as explained next.
 
-To allow parents some control over school accounts, add the school account in
-Google Family link using
-[Google’s instructions](https://support.google.com/chromebook/answer/9900467?hl=en).
-It is critical that the UPrep account is added as a secondary account to the
-student account, not as its own account.
+## Linking the Two: What Actually Carries Over
 
-UPrep does not have recommendations for parental controls. Each family should
-decide what’s best for them.
+Families are encouraged to add the UPrep account as a **secondary account**
+under the student's Family Link-managed personal account, rather than as a
+separate login on the device. Adding it this way is what lets a parent see and
+manage both accounts from one place — but it's easy to overestimate how much
+control that link actually grants. Based on testing and on
+[Google's documentation](https://support.google.com/chromebook/answer/9900467?hl=en),
+here's exactly what does and doesn't cross over:
 
-### Blocking School-Required Apps
+**Carries over to the UPrep account:**
 
-If parental controls block apps that are required by classes, those apps cannot
-be installed by the student without the parent entering their password to
-install them. They can, however, usually be installed for all students at the
-same time by the school. If there are issues with installing school-required
-apps, we will reach out to the parents to allow them.
+- Signing in to websites using the UPrep account
+- Switching to the UPrep account to check email
+- Switching to the UPrep account for a small set of allowed apps and extensions,
+  like Google Classroom, to do schoolwork under parent supervision
+
+**Does not carry over to the UPrep account:**
+
+- **Screen time limits and downtime.** This is the one people most often assume
+  works and it doesn't: a Family Link screen time limit locks the personal
+  account's session on the device, but a student can still sign in and work
+  under their UPrep account after that lock hits. Confirmed by direct testing —
+  setting a screen time limit locked the personal test account on a Chromebook
+  while the UPrep account on the same device remained fully usable.
+- **App installs and Google Play.** While signed in to the personal account,
+  Play Store shows only what Family Link allows. While signed in to the UPrep
+  account, app availability is governed entirely by UPrep's Workspace admin
+  console — Family Link has no visibility or veto here, and there's no
+  parent-approval prompt. Google is explicit that a student can only add one
+  Workspace for Education account as a secondary account for exactly this
+  reason: allowing more would let a student switch accounts to download apps
+  from Play without parent approval.
+- **Content filtering.** Whatever sites Family Link blocks or allows applies to
+  the personal account's browsing, not the UPrep account's.
+
+The short version: a personal account is fully parent-controlled, a UPrep
+account is fully school-controlled, and linking them only grants the narrow set
+of conveniences above — checking email, using a few designated apps, and website
+sign-in. It is not a general supervision layer over the UPrep account, in either
+direction.
+
+### Required Apps and Parental Controls
+
+Because of the split above, whether a parental content or app block can prevent
+a required class app from working depends entirely on which account is doing the
+work:
+
+- If the student does their schoolwork on their **personal account** (with the
+  UPrep account only used as a secondary, per the allowlist above), a required
+  app blocked by Family Link may simply not be available, since UPrep's
+  force-install policy doesn't reach that session at all. There's no school-side
+  override for this — it would need to be resolved by adjusting the family's own
+  Family Link settings.
+- If the student signs in directly with their **UPrep account** as the primary
+  user, UPrep's Workspace policies apply fully, and required apps are installed
+  for all students automatically, regardless of any personal account settings.
+  If a required app has trouble installing in this case, we'll reach out to the
+  family to help.
