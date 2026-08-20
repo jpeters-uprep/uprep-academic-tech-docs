@@ -102,9 +102,78 @@ const config: Config = {
       "@docusaurus/plugin-client-redirects",
       {
         // Every path moved or removed by the Part B audience-first IA
-        // restructure. These are linked from emails, Schoology courses, and
-        // the Veracross portal, so old links must keep working.
+        // restructure, plus Part C's Schoology section restructure. These are
+        // linked from emails, Schoology courses, and the Veracross portal, so
+        // old links must keep working.
         redirects: [
+          {
+            from: "/faculty/schoology/rubrics",
+            to: "/faculty/schoology/best-practices/rubrics",
+          },
+          {
+            from: "/faculty/schoology/course-headers",
+            to: "/faculty/schoology/best-practices/course-headers",
+          },
+          {
+            from: "/faculty/schoology/working-in-resources",
+            to: "/faculty/schoology/best-practices/reusing-your-materials/working-in-resources",
+          },
+          {
+            from: "/faculty/schoology/saving-to-resources",
+            to: "/faculty/schoology/best-practices/reusing-your-materials/saving-to-resources",
+          },
+          {
+            from: "/faculty/schoology/adding-resources-to-a-course",
+            to: "/faculty/schoology/best-practices/reusing-your-materials/adding-resources-to-a-course",
+          },
+          {
+            from: "/faculty/schoology/student-centered-courses",
+            to: "/faculty/schoology/requirements",
+          },
+          {
+            from: "/faculty/schoology/issues",
+            to: "/faculty/schoology/faq",
+          },
+          {
+            from: "/faculty/schoology/issues/access",
+            to: "/faculty/schoology/faq/access",
+          },
+          {
+            from: "/faculty/schoology/issues/accessing-archived-courses",
+            to: "/faculty/schoology/faq/accessing-archived-courses",
+          },
+          {
+            from: "/faculty/schoology/issues/add-section",
+            to: "/faculty/schoology/faq/add-section",
+          },
+          {
+            from: "/faculty/schoology/issues/adding-dropping-students",
+            to: "/faculty/schoology/faq/adding-dropping-students",
+          },
+          {
+            from: "/faculty/schoology/issues/advisor-dashboard",
+            to: "/faculty/schoology/faq/advisor-dashboard",
+          },
+          {
+            from: "/faculty/schoology/issues/become-course-admin",
+            to: "/faculty/schoology/faq/become-course-admin",
+          },
+          {
+            from: "/faculty/schoology/issues/course-missing",
+            to: "/faculty/schoology/faq/course-missing",
+          },
+          {
+            from: "/faculty/schoology/issues/extend-course-through-summer",
+            to: "/faculty/schoology/faq/extend-course-through-summer",
+          },
+          {
+            from: "/faculty/schoology/issues/reorder-courses",
+            to: "/faculty/schoology/faq/reorder-courses",
+          },
+          {
+            from: "/faculty/schoology/issues/schoology-manager",
+            to: "/faculty/schoology/faq/schoology-manager",
+          },
           {
             from: "/tech-resources",
             to: "/families",

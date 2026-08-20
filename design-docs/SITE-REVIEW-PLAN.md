@@ -417,23 +417,29 @@ member and an AI have the same problem here.
 
 # Part C — Schoology section (the focus)
 
-> **Heads-up for whoever builds this (Part B shipped first, 2026-08-20):** two
-> pages created in Part B link into this section and will need updating when
-> it's restructured here:
->
-> - `students/schoology-for-students.mdx` links to
->   `faculty/schoology/best-practices#gradebook-exceptions-flags` and to
->   `faculty/schoology/issues`.
-> - `about/glossary.mdx` links to
->   `faculty/schoology/best-practices#paw-ratings`,
->   `faculty/schoology/best-practices#workload-calendar`,
->   `faculty/schoology/requirements`, and
->   `faculty/schoology/issues/become-course-admin`.
->
-> None of this blocks doing Part C — `onBrokenLinks`/`onBrokenAnchors` are both
-> set to `"throw"` (§A4), so the build will fail loudly if either page is
-> forgotten when `best-practices.mdx` is split and `issues/` is renamed to
-> `faq/`. Just don't be surprised by the failure; it's these two files.
+> **Done (2026-08-20).** Implemented per §C2/§C3: `best-practices.mdx` split
+> into a folder (`course-organization`, `assignments-and-materials`,
+> `due-dates-and-calendaring`, `paw-ratings`, `workload-calendar`, `gradebook/`
+> with `grade-setup` + `exceptions-and-flags`, plus
+> `rubrics`/`course-headers`/`reusing-your-materials/` moved under it);
+> `issues/` renamed to `faq/` (and Veracross's FAQ category relabeled "Veracross
+> FAQ" for the same §C1 Problem 6 consistency); `index.mdx` rewritten with the
+> three-doors + start/end-of-year + cross-audience structure;
+> `student-centered-courses.mdx` dissolved per the §C3 table and redirected to
+> `requirements`; the four new pages (`course-setup-checklist`,
+> `schoology-and-veracross`, `notifications`, `powerbuddy-and-ai`) written;
+> `families/schoology-for-families.mdx` refreshed (Android app, MS/US access
+> distinction moved up, parent-account feature list, cross-links) as C3
+> specified. All §E1 Schoology corrections that don't require verifying June's
+> own Schoology instance were applied while touching each page — see the updated
+> status inside the §E1 table. `requirements.mdx`'s internal duplication
+> (flagged for a propose-only fix since it's `ai_editing: suggest-only`) was
+> already fixed by June directly on the file before this landed. Two things
+> intentionally **not** built: `powerbuddy-and-ai.mdx` states PowerBuddy is off
+> entirely at UPrep (per June) rather than the speculative content originally
+> sketched; and the two Part-B pages this section's cross-links depended on
+> (`students/schoology-for-students.mdx`, `about/glossary.mdx`) have already
+> been repointed at the new paths — nothing left dangling.
 
 ## C1. What's wrong now
 
@@ -911,6 +917,17 @@ P0 = will produce a wrong answer to a real question; P1 = misleading; P2 =
 cosmetic/naming.**
 
 ## E1. Schoology (highest priority — these are in your most-used pages)
+
+> **Status (Part C, 2026-08-20):** rows **1, 2, 4, 6, 8, 9, 10 are fixed** —
+> applied while splitting `best-practices.mdx` and refreshing
+> `families/schoology-for-families.mdx`. Rows **3 and 5 are addressed but not
+> asserted as a fact**: rather than guess UPrep's specific instance
+> configuration, the new `exceptions-and-flags.mdx` explains the mechanism and
+> tells teachers to check their own course / ask June, and confirms **Collected
+> is available** at UPrep (per June). Rows **7, 11, 12, 13, 14, 15, 16 are still
+> open** — none were touched, since they're either cosmetic (14) or need the
+> same instance-specific verification called out in Appendix A rather than a
+> vendor-doc fix.
 
 | #   | Page                                | Current claim                                                                                                                                                                    | Correction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Pri    |
 | --- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
