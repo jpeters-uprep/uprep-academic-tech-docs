@@ -763,73 +763,109 @@ Then redirect `/faculty/schoology/student-centered-courses` →
 > repo-wide). Everything else below is a content bug and is **still open** —
 > confirmed still present, at the new paths, as of the Part B implementation.
 
-| Issue                                                                                                                                                   | Where                                                              | Fix                                                                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Literal placeholder shipped to production:** "recommended free software that we provide light support for, including [......]"                        | `software/index.mdx`                                               | Name 3–4 examples, or cut the clause. This is live on the site right now.                                                                                                                         |
-| **"Follow the process on the Academic Tech for Faculty site (linked from Veracross)"** — _this is that site_                                            | `software/index.mdx`, `software/unsupported.mdx`                   | Link to `/faculty/teacher-software/software-process`. Circular external references are especially bad for AI answering.                                                                           |
-| **Google Workspace is listed as both Fully Supported (yours) and IT-Supported (theirs)**                                                                | `software/fully-supported/index.mdx` + `software/it-supported.mdx` | Direct contradiction of your stated ownership boundary. Remove from Fully Supported; leave a "see IT-Supported" cross-reference. Same for the M365/Copilot mention in the `software/index` intro. |
-| **Padlet has two stories** — "paid subscription limited to a handful of approved users" vs. the Canva page framing Padlet as the thing to migrate _off_ | `software/fully-supported/index.mdx`, `canva-classroom.mdx`        | Pick one. If Padlet is being sunset, say so with a date. Also note the free tier is now **3 padlets total**, which makes "everyone else can use the free tier" much weaker advice than it sounds. |
-| Alphabetical list of ~30 tools with no filtering                                                                                                        | `software/fully-supported/index.mdx`                               | Add a department/subject column or tags. A World Language teacher shouldn't scan 30 entries to find four.                                                                                         |
-| ~~VR buried as one page inside "Software and VR"~~ **Done in Part B.**                                                                                  |                                                                    | ~~Rename the section **Software**; VR becomes a child page.~~                                                                                                                                     |
-| No mention of whether **Upper School** students get Adobe CC                                                                                            | `adobe-creative-cloud.mdx`                                         | States faculty + "MS students in certain classes" + "student publications" students. US students unaddressed — real gap.                                                                          |
-| ~~`unsupported-software.mdx` is a single unwrapped 500-char line~~ **Done (§A5).**                                                                      |                                                                    | ~~Prettier fix (§A5).~~                                                                                                                                                                           |
+> **Update (Part D, 2026-08-20):** the placeholder text, the circular reference
+> (both instances), and the Adobe CC Upper School gap are **fixed**. The Google
+> Workspace duplication and the Padlet "two stories" row both live inside
+> `software/fully-supported/index.mdx`'s **locked list**
+> (`ai_editing: suggest-only`) — removing or rewriting an entry there is a
+> list-content change, not formatting, so neither was applied directly. **Done
+> by June directly (2026-08-20):** the Google Workspace entry was removed from
+> Fully Supported, and Padlet's entry reworded to drop the stale free-tier
+> framing and point to Canva Classroom as the no-seat-limit alternative, rather
+> than assert a sunset date that was never confirmed. Applied by June herself
+> rather than by me, since both are list-content changes inside the
+> `ai_editing: suggest-only` boundary. The "no filtering for ~30 tools" row is
+> still open — worth a light pass of inline subject tags per entry (pure
+> formatting, doesn't touch the locked list's contents) whenever there's time
+> for it.
 
-**Recommendation — make the spreadsheet the source of truth.** You maintain an
-Approved Software Google Sheet (linked in this project). Right now the site's
-three software lists are hand-maintained copies that have already drifted from
-each other and from the privacy notice. Either (a) publish the sheet as CSV and
-generate `fully-supported` / `recommended-free` at build time from it, or (b)
-declare the sheet internal-only and the site canonical, and add a review step.
-Option (a) is ~2 hours of work and permanently ends the drift.
+| Issue                                                                                                                | Where                                                              | Fix                                                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ~~**Literal placeholder shipped to production**~~ **Done.**                                                          | `software/index.mdx`                                               | ~~Name 3–4 examples, or cut the clause.~~ Named Desmos, Kahoot, Scratch.                                                                          |
+| ~~**"Follow the process on the Academic Tech for Faculty site (linked from Veracross)"**~~ **Done, both instances.** | `software/index.mdx`, `software/unsupported.mdx`                   | ~~Link to `/faculty/teacher-software/software-process`.~~                                                                                         |
+| ~~**Google Workspace is listed as both Fully Supported (yours) and IT-Supported (theirs)**~~ **Done, by June.**      | `software/fully-supported/index.mdx` + `software/it-supported.mdx` | ~~Remove from Fully Supported; leave a "see IT-Supported" cross-reference.~~                                                                      |
+| ~~**Padlet has two stories**~~ **Done, by June.**                                                                    | `software/fully-supported/index.mdx`, `canva-classroom.mdx`        | Reworded to the current 3-padlet free-tier limit and pointed to Canva Classroom as the alternative, without asserting an unconfirmed sunset date. |
+| Alphabetical list of ~30 tools with no filtering                                                                     | `software/fully-supported/index.mdx`                               | Add a department/subject column or tags. A World Language teacher shouldn't scan 30 entries to find four.                                         |
+| ~~VR buried as one page inside "Software and VR"~~ **Done in Part B.**                                               |                                                                    | ~~Rename the section **Software**; VR becomes a child page.~~                                                                                     |
+| ~~No mention of whether **Upper School** students get Adobe CC~~ **Done.**                                           | `adobe-creative-cloud.mdx`                                         | Confirmed with June: all US students have access. Added.                                                                                          |
+| ~~`unsupported-software.mdx` is a single unwrapped 500-char line~~ **Done (§A5).**                                   |                                                                    | ~~Prettier fix (§A5).~~                                                                                                                           |
+
+**Recommendation — the site's approved-software pages are canon, corrected
+(June, 2026-08-20).** The Google Sheet isn't a data source to sync from — it's
+the artifact of the annual software-approval process. June updates the site's
+`software/fully-supported` and `software/recommended-free` lists each year based
+on that process's outcome, and those site pages are the canonical,
+publicly-readable record of what's approved. There's no CSV generation or
+build-time sync to set up here; the discipline is just: when the annual approval
+process concludes, update the site pages as part of closing it out, the same
+day, so they never drift from the actual outcome the way they have until now.
 
 ## D2. Tech Resources / Student Laptops
 
-- **`family-link-school-account.mdx` duplicates ~90% of the "Linking the Two"
-  section of `chromebook-access-control.mdx`**, near-verbatim, including the
-  testing anecdote. Likewise `parental-control-apps.mdx` vs. the "Third-Party
-  Parental Control Apps" section. Pick the deep page as canonical and reduce
-  each FAQ to a three-line answer plus a link. Right now these will drift apart,
-  and when they do, an AI will quote the stale one.
-- **Chromebook "ALTERNATIVES" spec is below the Chromebook Plus bar** it's
-  presented as an alternative to (§7.12). It's also silent on CPU, which is the
-  spec that actually determines whether a cheap Chromebook survives four years.
-- **"Chromebook Plus … should last for 3+ years"** — Google now commits to **10
-  years of ChromeOS updates**, but measured from the _platform's_ release date,
-  not purchase. Replace the durability claim with "check the model's Auto Update
-  Expiration date and confirm it covers your student's remaining years here,"
-  plus a link to Google's AUE table. This is more useful _and_ more accurate.
-- `tech-resources/index.mdx` says "You will receive an email from IT in July" —
-  add the year or phrase it as "each July" so it doesn't read as stale in
-  October.
-- `chromebook-setup` and `upper-school-laptop-setup` are **iframe-only pages**
-  wrapping published Google Docs. They work, but: no search indexing of the
-  content, no "last updated," poor mobile rendering, and invisible to AI.
-  Migrate the content onto the site when you have a spare hour; keep the Doc as
-  the editing surface only if you must.
-- `print-queue.mdx` and `makers-tools.mdx` link to the 3D print form and the
-  OneDrive folder with **two different URL forms each** (`forms.gle/...` vs
-  `docs.google.com/forms/d/e/...`; a short SharePoint `:f:/g/` link vs a long
-  `personal/puma.../onedrive.aspx?id=...` link). Consolidate to one canonical
-  URL per destination — ideally define them once and reference them, so a
-  rotated link is a one-line fix.
+> **Update (Part D, 2026-08-20):** all five items below are resolved — four
+> **done** as originally scoped, and the iframe-migration item **corrected**
+> instead: it turned out to be the wrong recommendation entirely, not just
+> unfinished. See its bullet.
+
+- ~~**`family-link-school-account.mdx` duplicates ~90% of the "Linking the Two"
+  section of `chromebook-access-control.mdx`**~~, near-verbatim, including the
+  testing anecdote. ~~Likewise `parental-control-apps.mdx` vs. the "Third-Party
+  Parental Control Apps" section.~~ On inspection, `parental-control-apps.mdx`
+  wasn't actually a near-duplicate (it already cross-links back rather than
+  restating the detail) — no change needed there.
+  `family-link-school-account.mdx` genuinely was, including the testing
+  anecdote; trimmed to a short answer plus a link to the deep page, which stays
+  canonical and unchanged.
+- ~~**Chromebook "ALTERNATIVES" spec is ... silent on CPU**~~ **Done** — added
+  "Intel Core i3 (or equivalent)" per June.
+- ~~**"Chromebook Plus … should last for 3+ years"** — Google now commits to
+  **10 years of ChromeOS updates**...~~ **Corrected by June (2026-08-20): this
+  diagnosis was wrong.** The "3+ years" claim was never about software-update
+  lifecycle — it's about the device having enough processing power and memory to
+  stay fast through all of Middle School as web pages and apps get heavier over
+  time. `families/middle-school-chromebooks.mdx` has been reworded to say that
+  plainly instead of conflating it with ChromeOS Auto Update Expiration.
+  **Done** — no AUE table link needed here.
+- ~~`tech-resources/index.mdx` says "You will receive an email from IT in
+  July"~~ **Done** — now `families/index.mdx`, reworded to "each July."
+- ~~`chromebook-setup` and `upper-school-laptop-setup` are **iframe-only pages**
+  wrapping published Google Docs. ... Migrate the content onto the site...~~
+  **Corrected by June (2026-08-20): this recommendation was wrong, not just
+  premature.** These two guides are **owned by IT, not June**, and IT wants to
+  keep maintaining them in Google Docs — the embed is the intended permanent
+  setup, not a migration gap to close. Both pages now carry `owner: IT`
+  frontmatter, `ai_editing: suggest-only`, and a visible "maintained by IT in
+  Google Docs" note above the embed. No migration should happen here. (Before
+  this correction landed, a fetch of the published Chromebook doc confirmed a
+  separate reason migrating would have been risky anyway: the fetch tool only
+  returns an AI-summarized extraction, not a verbatim transcript, and a device
+  setup guide is exactly the kind of content where a paraphrased password
+  requirement or step order would be worse than the iframe. Moot now, but worth
+  remembering if a similar embedded-doc page ever does need migrating.)
+- ~~`print-queue.mdx` and `makers-tools.mdx` link to the 3D print form and the
+  OneDrive folder with **two different URL forms each**~~ **Done** — verified
+  both pairs actually resolve to the same destination (confirmed the form
+  redirect directly; June confirmed the OneDrive folder) and consolidated each
+  to one URL.
 
 ## D3. Makers
 
-- `makers-tools.mdx` and `programs-teams-and-clubs.mdx` have **no frontmatter at
-  all** — their titles come from the H1. Add frontmatter for consistency and so
-  `description`/`tags` can be set.
-- **Typo:** `jpeters@universtyprep.org` (missing "i") in the Laser Cutter
-  section. A student who copies that address gets a bounce.
-- **CNC section is missing its `Location:` line** — every other tool has one.
-- Consider a **Makerspace Safety** parent page over `ppe.mdx` + tool-training
-  requirements + shop rules. The PPE page is excellent (the
-  spinning-tools/gloves rule is exactly right), but "training is required before
-  operating the machine" appears only for the laser cutter, with no stated way
-  to get trained or record that you were. That's a safety-documentation gap, not
-  just an IA one.
-- `makers/faq/print-directories.mdx` is one of two "print" FAQs on the site (the
-  other is paper printing). Retitle to "Where do I find 3D models?" to
-  disambiguate.
+> **Update (Part D, 2026-08-20):** first, second, third, and fifth items below
+> are **done**. The Makerspace Safety parent page is **dropped, per June** — not
+> deferred, removed from scope. See its bullet.
+
+- ~~`makers-tools.mdx` and `programs-teams-and-clubs.mdx` have **no frontmatter
+  at all**~~ **Done** (§A7, applied during Part A's site-wide frontmatter
+  rollout).
+- ~~**Typo:** `jpeters@universtyprep.org`~~ **Done.**
+- ~~**CNC section is missing its `Location:` line**~~ **Done** — ULab
+  Makerspace, per June.
+- ~~Consider a **Makerspace Safety** parent page over `ppe.mdx` + tool-training
+  requirements + shop rules.~~ **Dropped (June, 2026-08-20).** Not being pursued
+  — remove from any future work plan too (see Phase 4 item 6 in Part G, which
+  listed this same page).
+- ~~`makers/faq/print-directories.mdx` is one of two "print" FAQs~~ **Done** —
+  retitled "Where Do I Find 3D Models?"
 
 ## D4. Accessibility
 
@@ -837,19 +873,20 @@ Option (a) is ~2 hours of work and permanently ends the drift.
 > audience-first IA restructure — student-facing device features are now at
 > `students/accessibility-tools.mdx`, and the "Faculty Guidance" section is now
 > `faculty/accessibility-in-your-course.mdx`. The split and the title/H1
-> mismatch are both **done**. The Canvas mention was preserved as-is during the
-> move (a content fact, not something a structural move should touch) — it's
-> **still open**, now on `students/accessibility-tools.mdx`. Adding the named
-> Schoology accessibility features is also **still open**, and is really two
-> pages' worth now: some belongs on `students/accessibility-tools.mdx` (what you
-> can turn on yourself), some on `faculty/accessibility-in-your-course.mdx`
-> (what to point students to in your course) — that page still hasn't been
-> "expanded with LMS specifics" as this section originally called for.
+> mismatch are both **done**. The "Canvas" mention was preserved as-is during
+> the move — and per June (2026-08-20), the original finding was wrong: it's a
+> typo for **Canva** (a tool UPrep does use), not a reference to the Canvas LMS.
+> **Fixed** as a typo correction, not a removal. Adding the named Schoology
+> accessibility features is also **still open**, and is really two pages' worth
+> now: some belongs on `students/accessibility-tools.mdx` (what you can turn on
+> yourself), some on `faculty/accessibility-in-your-course.mdx` (what to point
+> students to in your course) — that page still hasn't been "expanded with LMS
+> specifics" as this section originally called for.
 
-- ~~**Mentions Canvas**~~ **Still open, moved to
-  `students/accessibility-tools.mdx`:** "tools UPrep already uses … Google Docs,
-  Slides, Sheets, **Canvas**, and Schoology." UPrep doesn't use Canvas. Remove
-  it.
+- ~~**Mentions Canvas** — "tools UPrep already uses … Google Docs, Slides,
+  Sheets, Canvas, and Schoology." UPrep doesn't use Canvas. Remove it.~~
+  **Corrected, not removed:** this was a typo for **Canva**, a tool UPrep does
+  use. Fixed on `students/accessibility-tools.mdx`.
 - ~~Split by audience: student-facing device features →
   `/students/accessibility-tools`; the "Faculty Guidance" section →
   `/faculty/accessibility-in-your-course`~~ **Done in Part B.** Still open:
@@ -866,8 +903,17 @@ Option (a) is ~2 hours of work and permanently ends the drift.
 
 ## D5. Privacy & COPPA
 
-This page is **IT/legal-owned content living in your site with no owner label**,
-and it's the stalest content here.
+> **Correction (June, 2026-08-20):** this page was migrated onto the site from
+> an older one, not authored here — and it's owned by **SLT**, not IT. June's
+> manager is talking to school leadership about it and there's a follow-up
+> pending, so **the body is intentionally untouched for now** — only the
+> ownership frontmatter was corrected (`owner: SLT`, and the
+> `about/who-owns-what.mdx` table updated to match). Don't act on any of the
+> findings below until that review concludes; they're preserved here as a record
+> of what to revisit once it does.
+
+This page is **owned by SLT, currently under review**, and it's the stalest
+content here.
 
 - Third-party list includes **Twitter** ("known as X" — the rebrand completed in
   2024; the account and the framing are both dated), **Office 365** with links
@@ -886,12 +932,15 @@ and it's the stalest content here.
 - Bullet-formatting bug: "• Log into the Parent Portal … • Sending us an email"
   renders as run-together text, not a list.
 
-**Recommendation:** add `owner: IT` frontmatter, add a visible "This notice is
-maintained by IT; contact Amy Spivey" banner, and send Amy a short memo listing
-the stale entries. Don't silently fix someone else's legal text — but don't host
-it un-owned either.
+**Recommendation:** ~~add `owner: IT` frontmatter~~ — **done differently**:
+`owner: SLT` frontmatter added (2026-08-20), reflecting that this is under
+active review with school leadership, not an IT-owned page. Hold off on a
+visible banner or a memo to anyone until that review concludes — the stale
+entries below are worth revisiting then, not before.
 
 ## D6. Veracross — a scope question
+
+> **Update (Part D, 2026-08-20): done.**
 
 You describe the site as covering areas you own: Schoology, Makerspaces,
 laptops, academic software. **Veracross is not on that list**, and
@@ -899,14 +948,14 @@ laptops, academic software. **Veracross is not on that list**, and
 site carries four substantial Veracross workflow pages (attendance, grades &
 comments, advisor comment review, faculty portal).
 
-That's fine — but say so. Add to the Veracross index: "These guides are
-maintained by Academic Technology as a convenience. Veracross itself is
+That's fine — but say so. ~~Add to the Veracross index~~ Added: "These guides
+are maintained by Academic Technology as a convenience. Veracross itself is
 administered by the Registrar and IT — see Who Manages Veracross?" Otherwise you
 inherit questions you can't answer, and an AI reading the site will route
 Veracross email to you.
 
-Also fix the typo in `veracross-manager.mdx`: **`support@univeresityprep.org`**
-→ `support@universityprep.org`.
+~~Also fix the typo in `veracross-manager.mdx`: `support@univeresityprep.org`~~
+**Done.**
 
 ---
 
@@ -1179,15 +1228,32 @@ These are all safe, isolated, and high-value.
 
 ## Phase 4 — Content depth & AI-readiness (ongoing)
 
-1. Write `schoology-and-veracross`, `notifications`, `powerbuddy-and-ai`.
-2. Add `llms.txt` / `llms-full.txt`; add `description` + `owner` +
-   `last_reviewed` + `tags` frontmatter site-wide (do it as you touch pages, not
-   in one pass).
-3. Reconcile the software lists against the Approved Software Sheet; decide on
-   generating them from CSV.
-4. Send Amy the privacy-notice memo (§E4).
-5. Migrate the two iframe-only setup guides onto the site.
-6. Add the Makerspace Safety parent page and a tool-training path.
+1. ~~Write `schoology-and-veracross`, `notifications`, `powerbuddy-and-ai`.~~
+   **Done in Part C.**
+2. ~~Add `llms.txt` / `llms-full.txt`; add `description` + `owner` +
+   `last_reviewed` + `tags` frontmatter site-wide~~ **Done in Part A** (minus
+   `last_reviewed`, deliberately dropped — see §A7).
+3. **Fully Supported Software follow-ups (2026-08-20):**
+   - ~~Remove the `## Google Workspace` entry~~ **Done, by June.**
+   - ~~Reconcile Padlet's two stories~~ **Done, by June.**
+   - Add subject/department tags to the ~30-tool list (pure formatting, not a
+     list-content change) — **still open**, no urgency.
+
+   All three are recommended but not applied directly, since the list itself is
+   `ai_editing: suggest-only` — June is doing these manually. ~~Decide on
+   generating the lists from CSV~~ **Corrected:** not needed — the site's lists
+   are canon, updated once a year from the software-approval process's outcome,
+   not synced from the sheet.
+
+4. Send the privacy-notice memo (§E4) — **on hold**, not to Amy specifically.
+   Ownership moved from IT to **SLT** (§D5, 2026-08-20); June's manager is
+   already talking to school leadership about this page, so hold off on any memo
+   or banner until that review concludes.
+5. ~~Migrate the two iframe-only setup guides onto the site.~~ **Corrected, not
+   just deferred:** these guides are IT-owned and IT wants to keep maintaining
+   them in Google Docs — no migration should happen. See §D2.
+6. ~~Add the Makerspace Safety parent page and a tool-training path.~~ **Dropped
+   (June, 2026-08-20)** — not being pursued.
 7. Add the `internal/` unlisted answer-bank pages.
 
 ## Verification checklist (run before each deploy)
