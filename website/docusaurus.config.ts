@@ -98,6 +98,132 @@ const config: Config = {
         removeDuplicateHeadings: true,
       },
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        // Every path moved or removed by the Part B audience-first IA
+        // restructure. These are linked from emails, Schoology courses, and
+        // the Veracross portal, so old links must keep working.
+        redirects: [
+          {
+            from: "/tech-resources",
+            to: "/families",
+          },
+          {
+            from: "/tech-resources/chromebook-access-control",
+            to: "/families/chromebook-access-control",
+          },
+          {
+            from: "/tech-resources/schoology-overview",
+            to: "/families/schoology-for-families",
+          },
+          {
+            from: "/tech-resources/student-laptops",
+            to: "/families",
+          },
+          {
+            from: "/tech-resources/student-laptops/middle-school-chromebooks",
+            to: "/families/middle-school-chromebooks",
+          },
+          {
+            from: "/tech-resources/student-laptops/chromebook-setup",
+            to: "/families/chromebook-setup",
+          },
+          {
+            from: "/tech-resources/student-laptops/upper-school-laptops",
+            to: "/families/upper-school-laptops",
+          },
+          {
+            from: "/tech-resources/student-laptops/upper-school-laptop-setup",
+            to: "/families/upper-school-laptop-setup",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq",
+            to: "/families/faq",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/family-link-school-account",
+            to: "/families/parental-controls/family-link-school-account",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/parental-control-apps",
+            to: "/families/parental-controls/parental-control-apps",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/backup-pc",
+            to: "/families/faq/backup-pc",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/chromebooks-us",
+            to: "/families/faq/chromebooks-us",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/how-to-print",
+            to: "/families/faq/how-to-print",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/macbook-neo",
+            to: "/families/faq/macbook-neo",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/password-change",
+            to: "/families/faq/password-change",
+          },
+          {
+            from: "/tech-resources/student-laptops/faq/wifi-connection",
+            to: "/families/faq/wifi-connection",
+          },
+          {
+            from: "/tech-resources/technology-use-guidelines",
+            to: "/policies/technology-use-guidelines",
+          },
+          {
+            from: "/tech-resources/privacy-and-coppa",
+            to: "/policies/privacy-and-coppa",
+          },
+          {
+            from: "/software-and-vr",
+            to: "/software",
+          },
+          {
+            from: "/software-and-vr/fully-supported-software",
+            to: "/software/fully-supported",
+          },
+          {
+            from: "/software-and-vr/fully-supported-software/adobe-creative-cloud",
+            to: "/software/fully-supported/adobe-creative-cloud",
+          },
+          {
+            from: "/software-and-vr/fully-supported-software/autodesk",
+            to: "/software/fully-supported/autodesk",
+          },
+          {
+            from: "/software-and-vr/recommended-free-software",
+            to: "/software/recommended-free",
+          },
+          {
+            from: "/software-and-vr/unsupported-software",
+            to: "/software/unsupported",
+          },
+          {
+            from: "/software-and-vr/it-supported-software",
+            to: "/software/it-supported",
+          },
+          {
+            from: "/software-and-vr/vr-software",
+            to: "/software/vr",
+          },
+          {
+            from: "/it-support",
+            to: "/about/it-support",
+          },
+          {
+            from: "/accessibility",
+            to: "/students/accessibility-tools",
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig: {
@@ -112,8 +238,13 @@ const config: Config = {
       },
       items: [
         {
-          to: "/tech-resources",
-          label: "Students & Families",
+          to: "/students",
+          label: "Students",
+          position: "left",
+        },
+        {
+          to: "/families",
+          label: "Families",
           position: "left",
         },
         {
@@ -122,7 +253,7 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/software-and-vr",
+          to: "/software",
           label: "Software",
           position: "left",
         },

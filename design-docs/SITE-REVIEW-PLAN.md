@@ -232,18 +232,19 @@ value:
    See §6.1 for the four places you're currently violating this — each one is a
    future wrong answer.
 6. **Flag policy documents as suggest-only for AI editing.** _(Added after
-   initial review, at June's request.)_ A handful of pages are
-   governance/policy documents — ILT- or IT-owned, or otherwise not June's to
-   unilaterally rewrite — where an AI assistant should propose changes in
-   conversation rather than edit the page directly. These carry an
-   `ai_editing: suggest-only` frontmatter field plus an `ai_edit_note:`
-   explaining the boundary in plain language:
+   initial review, at June's request.)_ A handful of pages are governance/policy
+   documents — ILT- or IT-owned, or otherwise not June's to unilaterally rewrite
+   — where an AI assistant should propose changes in conversation rather than
+   edit the page directly. These carry an `ai_editing: suggest-only` frontmatter
+   field plus an `ai_edit_note:` explaining the boundary in plain language:
+
    ```yaml
    ai_editing: suggest-only
    ai_edit_note: >-
-     This is a policy document. Propose changes in conversation for a human
-     to review and apply, rather than editing the body directly.
+     This is a policy document. Propose changes in conversation for a human to
+     review and apply, rather than editing the body directly.
    ```
+
    The flagged pages:
    - `faculty/schoology/requirements.mdx` (Schoology Requirements — ILT-owned)
    - `tech-resources/privacy-and-coppa.mdx` (Privacy and COPPA — IT-owned)
@@ -254,13 +255,13 @@ value:
    - `software-and-vr/fully-supported-software/index.mdx` — **partial lock**:
      the list of approved software itself is policy-controlled, but
      descriptions, formatting, and page layout may still be edited freely. The
-     `ai_edit_note` on this page spells out that distinction rather than
-     using a different field name.
+     `ai_edit_note` on this page spells out that distinction rather than using a
+     different field name.
 
    This is a convention for AI tooling to respect, not a Docusaurus or
    filesystem-level permission — it doesn't stop a human editing the file, and
-   it doesn't stop a careless AI that doesn't check frontmatter first. Treat
-   it as a clearly-posted sign, not a lock.
+   it doesn't stop a careless AI that doesn't check frontmatter first. Treat it
+   as a clearly-posted sign, not a lock.
 
 **Optional but powerful:** Docusaurus supports `unlisted: true` (page builds and
 is reachable by URL, but is excluded from sidebar, search, and sitemap).
@@ -415,6 +416,24 @@ member and an AI have the same problem here.
 ---
 
 # Part C — Schoology section (the focus)
+
+> **Heads-up for whoever builds this (Part B shipped first, 2026-08-20):** two
+> pages created in Part B link into this section and will need updating when
+> it's restructured here:
+>
+> - `students/schoology-for-students.mdx` links to
+>   `faculty/schoology/best-practices#gradebook-exceptions-flags` and to
+>   `faculty/schoology/issues`.
+> - `about/glossary.mdx` links to
+>   `faculty/schoology/best-practices#paw-ratings`,
+>   `faculty/schoology/best-practices#workload-calendar`,
+>   `faculty/schoology/requirements`, and
+>   `faculty/schoology/issues/become-course-admin`.
+>
+> None of this blocks doing Part C — `onBrokenLinks`/`onBrokenAnchors` are both
+> set to `"throw"` (§A4), so the build will fail loudly if either page is
+> forgotten when `best-practices.mdx` is split and `issues/` is renamed to
+> `faq/`. Just don't be surprised by the failure; it's these two files.
 
 ## C1. What's wrong now
 
@@ -729,16 +748,25 @@ Then redirect `/faculty/schoology/student-centered-courses` →
 
 ## D1. Software and VR
 
-| Issue                                                                                                                                                   | Where                                                              | Fix                                                                                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Literal placeholder shipped to production:** "recommended free software that we provide light support for, including [......]"                        | `software-and-vr/index.mdx`                                        | Name 3–4 examples, or cut the clause. This is live on the site right now.                                                                                                                                |
-| **"Follow the process on the Academic Tech for Faculty site (linked from Veracross)"** — _this is that site_                                            | `software-and-vr/index.mdx`, `unsupported-software.mdx`            | Link to `/faculty/teacher-software/software-process`. Circular external references are especially bad for AI answering.                                                                                  |
-| **Google Workspace is listed as both Fully Supported (yours) and IT-Supported (theirs)**                                                                | `fully-supported-software/index.mdx` + `it-supported-software.mdx` | Direct contradiction of your stated ownership boundary. Remove from Fully Supported; leave a "see IT-Supported" cross-reference. Same for the M365/Copilot mention in the `software-and-vr/index` intro. |
-| **Padlet has two stories** — "paid subscription limited to a handful of approved users" vs. the Canva page framing Padlet as the thing to migrate _off_ | `fully-supported-software/index.mdx`, `canva-classroom.mdx`        | Pick one. If Padlet is being sunset, say so with a date. Also note the free tier is now **3 padlets total**, which makes "everyone else can use the free tier" much weaker advice than it sounds.        |
-| Alphabetical list of ~30 tools with no filtering                                                                                                        | `fully-supported-software/index.mdx`                               | Add a department/subject column or tags. A World Language teacher shouldn't scan 30 entries to find four.                                                                                                |
-| VR buried as one page inside "Software and VR"                                                                                                          |                                                                    | Rename the section **Software**; VR becomes a child page.                                                                                                                                                |
-| No mention of whether **Upper School** students get Adobe CC                                                                                            | `adobe-creative-cloud.mdx`                                         | States faculty + "MS students in certain classes" + "student publications" students. US students unaddressed — real gap.                                                                                 |
-| `unsupported-software.mdx` is a single unwrapped 500-char line                                                                                          |                                                                    | Prettier fix (§A5).                                                                                                                                                                                      |
+> **Update (Part B, 2026-08-20):** the section was renamed and moved during the
+> audience-first IA restructure: `software-and-vr/` → `software/`,
+> `fully-supported-software/` → `software/fully-supported/`,
+> `unsupported-software.mdx` → `software/unsupported.mdx`. The "Rename the
+> section Software; VR becomes a child page" row below is **done** as a side
+> effect of that move. The Prettier-formatting row is also done (§A5, applied
+> repo-wide). Everything else below is a content bug and is **still open** —
+> confirmed still present, at the new paths, as of the Part B implementation.
+
+| Issue                                                                                                                                                   | Where                                                              | Fix                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Literal placeholder shipped to production:** "recommended free software that we provide light support for, including [......]"                        | `software/index.mdx`                                               | Name 3–4 examples, or cut the clause. This is live on the site right now.                                                                                                                         |
+| **"Follow the process on the Academic Tech for Faculty site (linked from Veracross)"** — _this is that site_                                            | `software/index.mdx`, `software/unsupported.mdx`                   | Link to `/faculty/teacher-software/software-process`. Circular external references are especially bad for AI answering.                                                                           |
+| **Google Workspace is listed as both Fully Supported (yours) and IT-Supported (theirs)**                                                                | `software/fully-supported/index.mdx` + `software/it-supported.mdx` | Direct contradiction of your stated ownership boundary. Remove from Fully Supported; leave a "see IT-Supported" cross-reference. Same for the M365/Copilot mention in the `software/index` intro. |
+| **Padlet has two stories** — "paid subscription limited to a handful of approved users" vs. the Canva page framing Padlet as the thing to migrate _off_ | `software/fully-supported/index.mdx`, `canva-classroom.mdx`        | Pick one. If Padlet is being sunset, say so with a date. Also note the free tier is now **3 padlets total**, which makes "everyone else can use the free tier" much weaker advice than it sounds. |
+| Alphabetical list of ~30 tools with no filtering                                                                                                        | `software/fully-supported/index.mdx`                               | Add a department/subject column or tags. A World Language teacher shouldn't scan 30 entries to find four.                                                                                         |
+| ~~VR buried as one page inside "Software and VR"~~ **Done in Part B.**                                                                                  |                                                                    | ~~Rename the section **Software**; VR becomes a child page.~~                                                                                                                                     |
+| No mention of whether **Upper School** students get Adobe CC                                                                                            | `adobe-creative-cloud.mdx`                                         | States faculty + "MS students in certain classes" + "student publications" students. US students unaddressed — real gap.                                                                          |
+| ~~`unsupported-software.mdx` is a single unwrapped 500-char line~~ **Done (§A5).**                                                                      |                                                                    | ~~Prettier fix (§A5).~~                                                                                                                                                                           |
 
 **Recommendation — make the spreadsheet the source of truth.** You maintain an
 Approved Software Google Sheet (linked in this project). Right now the site's
@@ -799,18 +827,36 @@ Option (a) is ~2 hours of work and permanently ends the drift.
 
 ## D4. Accessibility
 
-- **Mentions Canvas** — "tools UPrep already uses … Google Docs, Slides, Sheets,
-  **Canvas**, and Schoology." UPrep doesn't use Canvas. Remove it.
-- Split by audience: student-facing device features →
+> **Update (Part B, 2026-08-20):** `accessibility.mdx` was split as part of the
+> audience-first IA restructure — student-facing device features are now at
+> `students/accessibility-tools.mdx`, and the "Faculty Guidance" section is now
+> `faculty/accessibility-in-your-course.mdx`. The split and the title/H1
+> mismatch are both **done**. The Canvas mention was preserved as-is during the
+> move (a content fact, not something a structural move should touch) — it's
+> **still open**, now on `students/accessibility-tools.mdx`. Adding the named
+> Schoology accessibility features is also **still open**, and is really two
+> pages' worth now: some belongs on `students/accessibility-tools.mdx` (what you
+> can turn on yourself), some on `faculty/accessibility-in-your-course.mdx`
+> (what to point students to in your course) — that page still hasn't been
+> "expanded with LMS specifics" as this section originally called for.
+
+- ~~**Mentions Canvas**~~ **Still open, moved to
+  `students/accessibility-tools.mdx`:** "tools UPrep already uses … Google Docs,
+  Slides, Sheets, **Canvas**, and Schoology." UPrep doesn't use Canvas. Remove
+  it.
+- ~~Split by audience: student-facing device features →
   `/students/accessibility-tools`; the "Faculty Guidance" section →
-  `/faculty/accessibility-in-your-course`, expanded with LMS specifics.
-- Add the Schoology accessibility features that now exist: **Accessibility
-  Checker** in the text editor, **Text-to-Speech and Line Reader**, text
-  highlighting in assessments. Right now the page says platforms "include
-  built-in accessibility features" generically while your own LMS has named
-  tools worth telling teachers about.
-- Title/H1 mismatch: frontmatter `Accessibility` vs H1
-  `Accessibility Tools for Students and Faculty`.
+  `/faculty/accessibility-in-your-course`~~ **Done in Part B.** Still open:
+  expand `faculty/accessibility-in-your-course.mdx` with LMS specifics (next
+  bullet).
+- **Still open.** Add the Schoology accessibility features that now exist:
+  **Accessibility Checker** in the text editor, **Text-to-Speech and Line
+  Reader**, text highlighting in assessments. Right now the page says platforms
+  "include built-in accessibility features" generically while your own LMS has
+  named tools worth telling teachers about.
+- ~~Title/H1 mismatch: frontmatter `Accessibility` vs H1
+  `Accessibility Tools for Students and Faculty`.~~ **Done in Part B** — each
+  split page now has one consistent title, no separate H1.
 
 ## D5. Privacy & COPPA
 
