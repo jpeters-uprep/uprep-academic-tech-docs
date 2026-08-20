@@ -799,8 +799,10 @@ day, so they never drift from the actual outcome the way they have until now.
 
 ## D2. Tech Resources / Student Laptops
 
-> **Update (Part D, 2026-08-20):** four of five items below are **done**; the
-> iframe migration is **still open** — see its bullet for why.
+> **Update (Part D, 2026-08-20):** all five items below are resolved — four
+> **done** as originally scoped, and the iframe-migration item **corrected**
+> instead: it turned out to be the wrong recommendation entirely, not just
+> unfinished. See its bullet.
 
 - ~~**`family-link-school-account.mdx` duplicates ~90% of the "Linking the Two"
   section of `chromebook-access-control.mdx`**~~, near-verbatim, including the
@@ -823,14 +825,20 @@ day, so they never drift from the actual outcome the way they have until now.
   **Done** — no AUE table link needed here.
 - ~~`tech-resources/index.mdx` says "You will receive an email from IT in
   July"~~ **Done** — now `families/index.mdx`, reworded to "each July."
-- `chromebook-setup` and `upper-school-laptop-setup` are **iframe-only pages**
-  wrapping published Google Docs. **Still open.** I fetched the published
-  Chromebook setup doc to see what a migration would take — the fetch tool only
+- ~~`chromebook-setup` and `upper-school-laptop-setup` are **iframe-only pages**
+  wrapping published Google Docs. ... Migrate the content onto the site...~~
+  **Corrected by June (2026-08-20): this recommendation was wrong, not just
+  premature.** These two guides are **owned by IT, not June**, and IT wants to
+  keep maintaining them in Google Docs — the embed is the intended permanent
+  setup, not a migration gap to close. Both pages now carry `owner: IT`
+  frontmatter, `ai_editing: suggest-only`, and a visible "maintained by IT in
+  Google Docs" note above the embed. No migration should happen here. (Before
+  this correction landed, a fetch of the published Chromebook doc confirmed a
+  separate reason migrating would have been risky anyway: the fetch tool only
   returns an AI-summarized extraction, not a verbatim transcript, and a device
   setup guide is exactly the kind of content where a paraphrased password
-  requirement or step order is worse than not migrating at all. Do this one with
-  the actual doc text in hand (paste it in, or open it up for direct editing)
-  rather than from a secondhand summary.
+  requirement or step order would be worse than the iframe. Moot now, but worth
+  remembering if a similar embedded-doc page ever does need migrating.)
 - ~~`print-queue.mdx` and `makers-tools.mdx` link to the 3D print form and the
   OneDrive folder with **two different URL forms each**~~ **Done** — verified
   both pairs actually resolve to the same destination (confirmed the form
@@ -840,9 +848,8 @@ day, so they never drift from the actual outcome the way they have until now.
 ## D3. Makers
 
 > **Update (Part D, 2026-08-20):** first, second, third, and fifth items below
-> are **done**. The Makerspace Safety parent page is **still open** — it's a new
-> page, not a fix, and worth its own conversation about scope before building
-> it.
+> are **done**. The Makerspace Safety parent page is **dropped, per June** — not
+> deferred, removed from scope. See its bullet.
 
 - ~~`makers-tools.mdx` and `programs-teams-and-clubs.mdx` have **no frontmatter
   at all**~~ **Done** (§A7, applied during Part A's site-wide frontmatter
@@ -850,11 +857,10 @@ day, so they never drift from the actual outcome the way they have until now.
 - ~~**Typo:** `jpeters@universtyprep.org`~~ **Done.**
 - ~~**CNC section is missing its `Location:` line**~~ **Done** — ULab
   Makerspace, per June.
-- Consider a **Makerspace Safety** parent page over `ppe.mdx` + tool-training
-  requirements + shop rules. **Still open** — say the word if you want this
-  scoped out; it's a new page, not a quick fix, and the training-record question
-  ("no stated way to get trained or record that you were") needs a real process
-  decision, not just a docs page.
+- ~~Consider a **Makerspace Safety** parent page over `ppe.mdx` + tool-training
+  requirements + shop rules.~~ **Dropped (June, 2026-08-20).** Not being pursued
+  — remove from any future work plan too (see Phase 4 item 6 in Part G, which
+  listed this same page).
 - ~~`makers/faq/print-directories.mdx` is one of two "print" FAQs~~ **Done** —
   retitled "Where Do I Find 3D Models?"
 
@@ -1220,14 +1226,37 @@ These are all safe, isolated, and high-value.
 ## Phase 4 — Content depth & AI-readiness (ongoing)
 
 1. Write `schoology-and-veracross`, `notifications`, `powerbuddy-and-ai`.
-2. Add `llms.txt` / `llms-full.txt`; add `description` + `owner` +
-   `last_reviewed` + `tags` frontmatter site-wide (do it as you touch pages, not
-   in one pass).
-3. Reconcile the software lists against the Approved Software Sheet; decide on
-   generating them from CSV.
-4. Send Amy the privacy-notice memo (§E4).
-5. Migrate the two iframe-only setup guides onto the site.
-6. Add the Makerspace Safety parent page and a tool-training path.
+2. ~~Add `llms.txt` / `llms-full.txt`; add `description` + `owner` +
+   `last_reviewed` + `tags` frontmatter site-wide~~ **Done in Part A** (minus
+   `last_reviewed`, deliberately dropped — see §A7).
+3. **Fully Supported Software follow-ups (still open, tracked here as of
+   2026-08-20):**
+   - Remove the `## Google Workspace` entry from
+     `software/fully-supported/index.mdx` (it's IT-owned, already listed on
+     `software/it-supported.mdx` — direct duplication of the same content).
+   - Reconcile Padlet's two stories — reword the Fully Supported entry to drop
+     the "everyone else can use the free tier" framing (the free tier is 3
+     padlets total now, much weaker than it reads) and remove the unsupported
+     "limited to a handful of approved users" framing unless that's still true;
+     only mention sunsetting if there's an actual date.
+   - Add subject/department tags to the ~30-tool list (pure formatting, not a
+     list-content change).
+
+   All three are recommended but not applied directly, since the list itself is
+   `ai_editing: suggest-only` — June is doing these manually. ~~Decide on
+   generating the lists from CSV~~ **Corrected:** not needed — the site's lists
+   are canon, updated once a year from the software-approval process's outcome,
+   not synced from the sheet.
+
+4. Send the privacy-notice memo (§E4) — **on hold**, not to Amy specifically.
+   Ownership moved from IT to **SLT** (§D5, 2026-08-20); June's manager is
+   already talking to school leadership about this page, so hold off on any memo
+   or banner until that review concludes.
+5. ~~Migrate the two iframe-only setup guides onto the site.~~ **Corrected, not
+   just deferred:** these guides are IT-owned and IT wants to keep maintaining
+   them in Google Docs — no migration should happen. See §D2.
+6. ~~Add the Makerspace Safety parent page and a tool-training path.~~ **Dropped
+   (June, 2026-08-20)** — not being pursued.
 7. Add the `internal/` unlisted answer-bank pages.
 
 ## Verification checklist (run before each deploy)
