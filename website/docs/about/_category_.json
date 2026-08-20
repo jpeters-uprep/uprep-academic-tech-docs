@@ -1,0 +1,8 @@
+{
+  "label": "About",
+  "position": 7,
+  "link": {
+    "type": "doc",
+    "id": "about/index"
+  }
+}
