@@ -1,0 +1,63 @@
+# Builds and deploys the Docusaurus site to GitHub Pages on every push to
+# main. This removes the single point of failure of "deploy only runs from
+# June's laptop" (see the root README's Deploying section).
+#
+# ONE-TIME SETUP REQUIRED before this workflow can publish anything:
+#   Repo Settings → Pages → Build and deployment → Source → "GitHub Actions"
+#   (it is likely currently set to "Deploy from a branch: gh-pages").
+# That's an account/repo settings change, so it isn't done by this file —
+# someone with admin access to the repo needs to flip it once.
+#
+# Also builds (but doesn't deploy) on pull requests, so a broken build or a
+# bad link (onBrokenLinks/onBrokenAnchors/onBrokenMarkdownLinks are all set
+# to "throw") is caught before merge instead of after.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - name: Install dependencies
+        working-directory: website
+        run: npm ci
+      - name: Build
+        working-directory: website
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: website/build
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
