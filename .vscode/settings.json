@@ -3,6 +3,9 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "prettier.printWidth": 80,
   "prettier.proseWrap": "always",
   "cSpell.words": ["Gradebook", "Schoology"]
