@@ -768,24 +768,27 @@ Then redirect `/faculty/schoology/student-centered-courses` →
 > Workspace duplication and the Padlet "two stories" row both live inside
 > `software/fully-supported/index.mdx`'s **locked list**
 > (`ai_editing: suggest-only`) — removing or rewriting an entry there is a
-> list-content change, not formatting, so neither was applied directly.
-> **Proposed, not yet applied:** drop the `## Google Workspace` entry from Fully
-> Supported (keep it IT-Supported-only); reconcile Padlet's two stories once
-> June confirms whether it's being sunset and by when. The "no filtering for ~30
-> tools" row is also still open — worth a light pass of inline subject tags per
-> entry (pure formatting, doesn't touch the locked list's contents) whenever
-> there's time for it.
+> list-content change, not formatting, so neither was applied directly. **Done
+> by June directly (2026-08-20):** the Google Workspace entry was removed from
+> Fully Supported, and Padlet's entry reworded to drop the stale free-tier
+> framing and point to Canva Classroom as the no-seat-limit alternative, rather
+> than assert a sunset date that was never confirmed. Applied by June herself
+> rather than by me, since both are list-content changes inside the
+> `ai_editing: suggest-only` boundary. The "no filtering for ~30 tools" row is
+> still open — worth a light pass of inline subject tags per entry (pure
+> formatting, doesn't touch the locked list's contents) whenever there's time
+> for it.
 
-| Issue                                                                                                                                                   | Where                                                              | Fix                                                                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ~~**Literal placeholder shipped to production**~~ **Done.**                                                                                             | `software/index.mdx`                                               | ~~Name 3–4 examples, or cut the clause.~~ Named Desmos, Kahoot, Scratch.                                                                                                                          |
-| ~~**"Follow the process on the Academic Tech for Faculty site (linked from Veracross)"**~~ **Done, both instances.**                                    | `software/index.mdx`, `software/unsupported.mdx`                   | ~~Link to `/faculty/teacher-software/software-process`.~~                                                                                                                                         |
-| **Google Workspace is listed as both Fully Supported (yours) and IT-Supported (theirs)**                                                                | `software/fully-supported/index.mdx` + `software/it-supported.mdx` | Direct contradiction of your stated ownership boundary. Remove from Fully Supported; leave a "see IT-Supported" cross-reference. Same for the M365/Copilot mention in the `software/index` intro. |
-| **Padlet has two stories** — "paid subscription limited to a handful of approved users" vs. the Canva page framing Padlet as the thing to migrate _off_ | `software/fully-supported/index.mdx`, `canva-classroom.mdx`        | Pick one. If Padlet is being sunset, say so with a date. Also note the free tier is now **3 padlets total**, which makes "everyone else can use the free tier" much weaker advice than it sounds. |
-| Alphabetical list of ~30 tools with no filtering                                                                                                        | `software/fully-supported/index.mdx`                               | Add a department/subject column or tags. A World Language teacher shouldn't scan 30 entries to find four.                                                                                         |
-| ~~VR buried as one page inside "Software and VR"~~ **Done in Part B.**                                                                                  |                                                                    | ~~Rename the section **Software**; VR becomes a child page.~~                                                                                                                                     |
-| ~~No mention of whether **Upper School** students get Adobe CC~~ **Done.**                                                                              | `adobe-creative-cloud.mdx`                                         | Confirmed with June: all US students have access. Added.                                                                                                                                          |
-| ~~`unsupported-software.mdx` is a single unwrapped 500-char line~~ **Done (§A5).**                                                                      |                                                                    | ~~Prettier fix (§A5).~~                                                                                                                                                                           |
+| Issue                                                                                                                | Where                                                              | Fix                                                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ~~**Literal placeholder shipped to production**~~ **Done.**                                                          | `software/index.mdx`                                               | ~~Name 3–4 examples, or cut the clause.~~ Named Desmos, Kahoot, Scratch.                                                                          |
+| ~~**"Follow the process on the Academic Tech for Faculty site (linked from Veracross)"**~~ **Done, both instances.** | `software/index.mdx`, `software/unsupported.mdx`                   | ~~Link to `/faculty/teacher-software/software-process`.~~                                                                                         |
+| ~~**Google Workspace is listed as both Fully Supported (yours) and IT-Supported (theirs)**~~ **Done, by June.**      | `software/fully-supported/index.mdx` + `software/it-supported.mdx` | ~~Remove from Fully Supported; leave a "see IT-Supported" cross-reference.~~                                                                      |
+| ~~**Padlet has two stories**~~ **Done, by June.**                                                                    | `software/fully-supported/index.mdx`, `canva-classroom.mdx`        | Reworded to the current 3-padlet free-tier limit and pointed to Canva Classroom as the alternative, without asserting an unconfirmed sunset date. |
+| Alphabetical list of ~30 tools with no filtering                                                                     | `software/fully-supported/index.mdx`                               | Add a department/subject column or tags. A World Language teacher shouldn't scan 30 entries to find four.                                         |
+| ~~VR buried as one page inside "Software and VR"~~ **Done in Part B.**                                               |                                                                    | ~~Rename the section **Software**; VR becomes a child page.~~                                                                                     |
+| ~~No mention of whether **Upper School** students get Adobe CC~~ **Done.**                                           | `adobe-creative-cloud.mdx`                                         | Confirmed with June: all US students have access. Added.                                                                                          |
+| ~~`unsupported-software.mdx` is a single unwrapped 500-char line~~ **Done (§A5).**                                   |                                                                    | ~~Prettier fix (§A5).~~                                                                                                                           |
 
 **Recommendation — the site's approved-software pages are canon, corrected
 (June, 2026-08-20).** The Google Sheet isn't a data source to sync from — it's
@@ -1225,22 +1228,16 @@ These are all safe, isolated, and high-value.
 
 ## Phase 4 — Content depth & AI-readiness (ongoing)
 
-1. Write `schoology-and-veracross`, `notifications`, `powerbuddy-and-ai`.
+1. ~~Write `schoology-and-veracross`, `notifications`, `powerbuddy-and-ai`.~~
+   **Done in Part C.**
 2. ~~Add `llms.txt` / `llms-full.txt`; add `description` + `owner` +
    `last_reviewed` + `tags` frontmatter site-wide~~ **Done in Part A** (minus
    `last_reviewed`, deliberately dropped — see §A7).
-3. **Fully Supported Software follow-ups (still open, tracked here as of
-   2026-08-20):**
-   - Remove the `## Google Workspace` entry from
-     `software/fully-supported/index.mdx` (it's IT-owned, already listed on
-     `software/it-supported.mdx` — direct duplication of the same content).
-   - Reconcile Padlet's two stories — reword the Fully Supported entry to drop
-     the "everyone else can use the free tier" framing (the free tier is 3
-     padlets total now, much weaker than it reads) and remove the unsupported
-     "limited to a handful of approved users" framing unless that's still true;
-     only mention sunsetting if there's an actual date.
+3. **Fully Supported Software follow-ups (2026-08-20):**
+   - ~~Remove the `## Google Workspace` entry~~ **Done, by June.**
+   - ~~Reconcile Padlet's two stories~~ **Done, by June.**
    - Add subject/department tags to the ~30-tool list (pure formatting, not a
-     list-content change).
+     list-content change) — **still open**, no urgency.
 
    All three are recommended but not applied directly, since the list itself is
    `ai_editing: suggest-only` — June is doing these manually. ~~Decide on
