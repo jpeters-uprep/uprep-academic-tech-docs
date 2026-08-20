@@ -793,11 +793,14 @@ Option (a) is ~2 hours of work and permanently ends the drift.
 - **Chromebook "ALTERNATIVES" spec is below the Chromebook Plus bar** it's
   presented as an alternative to (§7.12). It's also silent on CPU, which is the
   spec that actually determines whether a cheap Chromebook survives four years.
-- **"Chromebook Plus … should last for 3+ years"** — Google now commits to **10
-  years of ChromeOS updates**, but measured from the _platform's_ release date,
-  not purchase. Replace the durability claim with "check the model's Auto Update
-  Expiration date and confirm it covers your student's remaining years here,"
-  plus a link to Google's AUE table. This is more useful _and_ more accurate.
+- ~~**"Chromebook Plus … should last for 3+ years"** — Google now commits to
+  **10 years of ChromeOS updates**...~~ **Corrected by June (2026-08-20): this
+  diagnosis was wrong.** The "3+ years" claim was never about software-update
+  lifecycle — it's about the device having enough processing power and memory to
+  stay fast through all of Middle School as web pages and apps get heavier over
+  time. `families/middle-school-chromebooks.mdx` has been reworded to say that
+  plainly instead of conflating it with ChromeOS Auto Update Expiration.
+  **Done** — no AUE table link needed here.
 - `tech-resources/index.mdx` says "You will receive an email from IT in July" —
   add the year or phrase it as "each July" so it doesn't read as stale in
   October.
@@ -837,19 +840,20 @@ Option (a) is ~2 hours of work and permanently ends the drift.
 > audience-first IA restructure — student-facing device features are now at
 > `students/accessibility-tools.mdx`, and the "Faculty Guidance" section is now
 > `faculty/accessibility-in-your-course.mdx`. The split and the title/H1
-> mismatch are both **done**. The Canvas mention was preserved as-is during the
-> move (a content fact, not something a structural move should touch) — it's
-> **still open**, now on `students/accessibility-tools.mdx`. Adding the named
-> Schoology accessibility features is also **still open**, and is really two
-> pages' worth now: some belongs on `students/accessibility-tools.mdx` (what you
-> can turn on yourself), some on `faculty/accessibility-in-your-course.mdx`
-> (what to point students to in your course) — that page still hasn't been
-> "expanded with LMS specifics" as this section originally called for.
+> mismatch are both **done**. The "Canvas" mention was preserved as-is during
+> the move — and per June (2026-08-20), the original finding was wrong: it's a
+> typo for **Canva** (a tool UPrep does use), not a reference to the Canvas LMS.
+> **Fixed** as a typo correction, not a removal. Adding the named Schoology
+> accessibility features is also **still open**, and is really two pages' worth
+> now: some belongs on `students/accessibility-tools.mdx` (what you can turn on
+> yourself), some on `faculty/accessibility-in-your-course.mdx` (what to point
+> students to in your course) — that page still hasn't been "expanded with LMS
+> specifics" as this section originally called for.
 
-- ~~**Mentions Canvas**~~ **Still open, moved to
-  `students/accessibility-tools.mdx`:** "tools UPrep already uses … Google Docs,
-  Slides, Sheets, **Canvas**, and Schoology." UPrep doesn't use Canvas. Remove
-  it.
+- ~~**Mentions Canvas** — "tools UPrep already uses … Google Docs, Slides,
+  Sheets, Canvas, and Schoology." UPrep doesn't use Canvas. Remove it.~~
+  **Corrected, not removed:** this was a typo for **Canva**, a tool UPrep does
+  use. Fixed on `students/accessibility-tools.mdx`.
 - ~~Split by audience: student-facing device features →
   `/students/accessibility-tools`; the "Faculty Guidance" section →
   `/faculty/accessibility-in-your-course`~~ **Done in Part B.** Still open:
@@ -866,8 +870,17 @@ Option (a) is ~2 hours of work and permanently ends the drift.
 
 ## D5. Privacy & COPPA
 
-This page is **IT/legal-owned content living in your site with no owner label**,
-and it's the stalest content here.
+> **Correction (June, 2026-08-20):** this page was migrated onto the site from
+> an older one, not authored here — and it's owned by **SLT**, not IT. June's
+> manager is talking to school leadership about it and there's a follow-up
+> pending, so **the body is intentionally untouched for now** — only the
+> ownership frontmatter was corrected (`owner: SLT`, and the
+> `about/who-owns-what.mdx` table updated to match). Don't act on any of the
+> findings below until that review concludes; they're preserved here as a record
+> of what to revisit once it does.
+
+This page is **owned by SLT, currently under review**, and it's the stalest
+content here.
 
 - Third-party list includes **Twitter** ("known as X" — the rebrand completed in
   2024; the account and the framing are both dated), **Office 365** with links
@@ -886,10 +899,11 @@ and it's the stalest content here.
 - Bullet-formatting bug: "• Log into the Parent Portal … • Sending us an email"
   renders as run-together text, not a list.
 
-**Recommendation:** add `owner: IT` frontmatter, add a visible "This notice is
-maintained by IT; contact Amy Spivey" banner, and send Amy a short memo listing
-the stale entries. Don't silently fix someone else's legal text — but don't host
-it un-owned either.
+**Recommendation:** ~~add `owner: IT` frontmatter~~ — **done differently**:
+`owner: SLT` frontmatter added (2026-08-20), reflecting that this is under
+active review with school leadership, not an IT-owned page. Hold off on a
+visible banner or a memo to anyone until that review concludes — the stale
+entries below are worth revisiting then, not before.
 
 ## D6. Veracross — a scope question
 
