@@ -13,13 +13,12 @@ follow them.
   from that folder tree — there is no `sidebars.ts`. A folder's label/order
   comes from its `_category_.json`; a single page's order comes from its own
   `sidebar_position` frontmatter field.
-- `design-docs/SITE-REVIEW-PLAN.md` is the project's working plan and decision
-  log for the ongoing site review (not published to the site). If you're picking
-  up review/cleanup work, read it first — it records what's already been
-  decided, corrected, reverted, or deliberately held, including cases where an
-  earlier pass (mine or the plan's own) turned out to be wrong. Update it as you
-  go, in the same style: log what changed and why, don't just silently mark
-  things done.
+- `design-docs/` holds planning and review documents (not published to the site)
+  — check there for context before starting review/cleanup work, but treat
+  anything you find as a point-in-time snapshot, not a live source of truth.
+  Verify its claims against the actual repo rather than trusting them outright,
+  since a plan document can go stale the moment reality (or a human's decision)
+  moves past it.
 
 ## Commands (run from `website/`)
 
