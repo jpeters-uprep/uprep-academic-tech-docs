@@ -1140,6 +1140,61 @@ DeltaMath._
 Codify these in a `CONTRIBUTING.md` (or a section of the root README) so the
 next 60 pages are consistent by default.
 
+> **Update (2026-08-21): implemented.** Wrote
+> [`CONTRIBUTING.md`](../CONTRIBUTING.md) at the repo root codifying F1–F6, and
+> linked it from `README.md`. Before writing it, re-audited every "current
+> state" claim below against the actual repo rather than trusting this document
+> — several were already resolved by earlier parts, and F3's own recommendation
+> turned out to conflict with the site's real, working convention. Per-section
+> status:
+>
+> - **F1 (frontmatter):** already fully done — every one of the 92 pages has
+>   `description`/`owner`/`audience`/`tags` (Part A). Nothing to fix; codified
+>   the schema in `CONTRIBUTING.md` for future pages.
+> - **F2 (titles/H1):** **fixed.** All 10 pages with a duplicate body `#`
+>   heading (`home.mdx`, `makers-tools.mdx`, `programs-teams-and-clubs.mdx`,
+>   `ppe.mdx`, `recommended-free.mdx`, `vr.mdx`, `unsupported.mdx`,
+>   `chromebook-access-control.mdx`, `adobe-creative-cloud.mdx`, `autodesk.mdx`)
+>   had the redundant heading removed. Verified none remain site-wide.
+> - **F3 (links):** **the plan's own recommendation was wrong.** I'd suggested
+>   file-relative links keep the `.mdx` extension; in reality the site already
+>   has a clean, working, and nearly universal convention — root-absolute for
+>   cross-section links, extensionless file-relative for same-folder links —
+>   with exactly **one** file breaking it (`upper-school-laptops.mdx`'s Office →
+>   IT-Supported Software link, which is also one `../` too deep). That file is
+>   `ai_editing: suggest-only`, so I didn't touch it — flagging for June to fix:
+>   change `../software/it-supported.mdx` to `/software/it-supported`. The
+>   `](../.)` bug F3 originally flagged no longer exists anywhere. Codified the
+>   real (extensionless) convention in `CONTRIBUTING.md` rather than the plan's
+>   original suggestion.
+> - **F4 (FAQ pages):** **fixed.** Retitled every FAQ page whose title wasn't a
+>   genuine question (18 pages, e.g. "Macbook Neo?" → "Do you recommend the
+>   MacBook Neo?", "Add a Section" → "How do I add a section to my class?"), and
+>   added a `## Related` section to every FAQ that was missing one. Updated the
+>   handful of other pages that linked to these FAQs by their old title text
+>   (`requirements.mdx` also needed this, but it's `ai_editing: suggest-only` —
+>   flagging that one line for June instead of editing it: `[Add a Section]` →
+>   `[How do I add a section to my class?]`).
+> - **F5 (one fact, one place):** turned out to be **already resolved** by
+>   earlier parts — `family-link-school-account.mdx` was already trimmed to a
+>   short answer + link (Part E), `student-centered-courses.mdx` no longer
+>   exists (dissolved per §C3), and the software-process/app-install-requests/
+>   extension-requests pages already cross-link cleanly with no circularity. The
+>   one real remaining overlap (software lists vs. `privacy-and-coppa.mdx`)
+>   can't be touched — that page is held for SLT review (§E4). Nothing left to
+>   do here.
+> - **F6 (naming/contact hygiene):** **already fully done** — the two email
+>   typos, the `@uprep.org` domain error, and every "U Prep" instance were
+>   already fixed in earlier parts; June's pronouns were fixed today (see F6's
+>   own line item, updated 2026-08-21).
+>
+> **Not part of F, flagging separately:** Part G's Phase 4 checklist lists two
+> other loose items that aren't consistency-standard work and need June's input,
+> not mine — adding subject/department tags to the ~30-tool software list (still
+> open, low urgency, and the list itself is `ai_editing: suggest-only`), and an
+> optional `internal/` unlisted "answer bank" folder (needs June to actually
+> supply the canned language; nothing to implement without that).
+
 ## F1. Frontmatter — required on every page
 
 ```yaml
