@@ -174,45 +174,62 @@ the UPrep account isn't something Family Link reaches, as explained next.
 
 ## Linking the Two: What Actually Carries Over
 
-Families are encouraged to add the UPrep account as a **secondary account**
-under the student's Family Link-managed personal account, rather than as a
-separate login on the device. Adding it this way is what lets a parent see and
-manage both accounts from one place — but it's easy to overestimate how much
-control that link actually grants. Based on testing and on
-[Google's documentation](https://support.google.com/chromebook/answer/9900467?hl=en),
-here's exactly what does and doesn't cross over:
+There are two different ways a UPrep account can be present on the device, and
+they're not interchangeable:
 
-**Carries over to the UPrep account:**
+1. **As its own separate account**, added at the Chromebook's sign-in screen
+   alongside the personal account — this is what
+   [Recommended Setup](#recommended-setup) above calls for, and it's the normal,
+   expected setup. Signed in this way, the UPrep account is governed entirely by
+   UPrep's Workspace admin console, not by Family Link — that's intentional, not
+   a gap to close. It's the only way a student gets UPrep's force-installed
+   required class apps and the rest of the Workspace-managed app catalog.
+2. **As a secondary account inside the personal account's Chrome browser** — a
+   convenience that lets a parent (or student) check UPrep email and use a small
+   set of allowed apps, like Google Classroom, while browsing under the Family
+   Link-supervised personal profile, without switching accounts. This does
+   **not** give access to UPrep's managed apps or policies — it's an email and
+   browsing convenience layered on top of the personal account, not a substitute
+   for the actual UPrep account in #1.
+
+Based on testing and on
+[Google's documentation](https://support.google.com/chromebook/answer/9900467?hl=en),
+here's exactly what the **secondary-account convenience** (#2) does and doesn't
+carry over:
+
+**Carries over to the secondary UPrep account:**
 
 - Signing in to websites using the UPrep account
 - Switching to the UPrep account to check email
 - Switching to the UPrep account for a small set of allowed apps and extensions,
   like Google Classroom, to do schoolwork under parent supervision
 
-**Does not carry over to the UPrep account:**
+**Does not carry over:**
 
-- **Screen time limits and downtime.** This is the one people most often assume
-  works and it doesn't: a Family Link screen time limit locks the personal
-  account's session on the device, but a student can still sign in and work
-  under their UPrep account after that lock hits. Confirmed by direct testing —
-  setting a screen time limit locked the personal test account on a Chromebook
-  while the UPrep account on the same device remained fully usable.
-- **App installs and Google Play.** While signed in to the personal account,
-  Play Store shows only what Family Link allows. While signed in to the UPrep
-  account, app availability is governed entirely by UPrep's Workspace admin
-  console — Family Link has no visibility or veto here, and there's no
-  parent-approval prompt. Google is explicit that a student can only add one
-  Workspace for Education account as a secondary account for exactly this
-  reason: allowing more would let a student switch accounts to download apps
-  from Play without parent approval.
-- **Content filtering.** Whatever sites Family Link blocks or allows applies to
-  the personal account's browsing, not the UPrep account's.
+- **Required class apps, or anything else UPrep manages centrally.** App
+  availability for a signed-in UPrep session is governed entirely by UPrep's
+  Workspace admin console. When the UPrep account is only present as a secondary
+  account, that governance doesn't reach it — you need the actual, separate
+  UPrep account (#1) for required apps to force-install.
 
-The short version: a personal account is fully parent-controlled, a UPrep
-account is fully school-controlled, and linking them only grants the narrow set
-of conveniences above — checking email, using a few designated apps, and website
-sign-in. It is not a general supervision layer over the UPrep account, in either
-direction.
+For the **actual, separate UPrep account** (#1): screen time limits, content
+filtering, and Play Store restrictions set through Family Link on the personal
+account don't extend to it. That's expected, not a bug. We independently tested this
+and got a consistent result: a Family Link screen time limit locked the personal
+account's session on a Chromebook while a separate UPrep account on the same
+device stayed fully usable.
+
+Since there's no software-based screen time control that reaches the UPrep
+account, families who want to limit their child's overall screen time at home
+may want to rely on non-software approaches instead — for example, setting rules
+around where the device can be used or stored, such as not keeping it in a
+bedroom overnight.
+
+The short version: a personal account is fully parent-controlled, the actual
+UPrep account is fully school-controlled by design, and the secondary-account
+convenience only grants the narrow set of items above — checking email, using a
+few designated apps, and website sign-in. It is not a general supervision layer
+over the UPrep account, in either direction.
 
 ### Required Apps and Parental Controls
 
