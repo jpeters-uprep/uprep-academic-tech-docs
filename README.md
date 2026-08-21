@@ -79,7 +79,9 @@ tags: [schoology]
 ---
 ```
 
-See an existing page for the full list of frontmatter fields in use.
+See an existing page for the full list of frontmatter fields in use, and see
+[CONTRIBUTING.md](CONTRIBUTING.md) for the full content standards (headings,
+links, FAQ page structure, naming conventions).
 
 **Add an image** Drop it in `website/static/img/` and reference it as
 `/img/your-file.png`.
