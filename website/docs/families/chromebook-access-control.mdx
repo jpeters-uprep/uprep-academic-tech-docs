@@ -20,6 +20,13 @@ written as a collaboration between IT, Academic Technology, and school
 leadership, and while the subject is technical, it's meant to be understood by
 anyone.
 
+If you are setting up a new Chromebook, start with IT's
+[Chromebook Setup Guide](/families/chromebook-setup) for account creation and
+first sign-in, then use [Recommended Setup](#recommended-setup) below for the
+account order. If a Chromebook is already set up and school apps are missing,
+skip to
+[Fixing a Chromebook That's Already Set Up](#fixing-a-chromebook-thats-already-set-up).
+
 Control happens in layers, and each layer only governs what's inside it:
 
 1. **Network** — the wifi or cellular connection the device is using
@@ -95,28 +102,62 @@ signed in.
 
 ### Recommended Setup
 
-- **Make sure a parent is the device owner.** Whoever signs in first during
-  setup becomes the owner, and ownership can't be transferred afterward — the
-  only way to change it is to
-  [factory reset](https://support.google.com/chromebook/answer/183084) and set
-  the device up again with the parent's account first. Back up anything
-  important before doing this.
-- **Disable guest browsing and restrict sign-in to known accounts**, using
-  [Google's instructions](https://support.google.com/chromebook/answer/1059252?hl=en).
-  Without this, a student can sidestep every account-level control just by using
-  the guest profile or a second, unmanaged account.
-- **Add the student's personal Google account, then add their UPrep account as a
-  secondary account under it**. See
-  [Personal Accounts and Family Link](#3-personal-accounts-and-family-link)
-  below for how.
-- **Add the student's UPrep account** so they can use school approved apps
-  easily. This account is outside parental controls, as noted below. If you
-  require strict parental controls, do not set up the UPrep account; instead you
-  must be ready to approve UPrep-required apps quickly to avoid disrupting
-  class.
-- **Consider blocking unknown networks** on the device. This removes the
-  public-wifi back door, at the cost of making it harder for the student to work
-  from anywhere other than school or home.
+Set the device up in this order. Step 3 is what school requires; the rest are
+family choices.
+
+1. **Sign in first with a parent's Google account.** Whoever signs in first
+   during setup becomes the owner, and ownership can't be transferred afterward
+   — the only way to change it is to
+   [factory reset](https://support.google.com/chromebook/answer/183084) and set
+   the device up again with the parent's account first. Back up anything
+   important before doing this.
+2. **Disable guest browsing and restrict sign-in to known accounts**, using
+   [Google's instructions](https://support.google.com/chromebook/answer/1059252?hl=en).
+   Without this, a student can sidestep every account-level control just by
+   using the guest profile or a second, unmanaged account.
+3. **Add the student's UPrep account as its own user on the device**, from the
+   Chromebook's sign-in screen — "Add Person", then sign in with their
+   `@universityprep.org` address. This is the account they use for schoolwork,
+   and adding it this way is what delivers UPrep's force-installed class apps,
+   school bookmarks, and single sign-on to school services. If a supervised
+   child account is already on the device, Google will ask for a parent's
+   password before the new user is added — that's expected. The first sign-in
+   also prompts a password change; see IT's
+   [Chromebook Setup Guide](/families/chromebook-setup) for the password rules.
+4. **Optionally, add the student's personal Google account as its own user
+   too**, and supervise it with
+   [Family Link](#3-personal-accounts-and-family-link). Many families skip this
+   — a student does not need a personal Google account for school.
+5. **Consider blocking unknown networks** on the device. This removes the
+   public-wifi back door, at the cost of making it harder for the student to
+   work from anywhere other than school or home.
+
+:::warning "Add school account" is not the same as step 3
+
+Inside a Family Link–supervised personal profile, Google offers a separate **Add
+school account** option, which attaches the UPrep account to the child's
+supervised profile as a secondary account. That is a different, much narrower
+thing, and it does **not** install required class apps. It is a useful addition
+for families who want Family Link to cover schoolwork, but it is not a
+substitute for step 3. See
+[Linking the Two](#linking-the-two-what-actually-carries-over) for the full
+breakdown.
+
+:::
+
+#### If you want your parental controls to cover schoolwork too
+
+Family Link cannot reach a UPrep account added as its own user in step 3 — that
+account is governed by UPrep's Workspace policies by design. Families who want
+their own controls in force while their student is doing schoolwork have one
+option: have the student work inside the supervised personal profile, with the
+UPrep account added there as a **secondary** account. Screen time, downtime, and
+content filtering then apply to schoolwork as well.
+
+The trade-off is real: that session does not get UPrep's force-installed class
+apps, and UPrep has no way to override a block you've set. If you choose this
+route, be ready to approve the apps and sites your student needs for class
+quickly, so class isn't disrupted.
 
 ### Third-Party Parental Control Apps
 
@@ -165,9 +206,19 @@ Education account. Whatever Google services and apps a student can use while
 signed in to it is determined entirely by UPrep's Workspace admin console — not
 by any setting the family controls.
 
-This matters because UPrep can, and does, **force-install** apps required for
-class onto every Chromebook signed in with a UPrep account, and can otherwise
-manage the account's app catalog and settings directly. If a required app is
+These settings follow the account, not the device. UPrep does not enroll or
+manage family-owned Chromebooks, but the moment a student signs in with their
+UPrep account, UPrep's policies for that account apply. That's what gives the
+student:
+
+- **Force-installed class apps and extensions**, pushed automatically to every
+  session signed in with a UPrep account
+- **School bookmarks**, managed centrally and kept up to date
+- **Single sign-on** to school services — Schoology, Google Drive, the Veracross
+  portal, and school email — without separate logins
+
+This only happens when the UPrep account is signed in as its own user on the
+device (step 3 of [Recommended Setup](#recommended-setup)). If a required app is
 missing or broken, contact IT rather than troubleshooting Family Link settings —
 the UPrep account isn't something Family Link reaches, as explained next.
 
@@ -196,12 +247,18 @@ Based on testing and on
 here's exactly what the **secondary-account convenience** (#2) does and doesn't
 carry over:
 
+Setting it up requires ChromeOS 89 or later, a personal account that is already
+managed by Family Link, and a parent's approval at the time it's added.
+
 **Carries over to the secondary UPrep account:**
 
 - Signing in to websites using the UPrep account
 - Switching to the UPrep account to check email
 - Switching to the UPrep account for a small set of allowed apps and extensions,
   like Google Classroom, to do schoolwork under parent supervision
+- **Family Link screen time limits, downtime schedules, and content filtering**,
+  which govern the whole supervised profile — including what the student does
+  while switched to the secondary UPrep account
 
 **Does not carry over:**
 
@@ -247,3 +304,49 @@ work:
   for all students automatically, regardless of any personal account settings.
   If a required app has trouble installing in this case, we'll reach out to the
   family to help.
+
+## Fixing a Chromebook That's Already Set Up
+
+If a student's Chromebook is missing school apps or bookmarks, or they're being
+asked to log in to school services over and over, the usual cause is that the
+UPrep account was never added as its own user on the device — only as a
+secondary account inside a personal profile, or not at all.
+
+**Check which setup you have.** From the Chromebook's sign-in screen (sign out
+if you're signed in), look at the row of profile pictures:
+
+- If you see a tile for the `@universityprep.org` account, it's set up
+  correctly. Nothing to change. Log in with that account for access to UPrep-managed items.
+- If the only tiles are personal accounts, the UPrep account is missing as a
+  device user — follow the fix below.
+
+You can also check from inside a session: select the time in the bottom right →
+**Settings** → **People**. A UPrep address listed under "Accounts" _within_ a
+personal profile is the secondary-account setup, not the same thing.
+
+**The fix — no factory reset needed:**
+
+1. Sign out to reach the Chromebook's sign-in screen.
+2. Select **Add Person**.
+3. Sign in with the student's `@universityprep.org` address and password. On a
+   device with a supervised child account, Google will ask a parent to approve
+   the addition with their password.
+4. Let the device sit on wifi for a few minutes after the first sign-in — this
+   is when school apps and bookmarks install.
+5. Have the student use that UPrep tile for schoolwork from then on.
+
+If a personal account is already supervised through Family Link, leave it alone
+— it keeps working exactly as before. Adding the UPrep account as its own user
+does not weaken or remove any control you've set on the personal account, and it
+does not give UPrep any visibility into the personal account.
+
+**When a factory reset _is_ needed:** only if you want a parent to be the device
+owner and the student's account was the first one signed in during setup.
+Ownership can't be transferred any other way. This is optional — the UPrep
+account works correctly regardless of who owns the device. See
+[Device Owner Controls](#2-device-owner-controls) for what ownership does and
+doesn't get you.
+
+If the student's UPrep password doesn't work, or school apps still haven't
+appeared after a day, email [Tech Support](mailto:support@universityprep.org)
+rather than adjusting Family Link settings.
