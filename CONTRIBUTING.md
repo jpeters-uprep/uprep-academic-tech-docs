@@ -88,6 +88,11 @@ three places (and inevitably missing one).
 - **Domain is `@universityprep.org`**, never `@uprep.org`.
 - **Schoology** in prose; note once, where it's first introduced, that the
   vendor's current product name is "Schoology Learning."
+- **Fusion** or **Autodesk Fusion** in prose, never "Fusion 360" — Autodesk
+  dropped "360" from the product name in a January 2024 rebrand. Autodesk's own
+  URL slugs still say `fusion-360` (e.g.
+  `/learn/ondemand/curated/sheet-metal-with-fusion-360`); leave those alone,
+  only the display text changes.
 - **June Peters' pronouns are they/them.** Never "she/her/herself."
 - Contact info (June's email, IT support, the Registrar) should point to one
   canonical source rather than being retyped on every page, so a typo or a
