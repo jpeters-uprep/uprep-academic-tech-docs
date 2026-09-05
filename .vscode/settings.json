@@ -8,5 +8,6 @@
   },
   "prettier.printWidth": 80,
   "prettier.proseWrap": "always",
-  "cSpell.words": ["Gradebook", "Schoology"]
+  "cSpell.words": ["Gradebook", "Schoology"],
+  "git.repositoryScanMaxDepth": -1
 }
