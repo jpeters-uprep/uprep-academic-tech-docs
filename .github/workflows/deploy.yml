@@ -10,7 +10,10 @@
 #
 # Also builds (but doesn't deploy) on pull requests, so a broken build or a
 # bad link (onBrokenLinks/onBrokenAnchors/onBrokenMarkdownLinks are all set
-# to "throw") is caught before merge instead of after.
+# to "throw") is caught before merge instead of after. It also runs
+# `prettier --check` over the docs (same formatter as `npm run format:md`),
+# so an unformatted .md/.mdx page fails the PR instead of drifting in
+# unnoticed — run `npm run format:md` locally to fix.
 name: Deploy to GitHub Pages
 
 on:
@@ -42,6 +45,9 @@ jobs:
       - name: Install dependencies
         working-directory: website
         run: npm ci
+      - name: Check formatting
+        working-directory: website
+        run: npx prettier --check "**/*.{md,mdx}"
       - name: Build
         working-directory: website
         run: npm run build
