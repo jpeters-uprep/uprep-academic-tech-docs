@@ -1,0 +1,76 @@
+---
+title: Fusion Sketch Practice — Object Bank
+description:
+  A practice bank of 2D Fusion sketch objects for Design and Fabrication
+  students, organized by category and skill tier.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, fusion, cad]
+---
+
+A reusable list of 2D sketch objects to practice with in Fusion. Pick whatever
+category interests you and work at whichever tier matches how comfortable you
+are. All of these are **2D sketch only** — no extrude yet; that comes later in
+the unit.
+
+See [Fusion Training](/makers/fusion-training) for video walkthroughs of the
+tools these objects use, and
+[Autodesk Fusion](/software/fully-supported/autodesk) for how to get access to
+Fusion itself. Not sure which tool fits a given object? Check the
+[Fusion Sketch Tools quick reference](../fusion-sketch-tools).
+
+## How to use this
+
+- Every object has a version at all three tiers, so you can move up in
+  complexity on the _same_ object instead of switching to something unrelated —
+  start a robot head at Floor Tier and keep adding to that exact sketch as you
+  get more comfortable, rather than starting over on a different shape.
+- **Floor Tier** is a closed profile with 3+ connected lines, 2+ dimensional
+  constraints, and 1+ geometric constraint — start here if you're still building
+  basic fluency.
+- **Stretch Tier 1** adds one new mechanic — usually tangent arcs, a cutout, or
+  an equal/symmetric constraint — try this once the Floor Tier version feels
+  comfortable.
+- **Stretch Tier 2** combines several mechanics (nested cutouts, repeated or
+  patterned features, symmetry across a centerline) — reach for this if you're
+  moving fast and want a real design problem instead of more of the same.
+- Categories are deliberately mixed (sports, gaming, vehicles, architecture,
+  music, everyday objects) — pick whatever interests you, there's no requirement
+  to work through them in order.
+
+## Object Bank
+
+| Object                    | Category            | Floor Tier                                                                                                                       | Stretch Tier 1                                                                                                                                   | Stretch Tier 2                                                                                                                                                    |
+| ------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| House side                | Architecture        | Walls + triangular roof, no cutouts — closed profile combining a rectangle and a triangle, one parallel/perpendicular constraint | + one door cutout and one window cutout — nested closed profiles inside a closed profile                                                         | + two or more evenly-spaced windows — nested cutouts, equal-spacing between repeated features, likely a symmetry constraint across the door                       |
+| Car side profile          | Vehicles            | Boxy silhouette — rectangle body with two circle wheels, no wheel-well cutouts yet — closed profile plus circle placement        | + two tangent wheel-well arcs cut into the body — arc-tangent-to-line constraints                                                                | + one door line and one window cutout, tangent wheel wells — combines tangent arcs with a nested cutout, a genuinely hard sketch                                  |
+| Skateboard deck           | Sports              | Elongated rounded rectangle outline — basic closed profile, length/width dimensions                                              | + truck-mounting holes (small circles) — circle placement with dimensional constraints from an edge, repeated similar features                   | + tangent-arc kicktails at both ends and a patterned cutout graphic/logo shape — tangent arcs plus a nested cutout and repeated features                          |
+| Phone / tablet            | Tech                | Rounded rectangle outline — rectangle + fillet-style corners, dimensional constraints on both sides                              | Phone case with one camera-cutout circle — circle-in-a-closed-profile cutout, positioned with two dimension constraints                          | + a patterned multi-camera cluster and a charging-port cutout — repeated circle pattern plus a second nested cutout                                               |
+| Guitar                    | Music               | Guitar pick (rounded triangle) — closed profile with a mix of lines, one symmetry or equal constraint                            | Simplified guitar body outline, single tangent-arc curve, no waist — one tangent arc transition, a step toward the full body shape               | Full guitar body outline (tangent-arc "figure 8" curve) with a sound-hole circle — multiple tangent arcs in sequence, plus a positioned cutout circle             |
+| Shield                    | Gaming              | Flat top, pointed bottom — closed profile with angled lines, symmetry constraint down the centerline                             | + a crest/emblem cutout in the center — nested closed profile inside the shield                                                                  | + a patterned ring of rivets around the edge, plus the crest cutout — circular pattern combined with a nested cutout                                              |
+| Stop sign                 | Everyday objects    | Regular octagon — equal-length-side constraint across multiple edges                                                             | + lettering across the face (sketch text or simple line-built letters) — introduces the text/sketch-letter tool alongside the equal-side octagon | + lettering plus a patterned ring of mounting-pole bolt holes — text tool combined with a circular pattern                                                        |
+| Envelope                  | Everyday objects    | Rectangle + triangular flap — same shape family as the house, good for a theme change without new mechanics                      | + a windowed address cutout (rounded rectangle) — nested cutout plus a fillet                                                                    | + a patterned row of stamps in the corner — repeated equal-sized rectangles, an early pattern exercise                                                            |
+| Basketball backboard      | Sports              | Rectangle with one small notch — introduces a single simple cutout/notch as a coincident-point exercise                          | + a ring of mounting screw holes around the edge — circular pattern of small circles                                                             | + screw-hole pattern, a camera-mount cutout on top, and a nested shooter's-square outline — pattern, nested cutout, and a second nested profile combined          |
+| Robot head                | Gaming/Tech         | Rectangle head outline, no eye cutouts yet — basic closed profile                                                                | Rectangle with two circular "eye" cutouts — symmetry constraint across a centerline, applied to two separate circles                             | + an antenna (tangent arc) on top and a patterned mouth-grille of rectangle slats — tangent arc plus a rectangular pattern, on top of the existing symmetric eyes |
+| Picture frame             | Everyday objects    | Single rectangle outline, no mat opening yet — basic closed profile with dimensions                                              | Two nested rectangles (frame + mat opening) — offset/parallel nested profiles                                                                    | + a patterned decorative border (small evenly-spaced notches) and filleted inner mat corners — pattern plus fillet added to the existing nested profile           |
+| Home plate                | Sports              | Simple rectangle placeholder, no angled point yet — basic closed profile, straightforward dimensions                             | Pentagon with specific angles — angle dimensional constraints, not just length                                                                   | + a pair of batter's-box rectangles placed symmetrically on either side — symmetry constraint applied across the centerline to a second shape                     |
+| Skate ramp / quarter-pipe | Sports              | Straight ramp outline, two straight lines only, no arc yet — basic angled closed profile                                         | Line into a tangent arc — single tangent arc-to-line transition, the core skill for any curved surface                                           | + a second tangent arc back to flat (a full S-curve) plus a thin coping-rail cutout along the top edge — multiple tangent arcs plus a nested cutout               |
+| Castle turret             | Architecture/Gaming | Simple rectangular tower outline, no crenellations yet — basic closed profile                                                    | + a few individually-placed notches along the top edge, not yet patterned — introduces the notch shape before patterning                         | Evenly-spaced crenellations along the top — equal + collinear constraints applied to a repeated pattern of notches                                                |
+| Game controller           | Gaming              | Simple rounded rectangle body outline, no buttons yet — basic closed profile with fillet corners                                 | + one joystick circle and a single D-pad cross shape — introduces a circle and a compound line shape before symmetry is applied                  | Rounded body, two joystick circles, a D-pad cross, symmetric button circles — symmetry constraint across a centerline applied to several feature types at once    |
+| Window with mullions      | Architecture        | Single windowpane outline, no mullions yet — basic rectangle profile                                                             | + one mullion crossbar (a single divider), not yet a full grid — one nested divider before patterning                                            | A grid of small rectangle cutouts — repeated equal-spacing constraint practice, a real test of "fully constrained"                                                |
+| Box-end wrench            | Tools/Vehicles      | Simple rectangular shaft outline, no hex cutouts yet — basic closed profile with length/width                                    | + one hexagonal cutout at a single end (Polygon tool) — introduces the polygon tool before both ends are added                                   | Hexagonal cutout at each end, tangent arcs on the shaft — hexagon (equal-side + equal-angle) plus tangent arcs in one sketch                                      |
+| Rocket / spaceship        | Gaming/Sci-fi       | Simple triangular nose body outline, straight-sided, no tangent arc yet — basic closed profile                                   | + a tangent-arc nose cone replacing the straight point — introduces the tangent arc before fins and cutouts are added                            | Tangent nose-cone arc, fin cutouts, one window circle — tangent arc at the nose, plus symmetric fin shapes off a centerline                                       |
+
+## Tips
+
+- **Tangent arcs** show up the most across Stretch Tier 1 and 2 (wheel wells,
+  ramps, guitar bodies, rocket nose cones) — it's worth getting comfortable with
+  them since they come up constantly.
+- **Nested cutouts** (a closed profile inside a closed profile) are the second
+  most common mechanic — houses, picture frames, phone cases, windows — and
+  preview work you'll do later in the course when you design a CNC-cut project.
+- **Patterns** (Rectangular/Circular Pattern) show up a lot at Stretch Tier 2 —
+  screw holes, rivets, stamps, mullions, crenellations. A clean repeated feature
+  is one of the clearest signs your sketch is actually fully constrained, not
+  just "looks right by luck."
