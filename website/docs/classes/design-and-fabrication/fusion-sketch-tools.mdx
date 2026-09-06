@@ -1,0 +1,57 @@
+---
+title: Fusion Sketch Tools — Quick Reference
+description:
+  A quick reference for Fusion sketch tools like Polygon, Fillet, Tangent Arc,
+  and Pattern, matched to the objects you'll use them on.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, fusion, cad]
+---
+
+A fast reference for specific Fusion sketch tools, matched to when you'd
+actually reach for them. Pairs with the
+[Fusion Sketch Practice — Object Bank](../fusion-sketch-practice) — come back
+here when you're not sure which tool fits what you're trying to build. See
+[Fusion Training](/makers/fusion-training) for video walkthroughs of these tools
+in action.
+
+## Equal-sided shapes: Polygon tools + the Equal constraint
+
+For an object like the stop sign (octagon) or the wrench's hexagonal cutouts
+(see the [Object Bank](../fusion-sketch-practice)), use the **Polygon** tools
+(Sketch > Create > Polygon) rather than drawing individual lines and
+constraining each side equal by hand:
+
+- **Circumscribed Polygon** — you specify the distance across the flats (good
+  when a real-world spec, like a wrench size, gives you that measurement).
+- **Inscribed Polygon** — you specify the distance across the corners.
+- **Edge Polygon** — you define one edge and the polygon builds from it.
+
+If you draw a polygon-ish shape by hand instead (individual lines), the **Equal
+constraint** (Sketch > Constraints > Equal) can still force selected sides to
+match length after the fact — useful as a fallback, but the Polygon tools are
+the direct route.
+
+## Rounded corners: Fillet
+
+For an object like the phone/tablet outline or the skateboard deck's rounded
+corners, don't try to hand-draw an arc into a sharp corner — the **Fillet** tool
+(Sketch > Modify) rounds the intersection between two lines (or a line and an
+arc) to a specified radius in one click. It's faster, and it stays tangent
+automatically — exactly the "fully constrained, not just close" bar a
+deliverable is checking for.
+
+## Quick reference: object → tool
+
+| If the object needs...                                                          | Reach for...                                                     |
+| ------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| A straight edge flowing into a curve (ramp, wheel well, guitar body, nose cone) | Tangent Arc (drag from Line, or the dedicated tool)              |
+| A standalone curve not attached to a line                                       | 3-Point Arc or Center Point Arc                                  |
+| A messy sketch with overlapping/extra segments                                  | Trim (Break/Extend for related fixes)                            |
+| Two matching halves across a centerline                                         | Mirror (new geometry) or Symmetry constraint (existing geometry) |
+| Evenly-spaced repeated cutouts/notches (mullions, crenellations, windows)       | Rectangular Pattern / Circular Pattern                           |
+| A profile nested inside another (frame, case, pane)                             | Offset                                                           |
+| A regular polygon (octagon, hexagon)                                            | Polygon tools (Circumscribed / Inscribed / Edge)                 |
+| A rounded corner                                                                | Fillet                                                           |
+| Sides that must match length, drawn by hand                                     | Equal constraint                                                 |
