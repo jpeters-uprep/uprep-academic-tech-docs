@@ -26,7 +26,9 @@ follow them.
 - `npm run build` — full production build. Docusaurus is configured with
   `onBrokenLinks: "throw"` and `onBrokenAnchors: "throw"`, so a bad link or
   anchor fails the build. **Build before you commit, not after.**
-- `npm run format:md` — Prettier over all `.md`/`.mdx` files, repo-wide.
+- `npm run format:md` — Prettier over all `.md`/`.mdx` files, repo-wide. The PR
+  build workflow runs `prettier --check` too, so an unformatted page now fails
+  CI — run this before pushing rather than relying on CI to catch it.
 - Clean up build output after verifying: `rm -rf build .docusaurus`.
 
 ## Before finishing any content change
