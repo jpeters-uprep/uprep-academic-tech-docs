@@ -15,6 +15,12 @@ Our printers are Bambu Lab machines — a fleet of X1 Carbons plus an H2C. You
 prepare a file in **Bambu Studio** (the slicer), which cuts your model into
 layers and generates instructions the printer follows.
 
+The printers live inside enclosure tents, and there are **air-quality rules you
+have to follow before you open one** — closed tent while printing, and a timed
+air-out before you pull a print. Read
+[3D Printing Air Quality](/makers/print-air-quality) before your first print; it
+isn't optional and it isn't quick to improvise.
+
 For getting a print made, the two routes — join the queue, or slice and print it
 yourself in the Makerspace — are documented on
 [Makers Tools](/makers/makers-tools#3d-printers) and the
@@ -29,23 +35,30 @@ and
 ## Design decisions that happen before you slice
 
 **Orientation is a strength decision.** A printed part is layers glued together,
-and it's much weaker across the layer lines than along them. A hook printed flat
-on the plate will snap where a hook printed upright would hold. Ask which
-direction the load comes from, then orient so the layers resist it.
+and it's much weaker across the layer lines than along them. Hang weight on a
+hook printed standing upright and it splits along a layer line. The same hook
+printed lying flat on the plate runs the load along the layers instead of
+peeling them apart, and holds. Ask which direction the load comes from, then
+orient the part so the layers run with it, not across it.
 
-**Overhangs need support past about 45 degrees.** Plastic printed out over thin
-air droops. Under roughly 45 degrees from vertical, the layer below holds it up
-fine. Steeper than that and you either add supports or redesign — a chamfer or
-fillet often removes the need for supports entirely, and prints cleaner than
-supports ever will.
+**Shallow overhangs need support.** Plastic printed out over thin air droops.
+Bambu Studio's support threshold angle is 30 degrees, **measured from
+horizontal**: a surface sloping at less than 30 degrees off the bed gets support
+generated for it, and anything steeper than that prints fine on its own. Their
+[threshold angle documentation](https://wiki.bambulab.com/en/software/bambu-studio/support#threshold-angle)
+explains the setting. Before you reach for supports, though, try changing the
+geometry — a chamfer or fillet often removes the need entirely, and prints
+cleaner than supports ever will.
 
 **Design for the nozzle.** Nothing thinner than about two nozzle widths will
 print as a solid wall. Very fine detail, sharp knife edges, and text under a few
 millimeters tall come out mushy.
 
-**Big and hollow beats small and solid.** Print time scales with volume. A
-thicker wall and modest infill is stronger, faster, and cheaper than a solid
-part.
+**Walls do more for strength than infill.** Print time and filament both scale
+with how much plastic is actually in the part, and a couple of extra perimeters
+buys more strength than filling the middle. A part with thicker walls and modest
+infill is usually both stronger and faster to print than the same part filled
+solid.
 
 See [Tolerance and Fit](../tolerance-and-fit) for the clearance to leave between
 a printed part and whatever it has to mate with.
@@ -106,6 +119,7 @@ you changed next is the clearest evidence of your process you can produce.
 
 ## Related
 
+- [3D Printing Air Quality](/makers/print-air-quality)
 - [Exporting Your Design](../exporting-your-design)
 - [Tolerance and Fit](../tolerance-and-fit)
 - [3D Print Queue](/makers/print-queue)

@@ -45,10 +45,15 @@ hole, split it between the two parts or take it all off one.
 | Free fit — moves or spins freely                | 0.4 to 0.5 mm              | A hinge pin, a sliding drawer         |
 | Around a screw or bolt shaft                    | 0.2 to 0.4 mm over nominal | An M3 screw through a 3.2–3.4 mm hole |
 
-Two adjustments worth knowing:
+Three adjustments worth knowing:
 
+- **A print isn't solid, so you can't just drill it later.** Inside those outer
+  walls is infill — mostly air. Drilling into it gives you a ragged hole through
+  a honeycomb, not a clean one. If a hole has to be drilled, tapped, or reamed
+  after printing, design that region as solid material on purpose. Otherwise,
+  model the hole and print it.
 - **Small holes print smaller than you drew them.** Under about 5 mm diameter,
-  add a little extra or plan to open the hole with a drill bit afterward.
+  add a little extra rather than planning to open it up afterward.
 - **Vertical holes fare better than horizontal ones.** A hole printed on its
   side sags at the top. If a hole must be accurate, orient it vertically on the
   plate.
@@ -92,12 +97,13 @@ tested number instead of this page's guess.
 
 ## When a fit is already wrong
 
-- **Too tight, plastic:** open the hole with a drill bit, or sand. Faster than a
-  reprint if the part is otherwise good.
+- **Too tight, plastic:** sand or file it. Drilling only works if you designed
+  that area solid — otherwise you're drilling into infill and will make a mess
+  of it. Either way it's faster than a reprint if the part is otherwise good.
 - **Too tight, wood:** sand the tab, not the slot — you can see what you're
   doing and you won't wallow out the socket.
-- **Too loose:** shim it, or glue it. A loose joint that gets glued is fine; a
-  loose joint that has to stay removable needs a redesign.
+- **Too loose:** shim it, or glue it. A _slightly_ loose joint that gets glued
+  is fine; a sloppy one, or one that has to stay removable, needs a redesign.
 - **Wrong by more than about a millimeter:** that's not a tolerance problem,
   it's a measurement or units problem. Re-measure the real object and check
   which units your export used — see

@@ -86,9 +86,10 @@ once you have the real measurement.
 The machine cuts through thick material in several shallow passes rather than
 one deep plunge. A pass that's too deep is how bits break and edges burn. The
 toolpath software handles this for you once you've picked the right bit and
-material — the settings for our machine and our stock are posted at the machine.
-Carbide 3D's own [feeds and speeds guidance](https://carbide3d.com/hub/docs/) is
-the source to check before you invent your own numbers.
+material. Carbide 3D's own
+[feeds and speeds guidance](https://carbide3d.com/hub/docs/) is the source to
+check before you invent your own numbers, and ask June if you're unsure what to
+run for a given bit and material.
 
 What this means for your design: **depth costs time.** A pocket 3 mm deep cuts
 in a fraction of the time of one 12 mm deep. With one CNC shared across the
@@ -97,9 +98,14 @@ optimization.
 
 ## Leave room for work holding
 
-The stock has to be clamped or screwed down, and the bit cannot cut where a
-clamp is sitting. Leave a border of waste material around your parts — generally
-an inch or so — and don't nest parts right up to the edge of the sheet.
+The stock has to be held down, and the bit cannot cut where a clamp is sitting.
+Leave a border of waste material around your parts — generally an inch or so —
+and don't nest parts right up to the edge of the sheet.
+
+Clamps and screws into the wasteboard are the usual answer. Double-stick tape
+also works when it suits the part, and it has the advantage of leaving the whole
+top surface clear. Which one to use depends on the cut, so talk it through
+before you commit a layout that only works one way.
 
 ## Plywood-specific gotchas
 
@@ -110,6 +116,14 @@ an inch or so — and don't nest parts right up to the edge of the sheet.
 - **Sanding changes dimensions.** If you plan to sand a joint face, you're
   removing material after you cut to size. Account for it or sand only the faces
   that don't have to fit anything.
+
+## Watch out for topping out
+
+Our machine stops counting position once the Z axis runs to the top of its
+travel. If a retract move sends it up that far, the machine loses track of where
+Z actually is, and the next plunge cuts deeper than your toolpath says it
+should. Keep retract heights inside the machine's real travel — see
+[Running the CNC](../cnc-workflow) for the check to run before you start a job.
 
 ## Related
 

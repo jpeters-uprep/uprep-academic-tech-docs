@@ -56,38 +56,51 @@ walkthrough; we won't duplicate it.
    going to clamp down — measured, not nominal.
 2. **Import your DXF** and check one known dimension against your CAD model. If
    it's off, the units are wrong. Fix it now.
-3. **Set the zero corner** to match where you'll zero on the real machine.
-   Getting these two out of sync is the most common way a job cuts into a clamp.
-4. **Pick your bit from the tool library**, and pick the one actually in the
-   machine.
+3. **Set the zero corner** to match where you'll zero on the real machine —
+   typically the bottom left. Getting these two out of sync is the most common
+   way a job cuts into a clamp.
+4. **Pick your bit from the tool library** — the one you're going to use. It
+   doesn't have to be in the machine yet, but the toolpath has to match what
+   ends up in the collet.
 5. **Create the toolpaths** — contour for outlines, pocket for recesses, and
    choose whether the cut runs inside, outside, or on the line. Cutting on the
    line makes every part half a bit-width too small; this trips up nearly
    everyone once.
 6. **Add tabs** to any part that gets cut all the way through.
-7. **Simulate.** Watch the whole preview. Look for cuts going where you didn't
+7. **Simulate.** The simulation runs very fast by default — slow it down so you
+   can actually see the order of cuts. Look for cuts going where you didn't
    intend, features that vanished because they're smaller than the bit, and
    plunges deeper than your stock.
 8. **Save the file** with a version number in the name.
 
 ## At the machine
 
-1. **Secure the stock.** Clamps or screws into the wasteboard, with the border
-   you left in your design. Wiggle it — if you can move it by hand, the router
-   can move it at speed.
-2. **Install the bit** and tighten the collet properly. A bit that slips mid-cut
-   plunges deeper as it goes.
-3. **Initialize the machine** in Carbide Motion and let it home itself. Keep
+1. **Unplug the router first.** Everything in the next few steps happens with
+   your hands near the bit, so take the spindle's power out of the picture
+   before you start.
+2. **Secure the stock.** Clamps or screws into the wasteboard, with the border
+   you left in your design — or double-stick tape where that suits the part
+   better. Wiggle it: if you can move it by hand, the router can move it at
+   speed.
+3. **Install the bit** and tighten the collet properly, router still unplugged.
+   A bit that slips mid-cut plunges deeper as it goes.
+4. **Initialize the machine** in Carbide Motion and let it home itself. Keep
    hands clear; it moves on its own.
-4. **Set zero** — X, Y, and Z — to the same corner you chose in Carbide Create.
+5. **Set zero** — X, Y, and Z — to the same corner you chose in Carbide Create.
    Carbide 3D's
    [Movements and Zeroing](https://carbide3d.com/hub/courses/running-shapeoko/movements-zeroing/)
    lesson covers this in detail. Double-check Z: a Z zero that's off by the
    thickness of your material is how a bit gets driven into the wasteboard.
-5. **Run an air pass first if you're unsure** — raise Z well above the stock and
-   run the job so you can watch the path move without cutting anything.
-6. **Turn on dust collection**, then start the job.
-7. **Stay with the machine the entire time.** Hand on the stop, eyes on the cut.
+6. **Check that the machine won't top out.** Our machine stops counting position
+   once the Z axis reaches the top of its travel — so if a retract sends it that
+   high, the next plunge goes deeper than the toolpath intends. Keep retract
+   heights inside the machine's actual travel.
+7. **Confirm the job fits your stock.** Compare the job's dimensions against the
+   piece you just clamped down, in both X and Y. This catches more mistakes than
+   watching the machine move through the air does.
+8. **Plug the router back in, turn on dust collection**, then start the job. Our
+   dust collection is a shop vac with a cyclone attachment.
+9. **Stay with the machine the entire time.** Hand on the stop, eyes on the cut.
    Never walk away from a running job — not for a minute, not to grab something.
 
 ## Stop the machine if
@@ -103,7 +116,8 @@ Get an adult before restarting after any of these.
 
 ## After the job
 
-1. Let the spindle stop completely before reaching in.
+1. Let the spindle stop completely, then unplug the router before reaching in.
+   Unplug the router itself, not the CNC.
 2. Retrieve your parts, then cut or snap the tabs and clean up the edges.
 3. **Vacuum the machine and the floor around it.** The next person is queued
    behind you and shouldn't inherit your chips.
