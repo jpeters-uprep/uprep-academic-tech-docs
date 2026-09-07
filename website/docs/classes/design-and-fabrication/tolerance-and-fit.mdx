@@ -1,0 +1,110 @@
+---
+title: Tolerance and Fit
+description:
+  How much clearance to design between parts so they actually fit — starting
+  numbers for 3D-printed and CNC-cut parts, and how to test a fit before
+  committing machine time.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, cad, 3d-printing, cnc]
+sidebar_position: 6
+---
+
+Two parts modeled at exactly the same size will not fit together. A 10 mm peg
+does not go into a 10 mm hole — not in plastic, not in plywood, not ever. The
+gap you deliberately design in is called clearance, and choosing it on purpose
+is the difference between a part that assembles and a part you spend an hour
+sanding.
+
+This page gives starting numbers. It does not give final numbers, because those
+depend on the material, the machine, and the day. The habit that actually solves
+fit problems is at the bottom: **test the fit on a small piece first.**
+
+## Why parts come out the wrong size
+
+- **3D prints shrink and bulge.** Plastic contracts as it cools, and the first
+  layer squishes wider than the layer above it. Holes tend to come out slightly
+  undersize; outside dimensions slightly oversize.
+- **A CNC bit is round and has width.** It cannot cut a sharp inside corner, and
+  the path it follows is offset by its own radius — see
+  [Designing for the CNC](../cnc-design-rules).
+- **Sheet goods aren't their nominal thickness.** A sheet sold as 1/2 inch is
+  rarely 12.7 mm. Measure the actual sheet with calipers before you model a slot
+  for it.
+
+## Starting clearances for 3D-printed fits
+
+Clearance here means the total gap between the two surfaces — so for a peg in a
+hole, split it between the two parts or take it all off one.
+
+| You want                                        | Start with                 | Example                               |
+| ----------------------------------------------- | -------------------------- | ------------------------------------- |
+| Press fit — goes in hard, stays put permanently | 0 to 0.1 mm                | A pin you never plan to remove        |
+| Snug fit — hand pressure to assemble, no wobble | about 0.2 mm               | A lid, an insert, a divider           |
+| Free fit — moves or spins freely                | 0.4 to 0.5 mm              | A hinge pin, a sliding drawer         |
+| Around a screw or bolt shaft                    | 0.2 to 0.4 mm over nominal | An M3 screw through a 3.2–3.4 mm hole |
+
+Two adjustments worth knowing:
+
+- **Small holes print smaller than you drew them.** Under about 5 mm diameter,
+  add a little extra or plan to open the hole with a drill bit afterward.
+- **Vertical holes fare better than horizontal ones.** A hole printed on its
+  side sags at the top. If a hole must be accurate, orient it vertically on the
+  plate.
+
+## Starting clearances for CNC-cut plywood
+
+Wood moves, splinters, and varies sheet to sheet, so the numbers are coarser
+than for plastic.
+
+| You want                                  | Start with                                      |
+| ----------------------------------------- | ----------------------------------------------- |
+| A tab into a slot, glued                  | Slot 0.1 to 0.2 mm wider than the measured tab  |
+| A tab into a slot, assembled dry, tight   | Slot the same as the measured tab, then test    |
+| A shelf into a dado                       | Match the measured sheet thickness, not nominal |
+| A printed part sitting in a routed pocket | 0.3 to 0.5 mm around it                         |
+
+Always measure the actual material with calipers and model to that measurement.
+"1/2 inch plywood" is a name, not a dimension.
+
+## Test the fit before you commit
+
+This is the part that matters. Before you cut or print a whole part, make a
+small test piece — a **coupon** — that has only the feature you're unsure about.
+
+A good coupon is small, fast, and tests one thing:
+
+- **For a printed fit:** a 20 mm square, 5 mm thick, with three holes in it at
+  your three candidate clearances, labeled. Print it, try the mating part in
+  each, and use the one that feels right. It takes a few minutes and saves a
+  four-hour reprint.
+- **For a CNC joint:** a short offcut with one tab and one slot at your intended
+  dimensions. Cut it in the same material and on the same machine you'll use for
+  the real part, since that's what you're actually calibrating.
+- **For a cardboard mockup:** cut the full outline in cardboard on the
+  [Silhouette](../vinyl-and-cardstock-cutter) and hold it up against the real
+  object it has to fit. This catches "the whole thing is 15 mm too tall" errors
+  that no amount of clearance math will.
+
+Record the number that worked in your journal. Next project, you start from a
+tested number instead of this page's guess.
+
+## When a fit is already wrong
+
+- **Too tight, plastic:** open the hole with a drill bit, or sand. Faster than a
+  reprint if the part is otherwise good.
+- **Too tight, wood:** sand the tab, not the slot — you can see what you're
+  doing and you won't wallow out the socket.
+- **Too loose:** shim it, or glue it. A loose joint that gets glued is fine; a
+  loose joint that has to stay removable needs a redesign.
+- **Wrong by more than about a millimeter:** that's not a tolerance problem,
+  it's a measurement or units problem. Re-measure the real object and check
+  which units your export used — see
+  [Exporting Your Design](../exporting-your-design).
+
+## Related
+
+- [Designing for the CNC](../cnc-design-rules)
+- [Exporting Your Design](../exporting-your-design)
+- [Materials and Consumables](../materials-and-consumables)

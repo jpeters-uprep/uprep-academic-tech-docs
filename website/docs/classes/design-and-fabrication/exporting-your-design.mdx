@@ -1,0 +1,98 @@
+---
+title: Exporting Your Design
+description:
+  Which file format each Makerspace machine needs, how to export it from
+  Autodesk Fusion, and the export mistakes that waste machine time.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, fusion, cad, 3d-printing, cnc]
+sidebar_position: 5
+---
+
+Every machine wants a different file, and most lost machine time in this class
+traces back to an export problem rather than a design problem. This page is the
+lookup table.
+
+## Which format goes where
+
+| Sending it to                         | Format                       | What it carries                              |
+| ------------------------------------- | ---------------------------- | -------------------------------------------- |
+| Bambu Studio (3D printers)            | 3MF, or STL                  | A 3D surface only — no editable history      |
+| Carbide Create (CNC)                  | DXF, or SVG                  | Flat 2D outlines only                        |
+| Silhouette Studio (vinyl/cardstock)   | DXF, or SVG                  | Flat 2D outlines only                        |
+| A teammate who will keep modeling     | The Fusion design, or `.f3d` | Sketches, parameters, timeline — everything  |
+| A teammate who just needs to check it | STEP (`.step`)               | Real solid geometry, editable but no history |
+
+**Prefer 3MF over STL** for printing. 3MF stores units, so a part can't arrive
+ten times too small, and it carries color and per-object settings. STL is
+unitless — that's exactly why scale mistakes happen with it.
+
+**Never hand off an STL as your CAD file.** An STL is a shell of triangles. It
+cannot be turned back into your sketches, and "just remodel it" costs a class
+period.
+
+## Exporting from Fusion
+
+### For 3D printing (3MF or STL)
+
+Right-click the body or component in the Browser and choose **Save As Mesh**,
+then pick 3MF. Autodesk documents this, plus the higher-control 3D Print
+command, in
+[Mesh export](https://help.autodesk.com/view/NINVFUS/ENU/?guid=MESH-EXPORT-TOOLS)
+and
+[3D print a design](https://help.autodesk.com/view/NINVFUS/ENU/?guid=SLD-3D-PRINT).
+
+If a curved surface prints visibly faceted, the export refinement was too low —
+raise it in the export dialog rather than blaming the printer.
+
+### For the CNC or the vinyl cutter (DXF)
+
+Right-click the **sketch** in the Browser and choose **Export DXF**. Autodesk's
+step-by-step is
+[Export sketch as DXF](https://help.autodesk.com/view/NINVFUS/ENU/?guid=GUID-BC1A5C26-F7DC-499B-8411-5C191784BA3D).
+
+If what you want to cut is the outline of a 3D body rather than an existing
+sketch, make a new sketch on the flat face of that body — Fusion projects the
+face's edges into the sketch automatically — then export that sketch. Autodesk
+covers this route in
+[How to export a 3D model to DXF](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-export-a-3D-model-to-dxf-for-cnc-routing-plasma-cutting-or-waterjet-cutting-from-Fusion-360.html).
+
+### For a teammate
+
+Use **File > Export** and choose `.f3d` (they can keep modeling) or `.step`
+(they can measure and cut, but not edit your history). Or just share the cloud
+project — see [Fusion in This Class](../fusion-in-this-class).
+
+## Export mistakes that cost machine time
+
+- **Exporting the body instead of the sketch for a 2D cut.** You get a 3D mesh
+  the cutting software can't use. Export the sketch.
+- **Wrong units in the DXF.** Set the unit type deliberately in the export
+  dialog; don't accept the default without looking. Check one known dimension
+  after you open the file in Carbide Create or Silhouette Studio.
+- **Open contours.** A cutting path needs closed outlines. If a line doesn't
+  quite meet its neighbor, the software may treat the shape as an open curve and
+  cut something unexpected. A fully constrained sketch is your best defense — an
+  unconstrained sketch is where stray gaps hide, and
+  [Fusion Sketch Tools](../fusion-sketch-tools) covers how to find the geometry
+  that isn't pinned down yet.
+- **Construction lines and sketch points coming along for the ride.** The DXF
+  export dialog has checkboxes for these. Leave them off unless you want them
+  cut.
+- **Exporting before the design is done.** The export is a snapshot, not a link.
+  Change the model and you must re-export — and re-name, so you don't cut v1 by
+  mistake.
+
+## Naming exports
+
+Put a version in the filename and never overwrite a file you've already cut:
+`shelf-front-v3.dxf`. When a cut goes wrong, the first question is always "which
+version is on the machine," and a folder of files all called `shelf.dxf` can't
+answer it.
+
+## Related
+
+- [Tolerance and Fit](../tolerance-and-fit)
+- [Running the CNC](../cnc-workflow)
+- [3D Printing Workflow](../3d-printing-workflow)

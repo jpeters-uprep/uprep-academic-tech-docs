@@ -1,0 +1,124 @@
+---
+title: Problem Statements and Success Criteria
+description:
+  How to turn interview notes into a problem statement that leaves room for more
+  than one solution, and success criteria you can actually test a finished build
+  against.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, design-process]
+sidebar_position: 14
+---
+
+You've interviewed someone and you have pages of notes. This is the step where
+those notes become something you can design against — and the step most teams
+skip, which is why they end up building the first idea somebody said out loud.
+
+Two artifacts come out of it: a **problem statement** (what needs solving, and
+for whom) and **success criteria** (how you'll know if you did).
+
+## The problem statement
+
+One or two sentences. It names the user, the need, and why it matters — and it
+contains **no solution**.
+
+A usable shape:
+
+> **[User]** needs **[what they need]** because \*\*[what's true about
+> their > > >
+>
+> > situation]\*\*.
+
+The test: **could two teams read your problem statement and build genuinely
+different things?** If not, you've written a build order, not a problem
+statement.
+
+| Not a problem statement                                                                                                                | Why it fails                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| "Build a three-tier rolling cart with dividers."                                                                                       | It's a solution. Nothing left to design.              |
+| "Storage is bad."                                                                                                                      | No user, no need, nothing to aim at.                  |
+| "The coach needs a better gear caddy."                                                                                                 | "Better" isn't a need. Better how?                    |
+| "The coach needs to move gear between fields quickly, because he sets up on three fields a week and currently carries it in armloads." | Names user, need, and evidence. Leaves the form open. |
+
+Things to check before you commit to yours:
+
+- **Is the need in the user's terms or yours?** "Needs a modular system" is your
+  vocabulary. "Needs to find the right ball without unpacking everything" is
+  theirs.
+- **Is it the underlying need or the surface complaint?** See
+  [User Interviews](../user-interviews).
+- **Is there evidence behind it?** You should be able to point at a sentence in
+  your notes.
+- **Is it one problem?** If yours has an "and" joining two unrelated needs, you
+  probably have two problems and should pick.
+
+## Constraints are not criteria
+
+Keep these in a separate list. A constraint is something that's simply true and
+not up for negotiation — you don't get points for meeting it, you fail if you
+don't.
+
+- Physical limits: it must fit in a space this size, weigh under this much.
+- Existing conditions: it has to attach to something that already exists, in a
+  place you can't drill.
+- Access: a specific person has to be able to reach or lift it.
+- Shop reality: it has to be cuttable on our machines, out of material we have,
+  in the class periods that remain.
+
+Write them down explicitly, with numbers, and **measure the real thing** rather
+than trusting a stated dimension. Every unwritten constraint is a redesign
+waiting for you.
+
+## Success criteria
+
+These are the checks you'll run on the finished object. Good ones are
+**testable, specific, and written before you build** — so they can't be quietly
+rewritten to match whatever you managed to make.
+
+Each criterion should answer: _what will I do to test this, and what result
+counts as passing?_
+
+| Weak criterion      | Testable version                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------- |
+| "It's easy to use." | "The user can take out one item and put it back without moving anything else."              |
+| "It's sturdy."      | "It holds 15 lb on the top surface with no visible flex."                                   |
+| "It's organized."   | "Every item has one labeled home, and nothing has to be stacked."                           |
+| "It looks good."    | "The user picks it over the current setup when asked which they'd rather keep in the room." |
+| "It fits."          | "It slides into the cabinet with the door closing fully, with clearance for the cable."     |
+
+Aim for four to six. Fewer and you're not covering the need; more and you're
+writing a specification instead of a design target.
+
+Mix in:
+
+- **At least one criterion the user gave you**, in something close to their own
+  words.
+- **At least one you can measure with a tool** — a tape measure, a scale, a
+  stopwatch.
+- **At least one about use, not appearance.** Something someone has to do with
+  it.
+
+## Keep them visible, and check them twice
+
+Success criteria that live in a notebook nobody reopens are decoration. Put
+yours somewhere your team sees them while working.
+
+Then check against them **twice**:
+
+- **At your follow-up check-in**, mid-project. Ask your user whether these are
+  still the right criteria. Sometimes they aren't, and that's a legitimate
+  reason to revise them — as long as you write down what changed and why.
+- **On the finished build.** Run each test and record the result honestly,
+  including the ones you didn't pass. A build that misses two criteria and knows
+  exactly which two is a better piece of engineering work than one that claims
+  to have met all six without testing any.
+
+A criterion you failed is not a bad grade waiting to happen — it's the most
+useful sentence in your write-up, because it's the one that tells you what to do
+next.
+
+## Related
+
+- [User Interviews](../user-interviews)
+- [Tolerance and Fit](../tolerance-and-fit)

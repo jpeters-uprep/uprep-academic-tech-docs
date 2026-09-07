@@ -1,0 +1,130 @@
+---
+title: Running the CNC
+description:
+  The end-to-end workflow for UPrep's Shapeoko CNC router — Carbide Create
+  toolpaths, Carbide Motion setup, zeroing, running a job, and cleanup.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, cnc, safety]
+sidebar_position: 8
+---
+
+Our CNC is a Shapeoko 3 XL — a computer-controlled router. You design a toolpath
+on a computer, the machine drives a spinning bit through material to match it.
+It is the loudest, dustiest, and least forgiving machine in the shop, and the
+one with the longest queue, so preparation matters more here than anywhere else.
+
+**You must be certified before running it without an adult standing with you.**
+See [Machine Certification](../machine-certification).
+
+Carbide 3D — who make the machine and the software — publish a complete free
+course,
+[Running a Shapeoko](https://carbide3d.com/hub/courses/running-shapeoko/). Work
+through it rather than treating this page as a substitute; this page covers our
+machine, our sequence, and our shop rules.
+
+## Before you touch the machine
+
+- **PPE.** Safety glasses always. Hearing protection while it's cutting — for
+  you and for anyone standing nearby. An N95 for MDF and heavy dust. Details on
+  the [PPE page](/makers/ppe).
+- **No gloves.** The router spins. Gloves near a spinning tool are the one
+  exception-free rule in the shop.
+- **Tie back anything loose** — hair, sleeves, drawstrings, lanyards.
+- **Have your design finished and exported.** DXF, correct units, closed
+  contours. See [Exporting Your Design](../exporting-your-design). Machine time
+  is not CAD time.
+
+## Software: two programs, two jobs
+
+| Program            | What it does                                                                |
+| ------------------ | --------------------------------------------------------------------------- |
+| **Carbide Create** | Turns your 2D outlines into toolpaths and exports the file the machine runs |
+| **Carbide Motion** | Drives the machine — jogging, zeroing, starting the job                     |
+
+Both are free from Carbide 3D
+([Carbide Create](https://carbide3d.com/carbidecreate/download/),
+[Carbide Motion](https://carbide3d.com/carbidemotion/download/)) and installed
+on the shop computer. Carbide 3D's
+[Carbide Create course](https://guides.carbide3d.com/create/) is the
+walkthrough; we won't duplicate it.
+
+## Making toolpaths in Carbide Create
+
+1. **Set the stock size and thickness** to the actual piece of material you're
+   going to clamp down — measured, not nominal.
+2. **Import your DXF** and check one known dimension against your CAD model. If
+   it's off, the units are wrong. Fix it now.
+3. **Set the zero corner** to match where you'll zero on the real machine.
+   Getting these two out of sync is the most common way a job cuts into a clamp.
+4. **Pick your bit from the tool library**, and pick the one actually in the
+   machine.
+5. **Create the toolpaths** — contour for outlines, pocket for recesses, and
+   choose whether the cut runs inside, outside, or on the line. Cutting on the
+   line makes every part half a bit-width too small; this trips up nearly
+   everyone once.
+6. **Add tabs** to any part that gets cut all the way through.
+7. **Simulate.** Watch the whole preview. Look for cuts going where you didn't
+   intend, features that vanished because they're smaller than the bit, and
+   plunges deeper than your stock.
+8. **Save the file** with a version number in the name.
+
+## At the machine
+
+1. **Secure the stock.** Clamps or screws into the wasteboard, with the border
+   you left in your design. Wiggle it — if you can move it by hand, the router
+   can move it at speed.
+2. **Install the bit** and tighten the collet properly. A bit that slips mid-cut
+   plunges deeper as it goes.
+3. **Initialize the machine** in Carbide Motion and let it home itself. Keep
+   hands clear; it moves on its own.
+4. **Set zero** — X, Y, and Z — to the same corner you chose in Carbide Create.
+   Carbide 3D's
+   [Movements and Zeroing](https://carbide3d.com/hub/courses/running-shapeoko/movements-zeroing/)
+   lesson covers this in detail. Double-check Z: a Z zero that's off by the
+   thickness of your material is how a bit gets driven into the wasteboard.
+5. **Run an air pass first if you're unsure** — raise Z well above the stock and
+   run the job so you can watch the path move without cutting anything.
+6. **Turn on dust collection**, then start the job.
+7. **Stay with the machine the entire time.** Hand on the stop, eyes on the cut.
+   Never walk away from a running job — not for a minute, not to grab something.
+
+## Stop the machine if
+
+- The sound changes — a new pitch, chattering, or a stall.
+- You see smoke or smell burning.
+- The stock shifts, or a clamp moves.
+- The bit is cutting somewhere you didn't expect.
+- You're not sure. Stopping a job costs a few minutes; the alternatives cost
+  more.
+
+Get an adult before restarting after any of these.
+
+## After the job
+
+1. Let the spindle stop completely before reaching in.
+2. Retrieve your parts, then cut or snap the tabs and clean up the edges.
+3. **Vacuum the machine and the floor around it.** The next person is queued
+   behind you and shouldn't inherit your chips.
+4. Return the bit to its case and log anything odd — a dull bit, a loose clamp,
+   a strange noise — to June (jpeters@universityprep.org) so the next team
+   doesn't rediscover it the hard way.
+
+## Planning around the queue
+
+There is one CNC and a whole class. Two habits keep this from becoming your
+bottleneck:
+
+- **Get your CAD and toolpaths finished before your machine slot**, not during
+  it.
+- **Cut a cardboard test template first** on the
+  [Silhouette](../vinyl-and-cardstock-cutter). It costs minutes instead of an
+  hour and catches the mistakes that would otherwise cost you a second slot.
+
+## Related
+
+- [Designing for the CNC](../cnc-design-rules)
+- [Machine Certification](../machine-certification)
+- [PPE](/makers/ppe)
+- [Materials and Consumables](../materials-and-consumables)

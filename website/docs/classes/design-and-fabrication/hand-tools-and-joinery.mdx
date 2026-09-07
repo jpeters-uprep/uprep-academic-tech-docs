@@ -1,0 +1,99 @@
+---
+title: Hand Tools and Joinery
+description:
+  The hand-tool and joinery skills that finish a machined build — measuring,
+  drilling, clamping, the joints we use, and how to fasten printed parts to
+  wood.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, tools, joinery]
+sidebar_position: 11
+---
+
+Machines cut parts. Hand tools turn parts into an object. Almost every build in
+this class ends with measuring, drilling, clamping, gluing, and driving screws —
+and a build that was cut precisely can still come out crooked if it's assembled
+carelessly.
+
+The full inventory of what we have lives on
+[Makers Tools](/makers/makers-tools#hand-tools). This page is about using it.
+
+## Measuring
+
+**Calipers are the tool that makes your CAD match reality.** Almost every fit
+problem in this class starts with a dimension somebody guessed.
+
+- Use calipers for anything that has to fit something else — material thickness,
+  a bolt shaft, the inside of a cabinet, a printed part you're matching.
+- Measure the same thing twice in two places. Plywood is not uniform, and a
+  sheet can be 11.4 mm at one corner and 11.9 mm at another.
+- Write the measurement down when you take it. A number you remember is a number
+  you'll get wrong.
+- Use a tape measure for long spans, and read it against the same edge every
+  time — the hook on the end slides on purpose.
+
+## Drilling
+
+- **Clamp the work.** A part that spins when the bit catches is how hands get
+  hurt. This applies to a hand drill, not just the drill press.
+- **Match the bit to the job.** A hole for a screw shaft to pass through is
+  bigger than a hole for a screw to bite into. Two different holes, two
+  different bits.
+- **Back up the exit side** with a scrap board to keep the far face from blowing
+  out.
+- **Bare hands near the drill press.** No gloves, no loose sleeves — see
+  [PPE](/makers/ppe).
+
+## Clamping and glue
+
+- **Dry-fit the whole assembly before any glue touches it.** Glue-up is a timed
+  event and it's the worst moment to discover a part is backwards.
+- **Clamp squarely, and check with a square** rather than by eye. A cabinet
+  glued out of square stays out of square.
+- **Glue is stronger than the wood on a long-grain joint** and weak on an end-
+  grain butt joint — which is why the joints below exist.
+- Wipe squeeze-out while it's wet. Dried glue won't take finish and is miserable
+  to sand off.
+
+## The joints we use
+
+Unit 2 deliberately varies the joint type across teams, so you'll see several of
+these in the room at once.
+
+| Joint              | How it works                                          | Good for                        | Watch out for                                                                 |
+| ------------------ | ----------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------- |
+| Butt joint         | Two square edges meeting, held by screws or glue      | Fast, low-load assemblies       | Weakest option; end-grain glue barely holds                                   |
+| Rabbet             | A step cut along one edge, the other part sits in it  | Box corners, back panels        | Needs accurate depth or the corner shifts                                     |
+| Dado               | A slot across one part, the other slides in           | Shelves in a case               | Slot must match measured thickness, not nominal                               |
+| Finger / box joint | Interlocking square fingers                           | Strong CNC-cut box corners      | Inside corners need relief — see [Designing for the CNC](../cnc-design-rules) |
+| Dovetail           | Angled interlocking fingers that resist pulling apart | Drawers, anything under tension | Least forgiving of dimension errors                                           |
+| Mortise and tenon  | A peg on one part into a socket in the other          | Frames, legs, structural joints | Requires careful layout on both parts                                         |
+
+Every one of these depends on the slot matching the tab. Get the number from
+[Tolerance and Fit](../tolerance-and-fit) and from a test cut, not from the
+nominal thickness printed on the sheet.
+
+## Fastening printed parts to wood
+
+This comes up constantly once your project mixes 3D-printed parts with CNC-cut
+structure.
+
+- **Screws straight into plastic** work for light loads, but the threads chew
+  out after a few removals. Fine for something assembled once.
+- **Heat-set inserts** are brass threads pressed into a printed hole with a
+  soldering iron. They give you a real machine-screw thread that survives being
+  taken apart repeatedly. Worth it for anything serviceable.
+- **Bolt through, nut behind** is the simplest strong option when you can reach
+  both sides — model a hex pocket to capture the nut and it becomes a one-wrench
+  job.
+- **Design the fastener in from the start.** A hole added after the fact usually
+  lands somewhere structurally unfortunate. If your project requires real
+  fasteners, they belong in the CAD model.
+
+## Related
+
+- [Tolerance and Fit](../tolerance-and-fit)
+- [Designing for the CNC](../cnc-design-rules)
+- [Materials and Consumables](../materials-and-consumables)
+- [PPE](/makers/ppe)
