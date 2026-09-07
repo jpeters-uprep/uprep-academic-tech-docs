@@ -1,0 +1,126 @@
+---
+title: 3D Printing Workflow
+description:
+  How to get a Fusion model onto UPrep's Bambu Lab printers — slicing in Bambu
+  Studio, design choices that affect print success, and what to do when a print
+  fails.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, 3d-printing, bambu]
+sidebar_position: 9
+---
+
+Our printers are Bambu Lab machines — a fleet of X1 Carbons plus an H2C. You
+prepare a file in **Bambu Studio** (the slicer), which cuts your model into
+layers and generates instructions the printer follows.
+
+The printers live inside enclosure tents, and there are **air-quality rules you
+have to follow before you open one** — closed tent while printing, and a timed
+air-out before you pull a print. Read
+[3D Printing Air Quality](/makers/print-air-quality) before your first print; it
+isn't optional.
+
+For getting a print made, the two routes — join the queue, or slice and print it
+yourself in the Makerspace — are documented on
+[Makers Tools](/makers/makers-tools#3d-printers) and the
+[3D Print Queue](/makers/print-queue) page. This page is about the part that's
+yours: making a model that prints well and slicing it sensibly.
+
+Bambu Lab's own documentation is thorough and current — start with their
+[Introduction to Bambu Studio](https://wiki.bambulab.com/en/x1/manual/introduction-to-bambu-studio)
+and
+[Print Settings reference](https://wiki.bambulab.com/en/bambu-studio/parameter).
+
+## Design decisions that happen before you slice
+
+**Orientation is a strength decision.** A printed part is layers glued together,
+and it's much weaker across the layer lines than along them. Hang weight on a
+hook printed standing upright and it splits along a layer line. The same hook
+printed lying flat on the plate runs the load along the layers instead of
+peeling them apart, and holds. Ask which direction the load comes from, then
+orient the part so the layers run with it, not across it.
+
+**Shallow overhangs need support.** Plastic printed out over thin air droops.
+Bambu Studio's support threshold angle is 30 degrees, **measured from
+horizontal**: a surface sloping at less than 30 degrees off the bed gets support
+generated for it, and anything steeper than that prints fine on its own. Their
+[threshold angle documentation](https://wiki.bambulab.com/en/software/bambu-studio/support#threshold-angle)
+explains the setting. Before you reach for supports, though, try changing the
+geometry — a chamfer or fillet often removes the need entirely, and prints
+cleaner than supports ever will.
+
+**Design for the nozzle.** Nothing thinner than about two nozzle widths will
+print as a solid wall. Very fine detail, sharp knife edges, and text under a few
+millimeters tall come out mushy.
+
+**Walls do more for strength than infill.** Print time and filament both scale
+with how much plastic is actually in the part, and a couple of extra perimeters
+buys more strength than filling the middle. A part with thicker walls and modest
+infill is usually both stronger and faster to print than the same part filled
+solid.
+
+See [Tolerance and Fit](../tolerance-and-fit) for the clearance to leave between
+a printed part and whatever it has to mate with.
+
+## Slicing in Bambu Studio
+
+1. **Import your file.** Export 3MF from Fusion rather than STL — see
+   [Exporting Your Design](../exporting-your-design) for why.
+2. **Select the right printer and nozzle.** Our machines are not all identical;
+   picking the wrong profile is a wasted plate.
+3. **Select the filament actually loaded.** PLA and PETG print at very different
+   temperatures. Bambu's
+   [filament compatibility table](https://wiki.bambulab.com/en/general/filament-guide-material-table)
+   covers what each material needs.
+4. **Orient and place the part** on the plate, per the decisions above.
+5. **Set layer height.** Thinner layers look better and take longer. For a
+   functional bracket, a standard layer height is fine; save fine layers for
+   parts someone will look at closely.
+6. **Add supports only where you need them.** Bambu's
+   [support settings](https://wiki.bambulab.com/en/software/bambu-studio/support)
+   and
+   [support painting](https://wiki.bambulab.com/en/software/bambu-studio/support-painting)
+   guides show how to place supports on specific overhangs instead of blanketing
+   the whole model.
+7. **Slice, then actually look at the preview.** Step through the layers. Look
+   for parts floating with nothing beneath them, walls that came out
+   single-thickness, and a first layer that's smaller than you expected.
+8. **Check the time and material estimate.** If a part is going to run eight
+   hours, that's a scheduling fact your team needs to know today, not tomorrow.
+
+## Print time is a shared resource
+
+Five printers, eighteen students, and a semester with real deadlines:
+
+- **Sequence your prints.** Print the part you need for a test fit first, not
+  the decorative one.
+- **Fail small.** Print a small test section of a big part to check fit before
+  committing to the full thing.
+- **A reprint costs the same time twice.** Ten minutes checking the preview is
+  the cheapest insurance available.
+
+## When a print fails
+
+Bambu Lab documents the common failure modes with photographs, which is far more
+useful than a text description:
+
+- [Common print quality problems and solutions](https://wiki.bambulab.com/en/knowledge-sharing/common-print-quality-problem)
+- [Bad print quality: causes and solutions](https://wiki.bambulab.com/en/knowledge-sharing/troubleshooting-printing-issues)
+- [Filament not extruding](https://wiki.bambulab.com/en/x1/troubleshooting/filament-not-extruding)
+
+Identify the failure before you change anything. A part that came loose from the
+plate, a part that warped, and a part that printed at the wrong scale look
+different and have different fixes — and one of those three is a units problem
+in your export, not a printer problem at all.
+
+Log the failure in your journal with a photo. A photographed failure plus what
+you changed next is the clearest evidence of your process you can produce.
+
+## Related
+
+- [3D Printing Air Quality](/makers/print-air-quality)
+- [Exporting Your Design](../exporting-your-design)
+- [Tolerance and Fit](../tolerance-and-fit)
+- [3D Print Queue](/makers/print-queue)
+- [Where do I find 3D models?](/makers/faq/print-directories)

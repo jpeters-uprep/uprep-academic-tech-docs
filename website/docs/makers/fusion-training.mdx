@@ -14,7 +14,10 @@ Autodesk publishes a full
 covering everything from the basics to advanced workflows. That collection is
 huge, so this page picks out the lessons most relevant to what we actually build
 at UPrep. See the [Autodesk software page](/software/fully-supported/autodesk)
-for how to get access to Fusion itself.
+for how to get access to Fusion itself. Design and Fabrication students should
+also see
+[Fusion in This Class](/classes/design-and-fabrication/fusion-in-this-class) for
+files, units, and handoff.
 
 ## Introduction to Fusion
 
@@ -42,6 +45,39 @@ walks through sketching and building your first 3D models.
 - [Extrude solid bodies](https://www.autodesk.com/learn/ondemand/curated/get-started-with-modeling/1xP9YgyS6eblcyaWJZYTkL)
 - [Modify solid bodies with Press Pull](https://www.autodesk.com/learn/ondemand/curated/get-started-with-modeling/29DPu0ORL2rn0T8atcdYKw)
 - [Add fillets to solid bodies](https://www.autodesk.com/learn/ondemand/curated/get-started-with-modeling/VleKklLIcTIGlzvfTOFHf)
+
+## Assemblies and Joints
+
+Once a project is more than one part, you need components that move (or stay
+put) relative to each other. Fusion's Joint tools define that motion. Autodesk's
+reference documentation is the place to start:
+
+- [As-built joints](https://help.autodesk.com/view/NINVFUS/ENU/?guid=ASM-AS-BUILT-JOINT)
+  — for components already positioned where you want them, which is the usual
+  case when you've modeled everything in place.
+- [Adding Joints and As-built Joints to components](https://help.autodesk.com/view/NINVFUS/ENU/?guid=GUID-DE65A081-8233-456E-A930-F0D5FEB94277)
+  — a full guided activity assembling a camera stand, covering rigid, revolute,
+  slider, and ball joints.
+- [Duplicate components with their joints](https://help.autodesk.com/view/NINVFUS/ENU/?guid=ASM-DUPLICATE-WITH-JOINTS)
+  — for repeated hardware, so you place a joint once instead of twenty times.
+
+## Exporting for the CNC, printers, and cutters
+
+Getting a design out of Fusion in the format a machine wants:
+
+- [Export sketch as DXF](https://help.autodesk.com/view/NINVFUS/ENU/?guid=GUID-BC1A5C26-F7DC-499B-8411-5C191784BA3D)
+  — for the CNC router and the vinyl/cardstock cutters.
+- [How to export a 3D model to DXF](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-export-a-3D-model-to-dxf-for-cnc-routing-plasma-cutting-or-waterjet-cutting-from-Fusion-360.html)
+  — when what you want to cut is the outline of a solid body rather than an
+  existing sketch.
+- [Mesh export](https://help.autodesk.com/view/NINVFUS/ENU/?guid=MESH-EXPORT-TOOLS)
+  and
+  [3D print a design](https://help.autodesk.com/view/NINVFUS/ENU/?guid=SLD-3D-PRINT)
+  — for 3MF and STL files headed to Bambu Studio.
+
+For which format goes to which machine, and the export mistakes that cost
+machine time, see
+[Exporting Your Design](/classes/design-and-fabrication/exporting-your-design).
 
 ## Designing to Cut and Score Cardboard (2D → 3D)
 

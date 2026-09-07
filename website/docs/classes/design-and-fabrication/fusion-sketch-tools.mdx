@@ -1,46 +1,84 @@
 ---
 title: Fusion Sketch Tools — Quick Reference
 description:
-  A quick reference for Fusion sketch tools like Polygon, Fillet, Tangent Arc,
-  and Pattern, matched to the objects you'll use them on.
+  A quick reference matching Fusion sketch tools like Polygon, Fillet, Tangent
+  Arc, and Pattern to the objects you'll use them on.
 owner: Academic Technology
 maintainer: June Peters
 audience: [students]
 tags: [classes, design-and-fabrication, fusion, cad]
+sidebar_position: 3
 ---
 
-A fast reference for specific Fusion sketch tools, matched to when you'd
-actually reach for them. Pairs with the
+A fast lookup for which sketch tool to reach for, matched to what you're
+actually trying to build. Pairs with the
 [Fusion Sketch Practice — Object Bank](../fusion-sketch-practice) — come back
-here when you're not sure which tool fits what you're trying to build. See
-[Fusion Training](/makers/fusion-training) for video walkthroughs of these tools
-in action.
+here when you're not sure which tool fits the shape in front of you.
 
-## Equal-sided shapes: Polygon tools + the Equal constraint
+For how each tool works, Autodesk's own documentation is the reference. This
+page is about _when_ to pick which one.
 
-For an object like the stop sign (octagon) or the wrench's hexagonal cutouts
-(see the [Object Bank](../fusion-sketch-practice)), use the **Polygon** tools
-(Sketch > Create > Polygon) rather than drawing individual lines and
-constraining each side equal by hand:
+## Two habits worth building first
 
-- **Circumscribed Polygon** — you specify the distance across the flats (good
-  when a real-world spec, like a wrench size, gives you that measurement).
-- **Inscribed Polygon** — you specify the distance across the corners.
-- **Edge Polygon** — you define one edge and the polygon builds from it.
+**Use the tool that draws the shape, not lines plus constraints.** If Fusion has
+a tool for the shape you want, it will get you there faster and leave the sketch
+better constrained than hand-drawing lines and forcing them into place
+afterward.
 
-If you draw a polygon-ish shape by hand instead (individual lines), the **Equal
-constraint** (Sketch > Constraints > Equal) can still force selected sides to
-match length after the fact — useful as a fallback, but the Polygon tools are
-the direct route.
+**Aim for a fully constrained sketch.** A sketch whose geometry can still be
+dragged around will move on you later, and it's where stray gaps hide when you
+export for cutting. Autodesk's
+[Fusion sketch constraints](https://www.autodesk.com/learn/ondemand/curated/get-started-with-modeling/1iZPYyWwuEJdMqDEWsRFOK)
+lesson covers how constraints work and what the colors are telling you.
 
-## Rounded corners: Fillet
+## Finding the geometry that isn't constrained yet
 
-For an object like the phone/tablet outline or the skateboard deck's rounded
-corners, don't try to hand-draw an arc into a sharp corner — the **Fillet** tool
-(Sketch > Modify) rounds the intersection between two lines (or a line and an
-arc) to a specified radius in one click. It's faster, and it stays tangent
-automatically — exactly the "fully constrained, not just close" bar a
-deliverable is checking for.
+Fusion tells you _whether_ a sketch is fully constrained — the red lock icon
+next to it in the Browser — but not _which_ bits are still loose. On a sketch
+with any real complexity, hunting for them by dragging things around is
+miserable, and geometry can look fully black and still have a degree of freedom.
+
+There's a command that just answers the question:
+
+1. Turn on the text command window: **File > View > Show Text Commands.**
+2. Right-click the sketch in the Browser and choose **Edit Sketch** — the
+   command only works while you're inside the sketch.
+3. Type `Sketch.ShowUnderconstrained` into the text command box and press Enter.
+
+Fusion reports how many elements are still under-constrained and highlights them
+in the canvas, so you can go straight to them.
+
+Two caveats worth knowing. Autodesk notes that text commands aren't maintained
+for outside use, so treat this as a diagnostic aid rather than something to
+build a habit around — it can change or stop working between releases. And it
+tells you _where_ the freedom is, not what constraint to add; that's still your
+call.
+
+Autodesk's own writeup, including an Auto-constrain approach and an add-in that
+does the same job from a button, is
+[How to find under constrained sketch elements](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-find-unconstrained-sketch-elements-in-Fusion.html).
+
+## The two that come up most
+
+**Polygon** (Sketch > Create > Polygon) for any equal-sided shape — a stop-sign
+octagon, a wrench's hex cutout. There are three variants, and which one you want
+depends on which measurement you have: circumscribed (distance across the flats
+— what a real-world spec like a wrench size gives you), inscribed (distance
+across the corners), or edge (you define one edge and it builds from there).
+Autodesk's
+[Polygons in sketches](https://help.autodesk.com/view/NINVFUS/ENU/?guid=SKT-SKETCH-CREATE-POLYGONS)
+covers all three.
+
+If you've already hand-drawn a polygon-ish shape out of individual lines, the
+**Equal** constraint can still force the sides to match after the fact — a
+useful fallback, but the polygon tools are the direct route.
+
+**Fillet** (Sketch > Modify > Fillet) for a rounded corner — a phone outline, a
+skateboard deck. It rounds the intersection of two lines to a radius in one
+click and stays tangent automatically, which is exactly the "fully constrained,
+not just close" bar a deliverable is checking for. Don't hand-draw an arc into a
+corner. Autodesk:
+[Add fillets to sketch geometry](https://help.autodesk.com/view/NINVFUS/ENU/?guid=SKT-ADD-FILLETS).
 
 ## Quick reference: object → tool
 
@@ -55,3 +93,9 @@ deliverable is checking for.
 | A regular polygon (octagon, hexagon)                                            | Polygon tools (Circumscribed / Inscribed / Edge)                 |
 | A rounded corner                                                                | Fillet                                                           |
 | Sides that must match length, drawn by hand                                     | Equal constraint                                                 |
+
+## Related
+
+- [Fusion Sketch Practice — Object Bank](../fusion-sketch-practice)
+- [Fusion Training](/makers/fusion-training) — Autodesk video walkthroughs
+- [Exporting Your Design](../exporting-your-design) — once the sketch is done

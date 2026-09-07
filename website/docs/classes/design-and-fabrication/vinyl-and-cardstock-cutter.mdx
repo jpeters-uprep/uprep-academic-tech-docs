@@ -1,0 +1,99 @@
+---
+title: Vinyl and Cardstock Cutting
+description:
+  Using UPrep's Silhouette Cameo cutters and Silhouette Studio for cardboard
+  test-fit templates, heat-transfer vinyl, and sticky vinyl.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, vinyl, silhouette]
+sidebar_position: 10
+---
+
+We have two Silhouette Cameo cutters — a Cameo 4 Pro and a Cameo 5 Alpha. They
+drag a small blade through thin material instead of burning or routing it, which
+makes them fast, quiet, and safe enough to iterate on freely.
+
+In this class they do two quite different jobs, and the first one matters more
+than students usually expect.
+
+## Job one: cardboard and cardstock test templates
+
+Before you spend a CNC slot cutting plywood, cut the same outline in cardboard
+here and hold it against the real object it has to fit.
+
+This catches the errors that clearance math cannot: a shelf 15 mm too wide for
+the cabinet, a notch on the wrong side, a bracket that fits the wall but not the
+pipe next to it. It costs a few minutes of a machine nobody is queued for,
+instead of an hour of the machine everybody is queued for.
+
+The workflow:
+
+1. Export your outline as a DXF or SVG — see
+   [Exporting Your Design](../exporting-your-design).
+2. Import it into Silhouette Studio and confirm one known dimension. Units
+   travel badly between programs; check before you cut, every time.
+3. Set the material to the cardstock or cardboard you're actually using, load
+   the right mat and blade, and **run a test cut** in a corner first.
+4. Cut, then take it to the real object and check the fit.
+5. Photograph the test fit. That photo is worth more in your journal than a
+   paragraph describing it.
+
+Thicker corrugated cardboard needs a deeper-cutting blade and usually more than
+one pass. Ask before you force a material through — a blade dragged through
+something too thick shreds both the material and the blade.
+
+## Job two: vinyl for finished surfaces
+
+Two different materials that behave differently:
+
+- **Heat-transfer vinyl (HTV)** goes onto fabric with the heat press. It's cut
+  **mirrored**, because you apply it face-down. Forgetting to mirror is the
+  classic first mistake.
+- **Sticky (adhesive) vinyl** goes onto hard surfaces — a label on a bin, a logo
+  on a lid. Cut it right-reading and apply it with transfer tape.
+
+Either way you **weed** the design first: pick out the parts you don't want
+transferred. Thin lines and small enclosed shapes are painful to weed, so design
+with a bit more weight than you would for a printed graphic.
+
+Heat press temperatures and times depend on the material, and the numbers for
+what we stock are posted on the counter next to the presses — see
+[Makers Tools](/makers/makers-tools#heat-presses). Use those rather than a
+number from the internet.
+
+## Software: Silhouette Studio
+
+Silhouette Studio is the cutter's own software and it's installed on the shop
+computers. Silhouette's own documentation covers installation, registration, and
+the interface:
+
+- [Installing and using Silhouette Studio](https://silhouetteamerica.freshdesk.com/support/solutions/articles/35000273294-installing-and-using-silhouette-studio)
+- [Silhouette America support knowledge base](https://silhouetteamerica.freshdesk.com/support/solutions)
+- [Cameo 5 setup and documentation](https://silhouetteamerica.freshdesk.com/support/solutions/articles/35000280294-cameo-5)
+- [Cameo 4 user manual (PDF)](https://www.silhcdn.com/m/d/user-guides/cameo-4-en.pdf)
+
+Two notes specific to using it after Fusion:
+
+- **Imported DXF and SVG files arrive as line art, not as cut lines.** You may
+  need to tell Studio which lines to cut. Check the cut preview before you send
+  the job.
+- **Design work is easier upstream.** If a shape needs changing, change it in
+  Fusion and re-export rather than hand-editing the imported outline — otherwise
+  your CAD file and the thing you actually cut stop matching.
+
+## Safety
+
+Lower risk than the CNC, but not zero:
+
+- The blade is sharp and exposed when you change it. Retract or cap it before
+  handling.
+- Keep fingers clear of the rollers while the machine is feeding.
+- **Never put vinyl in the laser cutter.** Cutting vinyl with heat releases
+  chlorine gas. The vinyl cutter exists partly so nobody is tempted.
+
+## Related
+
+- [Exporting Your Design](../exporting-your-design)
+- [Tolerance and Fit](../tolerance-and-fit)
+- [Makers Tools](/makers/makers-tools)

@@ -1,0 +1,133 @@
+---
+title: Designing for the CNC
+description:
+  The geometry rules a round CNC bit imposes on your design — inside corner
+  radius, dogbone relief, minimum feature size, tabs, and material thickness.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, cnc, cad]
+sidebar_position: 7
+---
+
+Everything on this page follows from one fact: **the cutting bit is a spinning
+cylinder.** It removes material in a circle, so any shape it cuts inherits the
+roundness of that circle. Designs that ignore this look fine in Fusion and fail
+on the machine.
+
+Read this while you're still in CAD. Fixing these problems after the toolpath is
+made means going back to CAD anyway.
+
+## A round bit cannot cut a sharp inside corner
+
+If you draw a square pocket and cut it with a 1/4 inch (6.35 mm) bit, the inside
+corners come out with a 3.18 mm radius — half the bit diameter. The bit
+physically cannot reach into the corner.
+
+This matters most when a square tab has to seat into that pocket: the tab's
+sharp corners hit the pocket's round corners and the joint won't close.
+
+Three ways to handle it:
+
+- **Design the radius in.** Round the inside corners of your pocket to the bit
+  radius or larger, and round the mating part's corners to match. Cleanest
+  result, and the part looks intentional.
+- **Add relief cuts — dogbones or T-bones.** A small extra circle or slot cut
+  into each corner gives the tab's corner somewhere to go. Standard practice for
+  finger joints and slot-together assemblies. Slightly visible; completely
+  functional.
+- **Sand or chisel the corners by hand.** Fine for one or two corners, tedious
+  for twenty.
+
+Outside corners are the opposite: a bit cuts those perfectly sharp, no allowance
+needed.
+
+## Minimum feature size
+
+- **No hole, slot, or gap smaller than the bit diameter.** A 3 mm slot cannot be
+  cut with a 6.35 mm bit at all — the software will silently skip it, or cut
+  something wider than you drew.
+- **Keep thin walls thicker than the bit.** A 2 mm-wide standing rib in plywood
+  will splinter off during the cut even if the geometry is technically valid.
+- **Avoid tiny islands.** A small piece surrounded by cut material has nothing
+  holding it and becomes a projectile. If your design needs one, keep it
+  attached with tabs.
+
+## Tabs: keep your part from moving mid-cut
+
+When a through-cut finishes, the part is a loose piece inside a spinning cutter.
+Tabs are small uncut bridges that hold it to the surrounding stock until you cut
+or snap them free afterward.
+
+- Put tabs on straight edges, not on corners or on a surface that has to end up
+  perfectly flat.
+- More small tabs beat a few thick ones — easier to clean up, same holding
+  power.
+- Plan where they'll go while you're designing, so they don't land in the middle
+  of a joint face.
+
+## Model to the real thickness of the material
+
+A sheet sold as 1/2 inch plywood is usually not 12.7 mm, and two sheets from the
+same rack can differ. If you model a 12.7 mm dado and the sheet is 11.6 mm, the
+shelf rattles.
+
+**Measure the actual sheet with calipers, then model that number.** Better
+still, drive the dimension from a
+[Fusion parameter](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-find-a-Parameters-dialog-box-in-Fusion-360.html)
+named something like `stockThickness`, so switching to a different sheet is a
+one-number edit rather than a remodel.
+
+See [Tolerance and Fit](../tolerance-and-fit) for how much clearance to leave
+once you have the real measurement.
+
+## Depth, and why one pass isn't enough
+
+The machine cuts through thick material in several shallow passes rather than
+one deep plunge. A pass that's too deep is how bits break and edges burn. The
+toolpath software handles this for you once you've picked the right bit and
+material. Carbide 3D's own
+[feeds and speeds guidance](https://carbide3d.com/hub/docs/) is the source to
+check before you invent your own numbers, and ask June if you're unsure what to
+run for a given bit and material.
+
+What this means for your design: **depth costs time.** A pocket 3 mm deep cuts
+in a fraction of the time of one 12 mm deep. With one CNC shared across the
+class, shallow-where-possible is a real design consideration, not just an
+optimization.
+
+## Leave room for work holding
+
+The stock has to be held down, and the bit cannot cut where a clamp is sitting.
+Leave a border of waste material around your parts — generally an inch or so —
+and don't nest parts right up to the edge of the sheet.
+
+Clamps and screws into the wasteboard are the usual answer. Double-stick tape
+also works when it suits the part, and it has the advantage of leaving the whole
+top surface clear. Which one to use depends on the cut, so talk it through
+before you commit a layout that only works one way.
+
+## Plywood-specific gotchas
+
+- **Cut direction affects tearout.** The top veneer can splinter along the cut
+  edge. It shows most on cross-grain cuts and on the face you'll see.
+- **Voids happen.** Cheap plywood has internal gaps you can't see until you cut
+  through one. Not your fault; plan a spare if a visible face matters.
+- **Sanding changes dimensions.** If you plan to sand a joint face, you're
+  removing material after you cut to size. Account for it or sand only the faces
+  that don't have to fit anything.
+
+## Watch out for topping out
+
+Our machine stops counting position once the Z axis runs to the top of its
+travel. If a retract move sends it up that far, the machine loses track of where
+Z actually is, and the next plunge cuts deeper than your toolpath says it
+should. Keep retract heights inside the machine's real travel — see
+[Running the CNC](../cnc-workflow) for the check to run before you start a job.
+
+## Related
+
+- [Running the CNC](../cnc-workflow)
+- [Tolerance and Fit](../tolerance-and-fit)
+- [Exporting Your Design](../exporting-your-design)
+- [Hand Tools and Joinery](../hand-tools-and-joinery)

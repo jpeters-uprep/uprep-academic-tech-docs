@@ -1,0 +1,83 @@
+---
+title: Fusion in This Class
+description:
+  How to sign in to Autodesk Fusion with your UPrep account, where your class
+  files live, how units and versions work, and how to hand a file to a teammate.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [classes, design-and-fabrication, fusion, cad]
+sidebar_position: 1
+---
+
+The practical side of using Fusion for class work — access, files, units, and
+handoff. For how the software itself works, see
+[Fusion Training](/makers/fusion-training), which curates Autodesk's own video
+lessons.
+
+## Getting access
+
+Fusion is free for you as a student through Autodesk's education program. Full
+instructions are on the
+[Autodesk software page](/software/fully-supported/autodesk) — follow those
+rather than the steps a random tutorial gives you, since the education sign-up
+path is specific to schools.
+
+Two things worth knowing up front:
+
+- **Sign in with your `@universityprep.org` email.** If you use a personal
+  Autodesk account, your files won't be where you expect them next class and
+  you'll lose the education license.
+- **The education license renews annually.** If Fusion suddenly asks you to
+  subscribe partway through the year, that's the renewal coming due, not a
+  broken install. Let June know rather than trying to re-verify it yourself.
+
+## Where your files live
+
+Fusion saves to Autodesk's cloud by default, not to your laptop. That's a good
+thing here: your files follow you between your laptop and the shop computer, and
+you can't lose a project to a dead hard drive the night before a milestone.
+
+- **Save often, and give the save a comment.** Every save creates a version you
+  can go back to. That comment ("added cable notch," "shrank tabs to 3mm") is
+  what makes the version history useful three weeks later.
+- **Don't rely on the local recovery cache.** If Fusion crashes before you've
+  ever saved, there may be nothing to recover. Save as soon as you have a
+  sketch, not once you're done.
+- **Name files so someone else can find them.** Include the project and your
+  name or team — `vr-shelf-team3-jpeters` beats `Untitled (17)`. This matters
+  most when you're handing a file off for machine time.
+
+## Units
+
+Fusion lets you set the unit type per design, and mixing them up is one of the
+most common ways a part comes out at the wrong scale.
+
+- **3D printing is a millimeter world.** Bambu Studio, filament diameters, and
+  nozzle sizes are all specified in millimeters.
+- **Plywood and hardware are sold in inches.** A "1/2 inch" sheet is nominally
+  12.7 mm — and, as [Designing for the CNC](../cnc-design-rules) covers, it's
+  usually not actually that thick.
+- **Pick one unit for a design and stay in it.** If you need to work across
+  both, measure in the unit your material is sold in and let Fusion do the
+  conversion, rather than converting in your head partway through a sketch.
+
+## Handing a file to someone else
+
+Which format you send depends on what the other person needs to do with it — see
+[Exporting Your Design](../exporting-your-design) for the full table. The short
+version:
+
+- **A teammate who needs to keep modeling it** — send the Fusion design itself
+  (share the cloud project, or export an `.f3d`). Never send an STL for this; an
+  STL throws away your sketches, parameters, and history, and there's no way to
+  get them back.
+- **A teammate or June who just needs to check dimensions or cut it** — a STEP
+  file, or the DXF/3MF the machine actually needs.
+
+## Questions
+
+For license trouble, ask June Peters (jpeters@universityprep.org). For how a
+Fusion tool works, check [Fusion Training](/makers/fusion-training) or
+[Autodesk's own Fusion learning collection](https://www.autodesk.com/learn/ondemand/collection/self-paced-learning-for-fusion)
+first — it's searchable and it's the source of truth.
