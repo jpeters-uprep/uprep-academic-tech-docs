@@ -1,0 +1,78 @@
+---
+title: Sublimation Printing
+description:
+  Setting up and printing on UPrep's Epson SureColor F170 sublimation
+  printer, including drivers and picking the right color profile on
+  Windows and Mac.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students, faculty, staff]
+tags: [makers, sublimation, printing]
+---
+
+We print sublimation transfers on an **Epson SureColor F170**. It behaves like
+a normal printer for the most part, but getting colors that actually match
+what's on screen depends on picking the right color settings before you print —
+this page covers that setup.
+
+Once you've printed, use the heat press to transfer the ink to a polyester
+shirt, bag, or other sublimation-compatible blank — see
+[Makers Tools](/makers/makers-tools#heat-presses) for press temperature and
+time.
+
+Location: ULab Makerspace
+
+## Drivers and manuals
+
+Epson's product support page has the driver downloads, manuals, and
+troubleshooting for the F170:
+
+- [Epson SureColor F170 support and drivers](https://epson.com/Support/Printers/Single-Function-Inkjet-Printers/SureColor-Series/Epson-SureColor-F170/s/SPT_C11CJ80201)
+
+Download the driver for whichever computer you're printing from (Windows or
+Mac) from that page rather than using a generic or in-box driver — the
+sublimation-specific print settings described below only show up with Epson's
+own driver installed.
+
+## Selecting the color profile
+
+Sublimation ink behaves differently from regular ink, so the printer needs to
+be told to print for sublimation rather than for a normal photo or document.
+Do this every time, since the driver doesn't always remember it between jobs.
+
+### Windows
+
+1. Open your file and choose **Print**, then open the printer's **Preferences**
+   (or **Properties**) dialog for the SureColor F170.
+2. On the **Main** tab, set **Media Type** to the sublimation transfer paper
+   you're using.
+3. Under **Color**, choose the sublimation ICC/color profile rather than
+   **Automatic** or a standard photo profile. If a specific sublimation paper
+   profile isn't listed, ask June (jpeters@universityprep.org) — profiles
+   sometimes need to be installed separately before Windows will offer them.
+4. Confirm **Print Quality** is set appropriately for the transfer (higher
+   quality for detailed photos, standard for simple graphics), then print.
+
+### Mac
+
+1. Open your file and choose **Print**, then expand the print dialog with
+   **Show Details**.
+2. From the printer drop-down, confirm the **SureColor F170** is selected.
+3. Open the **Printer Settings** (or similarly-named) panel and set **Media
+   Type** to the sublimation transfer paper you're using.
+4. In **Color Matching**, keep **ColorSync** selected, but change the profile
+   dropdown from the generic default to **EPSON GeneralPurpose (Textile)** —
+   that's the profile built for sublimation transfer, and it's what actually
+   corrects the colors rather than printing them flat.
+5. Save this as a named **Preset** (the dropdown at the bottom of the print
+   dialog) so you don't have to reconfigure Media Type and the color profile
+   every time you print.
+6. Print.
+
+If colors still look off after a transfer, check with June before assuming the
+profile is wrong — humidity, press temperature, and time all shift sublimation
+color too.
+
+## Related
+
+- [Makers Tools](/makers/makers-tools)
