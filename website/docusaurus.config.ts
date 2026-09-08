@@ -353,8 +353,12 @@ const config: Config = {
           title: "Links",
           items: [
             {
-              label: "Schoology",
+              label: "Schoology - Staff and Students",
               href: "https://universityprep.schoology.com/home",
+            },
+            {
+              label: "Schoology - Parents",
+              href: "https://app.schoology.com/login",
             },
             {
               label: "Veracross",
