@@ -41,16 +41,21 @@ this every time, since the driver doesn't always remember it between jobs.
 
 ### Windows
 
-1. Open your file and choose **Print**, then open the printer's **Preferences**
-   (or **Properties**) dialog for the SureColor F170.
-2. On the **Main** tab, set **Media Type** to the sublimation transfer paper
-   you're using.
-3. Under **Color**, choose the sublimation ICC/color profile rather than
-   **Automatic** or a standard photo profile. If a specific sublimation paper
-   profile isn't listed, ask June (jpeters@universityprep.org) — profiles
-   sometimes need to be installed separately before Windows will offer them.
+1. Open your file and choose **Print**. If you're printing from Chrome, its
+   built-in print preview hides the driver's settings — click **Print using
+   system dialog** (or press Ctrl+Shift+P) to get the real Windows print dialog
+   first.
+2. In the system print dialog, select the **SureColor F170** and open **More
+   settings**, then the printer's **Preferences**/**Properties**.
+3. On the **Main** tab, set **Paper Type** to **Textile**. This is the setting
+   that applies the sublimation color correction on this printer — there isn't a
+   separate ICC profile picker to hunt for.
 4. Confirm **Print Quality** is set appropriately for the transfer (higher
    quality for detailed photos, standard for simple graphics), then print.
+
+If you don't see a **Textile** option under Paper Type, ask June
+(jpeters@universityprep.org) before printing — that usually means the wrong
+driver got installed.
 
 ### Mac
 
@@ -67,6 +72,12 @@ this every time, since the driver doesn't always remember it between jobs.
    dialog) so you don't have to reconfigure Media Type and the color profile
    every time you print.
 6. Print.
+
+**If EPSON GeneralPurpose (Textile) doesn't show up** even after installing the
+driver, remove the printer from **System Settings → Printers & Scanners** and
+add it again — a fresh install has fixed this every time it's come up. If you
+don't see a **Printer Settings** panel at all, double-check that you've expanded
+**Show Details** in the print dialog first.
 
 If colors still look off after a transfer, check with June before assuming the
 profile is wrong — humidity, press temperature, and time all shift sublimation
