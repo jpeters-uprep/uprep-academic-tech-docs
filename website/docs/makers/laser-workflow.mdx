@@ -1,0 +1,280 @@
+---
+title: Running the Laser Cutter
+description:
+  The workflow for UPrep's Epilog Fusion Maker laser cutter — startup and
+  shutdown order, the Filtrabox and air assist, sending files to the makerspace
+  PC, focusing, and what to do about a flare-up.
+owner: Academic Technology
+maintainer: June Peters
+audience: [students]
+tags: [makers, laser, epilog, safety]
+sidebar_position: 4
+---
+
+Our laser is an **Epilog Fusion Maker 24"**. It does two different things to a
+material: it **engraves** by rastering an image across the surface line by line,
+and it **cuts** by following vector paths all the way through.
+
+**You must be certified before running it on your own.** See
+[Machine Certification](../machine-certification).
+
+**There are instructions posted on the wall next to the laser**, along with a
+separate **material settings sheet**. The wall is the quick reference while
+you're standing at the laser; this page is the longer version with the reasons
+attached. The material settings sheet only exists on paper at the machine —
+check it before cutting anything new.
+
+Epilog's own documentation for this machine is thorough and current — the
+[Fusion Maker support center](https://support.epiloglaser.com/laser-machine/fusion-maker/)
+is the reference. This page covers our machine, our ventilation, and our
+sequence.
+
+## Startup — every time, in this order
+
+1. **Filtrabox on first.** Never run the laser unvented, not even for a quick
+   test.
+2. **Laser on**, and let it finish homing before you do anything else.
+3. **Air assist on**, for every job — engraving and cutting.
+
+The order is the point. The extractor is running before anything can be burned,
+not turned on once you notice smoke.
+
+### The Filtrabox
+
+The laser works by burning material, and everything it burns off has to be
+pulled out of the room rather than into it. That's the **ExpandX Filtrabox**
+fume extractor.
+
+- **It must be running before the laser fires**, for the whole job.
+- **After every job, keep the lid closed and let the Filtrabox run one more
+  minute.** Hot material keeps giving off fumes after the beam stops, and that
+  minute clears them before you open up.
+
+No Filtrabox, no laser job — this isn't a step you skip because the cut is
+short. If the unit isn't running, is alarming, or sounds different than usual,
+stop and tell June (jpeters@universityprep.org).
+
+### Air assist
+
+Air assist blows a stream of air at the point where the beam meets the material.
+It's **on for every job**, engraving and cutting alike.
+
+## Where you run it: the makerspace PC
+
+**The laser is driven only from the makerspace PC.** You can't send a job to it
+from your own laptop, and there's no queue form for the laser the way there is
+for the [3D printers](../print-queue). Two Epilog programs do the work:
+
+| Program                    | What it does                                                                     |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| **Epilog Laser Dashboard** | The print driver — where you set speed, power, and raster vs. vector for the job |
+| **Epilog Job Manager**     | The queue — holds jobs sent to the laser, and lets you re-run a past job         |
+
+Job Manager keeping your past jobs is genuinely useful: when a setting worked on
+a material, the job is still there with those numbers attached, so the next run
+starts from something known instead of from a guess.
+
+:::info[Under construction]
+
+Step-by-step instructions for getting a job from Illustrator through Job Manager
+and starting it on the laser are coming soon. Until then, run your jobs with
+June nearby.
+
+:::
+
+## Getting your file to the PC
+
+Laser files are **DXF or SVG**. From Fusion, that's a DXF of a sketch or of a
+sheet metal flat pattern; from Illustrator, export SVG or DXF. See
+[Exporting Your Design](/classes/design-and-fabrication/exporting-your-design)
+for how.
+
+1. Upload your file to the
+   [shared folder](https://uprep-my.sharepoint.com/:f:/g/personal/puma_universityprep_org/IgAZzfvtHNx-TbWUZwTNBDheAXskDrIbsp1WlCVBVQ-WXq4).
+2. Log on to the makerspace PC using the puma@ account.
+3. In File Explorer, open the "Prints" folder listed in Favorites on the left to
+   find your file.
+
+Name your file with a version number, the same as any other machine file —
+`box-lid-v3.svg`. See
+[Exporting Your Design](/classes/design-and-fabrication/exporting-your-design#naming-exports).
+
+**Printing to the laser happens from Illustrator, and the shared puma@ account
+doesn't have an Illustrator license.** Sign in to Illustrator with your own
+@universityprep.org account — see
+[Adobe Creative Cloud](/software/fully-supported/adobe-creative-cloud).
+
+:::info[Under construction]
+
+We're still working out the cleanest way to combine the shared folder with your
+own Illustrator sign-in on the makerspace PC. Ask June if the steps above don't
+get you there.
+
+:::
+
+## Engraving: print the image to the laser
+
+**Raster engraving works by printing.** Open the image in Illustrator, print it,
+and choose the laser as the printer — the Epilog Laser Dashboard comes up as the
+print settings dialog, and you set engrave speed and power there.
+
+That's the whole mental model: the laser is a printer that burns instead of
+inking. Anything you can print, you can engrave.
+
+## Cutting: vector lines at 0.1 pt or smaller
+
+The Dashboard decides whether a line gets **cut** or **engraved** by looking at
+how thick it is.
+
+**Vector lines from Illustrator must be 0.1 pt thick or smaller.** A line at 0.1
+pt or under is treated as a cut path and followed. A line any thicker is treated
+as artwork and rastered — so a shape you meant to cut out comes back as a burned
+outline on a piece that's still attached.
+
+**Illustrator's default stroke is 1 pt**, so any line you draw without changing
+it will engrave instead of cut. Set the stroke weight on every cut line before
+you send the job, not after.
+
+**Bend lines from a Fusion sheet metal flat pattern stay in the file.** They
+need their own settings on the laser so they score instead of cut.
+
+:::info[Under construction]
+
+Instructions for setting up scoring on bend lines are coming soon. Ask June
+before you run a flat pattern.
+
+:::
+
+Epilog documents the vector setup in
+[Sending Vector Jobs from Adobe Illustrator](https://support.epiloglaser.com/laser-machine/fusion-maker/usage-and-operation/software-techniques/sending-vector-jobs-from-adobe-illustrator/).
+
+## Materials
+
+### Never cut
+
+- **PVC, vinyl, or any unknown plastic.** Burning PVC releases a corrosive gas
+  that damages the machine and is dangerous to breathe. The
+  [vinyl cutter](/classes/design-and-fabrication/vinyl-and-cardstock-cutter)
+  exists partly so nobody is tempted.
+- **Anything that isn't on the material settings sheet** at the machine. Check
+  with June (jpeters@universityprep.org) first.
+- **Anything still carrying tape, staples, or an unknown coating.** Take them
+  off before the piece goes on the bed.
+
+"It's just plastic" covers materials that cut beautifully and materials that
+release something you don't want in the room, and you can't tell which by
+looking. That's what the settings sheet is for.
+
+## At the machine: placement and focus
+
+### Put your material near the center of the bed
+
+**Place your material as close to the center of the bed as you can**, not tucked
+into the top left corner where the head parks.
+
+The camera that handles alignment sits over the center of the bed. Straight
+below it, what the camera sees matches where the laser fires. Farther from the
+center, the camera is looking at your material at more of an angle, and the
+material's height shifts the image away from where the material really is — the
+same reason parallel lines seem to converge toward a vanishing point. The
+thicker the material and the farther from center, the more an engrave lands off
+target.
+
+### Focus the laser — the default setting doesn't
+
+The laser has to be focused at the surface of your material, and **the Epilog
+software defaults to Autofocus "off," which is rarely what you want.** It is a
+default, not a recommendation. Pick one of the other two:
+
+| Setting       | What it does                                                     | Use it when                                               |
+| ------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
+| **Plunger**   | The machine measures your material and sets the focus itself     | The default choice — let the machine do it                |
+| **Thickness** | You type in the material thickness and the machine focuses to it | You know the thickness and the piece sits flat on the bed |
+| **Off**       | No focusing happens at all                                       | Almost never — only with a reason you can say out loud    |
+
+**Thickness assumes your material is sitting directly on the laser bed.** If
+it's raised on anything — a jig, a scrap underneath, a warped board bowing up —
+the number you typed no longer describes where the surface actually is. Use
+Plunger instead.
+
+An out-of-focus laser doesn't fail loudly. It cuts with a wider, weaker beam —
+so cuts don't go all the way through, edges come out rough, and engraves look
+soft. If a job comes back looking mushy, focus is the first thing to check.
+
+## While it's running
+
+- **Never leave the laser unattended.** Not to grab something, not for a second.
+  Stay in the room, with eyes on the job.
+- **Watch vector cuts closely.** That's when a flare-up is most likely.
+- **A flame that doesn't go out on its own within a second or two means stop.**
+  See Fire response below.
+
+## Fire response
+
+- **Small flare-up that puts itself out:** let the job finish, then tell June
+  afterward.
+- **Flame that keeps going:** hit the **emergency stop** button on top of the
+  machine, use the extinguisher, and get June immediately.
+
+### Which extinguisher
+
+There are two next to the laser, and they are not interchangeable. **The one you
+want first is the one on the floor.**
+
+| Extinguisher                   | Where it is                                        | Reach for it when                                                   |
+| ------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------- |
+| **Halotron** (clean agent)     | On the floor, directly below the wall case         | Anything burning in or on the laser — this is the default           |
+| **ABC** (dry chemical, powder) | Wall-mounted above it, in a case with a clear door | The fire has spread off the machine, or the Halotron didn't stop it |
+
+**Default to the Halotron.** It evaporates and leaves no residue, so the machine
+survives. The ABC is better on burning wood, but its powder is corrosive and
+will finish off the laser — by the time it's the right call, the machine is
+already a loss and you're protecting the room instead.
+
+Note that the obvious one is the wrong one. The ABC is at eye level in a case;
+the Halotron is on the floor. Under stress people grab what they can see, so
+this is worth looking at once, deliberately, before you ever need it.
+
+The Halotron discharges for **about nine seconds, total** — two or three aimed
+bursts at the base of the flame, not a sustained spray. If it isn't out by then,
+stop fighting it: everyone out, pull the alarm, and let the fire department
+handle it.
+
+Knowing which extinguisher is which before you need it is part of being
+certified on this machine, not something to work out during a fire.
+
+## After your job
+
+- **Keep the lid closed for the one-minute Filtrabox run** before you open it.
+- **Check cut and engraved edges for smoldering** before you pick the piece up
+  and walk away with it.
+- **Don't stack or bag your piece right away.** Charred edges hold heat longer
+  than they look like they do.
+- **Clear your material and scraps off the bed** for whoever's next.
+
+## Shutdown — end of period
+
+1. **Laser off.**
+2. **Air assist off.**
+3. **Filtrabox off last**, once the last job's one-minute run is done.
+
+The Filtrabox goes on first and comes off last. It's running at every moment the
+laser could have put something in the air.
+
+## Always
+
+- **No touching the machine unless you're certified on it.** Not certified yet?
+  Ask June.
+- **Never open a panel or defeat a door interlock.** The interlocks exist
+  because the beam is invisible and does not care what's in its way.
+- **Don't look into the red pointer beam.**
+- **Something smells wrong, sounds wrong, or looks wrong — stop and get June.**
+  Don't try to fix it yourself. Reporting a problem is never the thing that gets
+  you in trouble.
+
+## Related
+
+- [Machine Certification](../machine-certification)
+- [Exporting Your Design](/classes/design-and-fabrication/exporting-your-design)
+- [Makers Tools](../makers-tools)
+- [PPE](../ppe)

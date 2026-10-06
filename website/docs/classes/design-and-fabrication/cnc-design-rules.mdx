@@ -117,13 +117,14 @@ before you commit a layout that only works one way.
   removing material after you cut to size. Account for it or sand only the faces
   that don't have to fit anything.
 
-## Watch out for topping out
+## Watch out for both ends of Z travel
 
-Our machine stops counting position once the Z axis runs to the top of its
-travel. If a retract move sends it up that far, the machine loses track of where
-Z actually is, and the next plunge cuts deeper than your toolpath says it
-should. Keep retract heights inside the machine's real travel — see
-[Running the CNC](../cnc-workflow) for the check to run before you start a job.
+Our machine has a limited window of Z travel. A retract that runs to the top
+makes the next plunge cut too deep, and a cut that runs the carriage off its
+plates at the bottom jumps and skews. It's mostly a setup check rather than a
+design rule, but a very thick part or a cut deliberately into the wasteboard is
+where your design will run into it. See [Running the CNC](../cnc-workflow) for
+the check to run before you zero.
 
 ## Related
 
