@@ -290,6 +290,11 @@ const config: Config = {
             from: "/accessibility",
             to: "/students/accessibility-tools",
           },
+          // Certification covers makerspace use outside the D&F classes.
+          {
+            from: "/classes/design-and-fabrication/machine-certification",
+            to: "/makers/machine-certification",
+          },
         ],
       },
     ],

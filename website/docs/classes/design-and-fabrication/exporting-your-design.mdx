@@ -6,7 +6,7 @@ description:
 owner: Academic Technology
 maintainer: June Peters
 audience: [students]
-tags: [classes, design-and-fabrication, fusion, cad, 3d-printing, cnc]
+tags: [classes, design-and-fabrication, fusion, cad, 3d-printing, cnc, laser]
 sidebar_position: 5
 ---
 
@@ -21,6 +21,7 @@ lookup table.
 | Bambu Studio (3D printers)            | 3MF, or STL                  | A 3D surface only — no editable history      |
 | Carbide Create (CNC)                  | DXF, or SVG                  | Flat 2D outlines only                        |
 | Silhouette Studio (vinyl/cardstock)   | DXF, or SVG                  | Flat 2D outlines only                        |
+| Epilog laser (via the makerspace PC)  | DXF, or SVG                  | Flat 2D outlines only                        |
 | A teammate who will keep modeling     | The Fusion design, or `.f3d` | Sketches, parameters, timeline — everything  |
 | A teammate who just needs to check it | STEP (`.step`)               | Real solid geometry, editable but no history |
 
@@ -46,17 +47,30 @@ and
 If a curved surface prints visibly faceted, the export refinement was too low —
 raise it in the export dialog rather than blaming the printer.
 
-### For the CNC or the vinyl cutter (DXF)
+### For the CNC, the laser, or the vinyl cutter (DXF)
 
 Right-click the **sketch** in the Browser and choose **Export DXF**. Autodesk's
 step-by-step is
 [Export sketch as DXF](https://help.autodesk.com/view/NINVFUS/ENU/?guid=GUID-BC1A5C26-F7DC-499B-8411-5C191784BA3D).
+
+For the laser, a **sheet metal flat pattern** works too: activate the flat
+pattern and use **Export DXF**. Autodesk covers it in
+[Export flat pattern as DXF](https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-9C211F95-7739-460F-BCA4-100AF6A444A2).
+Bend lines come along on their own layers — keep them. They get their own
+settings on the laser so they score instead of cut; see
+[Running the Laser Cutter](/makers/laser-workflow).
 
 If what you want to cut is the outline of a 3D body rather than an existing
 sketch, make a new sketch on the flat face of that body — Fusion projects the
 face's edges into the sketch automatically — then export that sketch. Autodesk
 covers this route in
 [How to export a 3D model to DXF](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-export-a-3D-model-to-dxf-for-cnc-routing-plasma-cutting-or-waterjet-cutting-from-Fusion-360.html).
+
+### From Illustrator (SVG or DXF)
+
+If you designed in Illustrator rather than Fusion, export SVG or DXF directly.
+Before you do, set every cut line to 0.1 pt or thinner — see
+[Running the Laser Cutter](/makers/laser-workflow#cutting-vector-lines-at-01-pt-or-smaller).
 
 ### For a teammate
 
@@ -96,3 +110,4 @@ answer it.
 - [Tolerance and Fit](../tolerance-and-fit)
 - [Running the CNC](../cnc-workflow)
 - [3D Printing Workflow](../3d-printing-workflow)
+- [Running the Laser Cutter](/makers/laser-workflow)

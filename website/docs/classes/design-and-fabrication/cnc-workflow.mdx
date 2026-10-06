@@ -16,7 +16,7 @@ It is the loudest, dustiest, and least forgiving machine in the shop, and the
 one with the longest queue, so preparation matters more here than anywhere else.
 
 **You must be certified before running it without an adult standing with you.**
-See [Machine Certification](../machine-certification).
+See [Machine Certification](/makers/machine-certification).
 
 Carbide 3D — who make the machine and the software — publish a complete free
 course,
@@ -29,8 +29,8 @@ machine, our sequence, and our shop rules.
 - **PPE.** Safety glasses always. Hearing protection while it's cutting — for
   you and for anyone standing nearby. An N95 for MDF and heavy dust. Details on
   the [PPE page](/makers/ppe).
-- **No gloves.** The router spins. Gloves near a spinning tool are the one
-  exception-free rule in the shop.
+- **No gloves.** The router spins, and a glove can catch on a spinning tool and
+  pull your hand in.
 - **Tie back anything loose** — hair, sleeves, drawstrings, lanyards.
 - **Have your design finished and exported.** DXF, correct units, closed
   contours. See [Exporting Your Design](../exporting-your-design). Machine time
@@ -86,15 +86,43 @@ walkthrough; we won't duplicate it.
    A bit that slips mid-cut plunges deeper as it goes.
 4. **Initialize the machine** in Carbide Motion and let it home itself. Keep
    hands clear; it moves on its own.
-5. **Set zero** — X, Y, and Z — to the same corner you chose in Carbide Create.
-   Carbide 3D's
+5. **Check the router height as soon as you start jogging, before you zero.** Z
+   can only travel so far in each direction, and a job that runs past either end
+   loses its position:
+
+   - **Topping out.** Our machine stops counting position once the Z axis
+     reaches the top of its travel — so if a retract sends it that high, the
+     next plunge goes deeper than the toolpath intends.
+   - **Bottoming out.** The Z carriage is only supported while **every one of
+     its wheels is still on a plate**. Below that point it jumps, skews the cut,
+     and knocks on the way back up.
+
+   Jog the bit down to the bottom of the cut — the wasteboard surface, for a
+   through-cut — and confirm every wheel is still on its plate. Then jog up to
+   the height the job retracts to above your stock and confirm Z isn't at the
+   top of its travel.
+
+   Most jobs fit without changing anything. The two that usually don't are a
+   **very thick part**, which pushes the job toward the top, and **cutting into
+   the wasteboard on purpose** — making a fence, say — which pushes it toward
+   the bottom. Where the router sits in its holder decides which limit you're
+   near:
+
+   - **Coming off the bottom?** Lower the router in its holder. The tip then
+     sits lower for any given carriage position, so the carriage doesn't have to
+     descend as far to reach the same cut depth.
+   - **Hitting the top?** Raise it, for the same reason in reverse.
+
+   Each move trades one limit for the other, so the job has to fit in the window
+   between them. If it won't, get June rather than splitting the difference and
+   hoping.
+
+6. **Set zero** — X, Y, and Z — to the same corner you chose in Carbide Create.
+   This comes after the router height check because moving the router moves the
+   bit tip, so a Z zero set beforehand would be wrong. Carbide 3D's
    [Movements and Zeroing](https://carbide3d.com/hub/courses/running-shapeoko/movements-zeroing/)
    lesson covers this in detail. Double-check Z: a Z zero that's off by the
    thickness of your material is how a bit gets driven into the wasteboard.
-6. **Check that the machine won't top out.** Our machine stops counting position
-   once the Z axis reaches the top of its travel — so if a retract sends it that
-   high, the next plunge goes deeper than the toolpath intends. Keep retract
-   heights inside the machine's actual travel.
 7. **Confirm the job fits your stock.** Compare the job's dimensions against the
    piece you just clamped down, in both X and Y. This catches more mistakes than
    watching the machine move through the air does.
@@ -108,6 +136,7 @@ walkthrough; we won't duplicate it.
 ## Stop the machine if
 
 - The sound changes — a new pitch, chattering, or a stall.
+- You hear knocking as Z retracts — it's bottoming out.
 - You see smoke or smell burning.
 - The stock shifts, or a clamp moves.
 - The bit is cutting somewhere you didn't expect.
@@ -141,6 +170,6 @@ bottleneck:
 ## Related
 
 - [Designing for the CNC](../cnc-design-rules)
-- [Machine Certification](../machine-certification)
+- [Machine Certification](/makers/machine-certification)
 - [PPE](/makers/ppe)
 - [Materials and Consumables](../materials-and-consumables)
