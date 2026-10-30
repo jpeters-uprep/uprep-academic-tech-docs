@@ -16,7 +16,7 @@ Every `.mdx` page needs frontmatter with at least these fields:
 title: Short Sidebar Title
 description: One sentence. Feeds search, link previews, and AI retrieval.
 owner: Academic Technology # who decides the content is correct
-maintainer: June Peters
+maintainer: Academic Technology PM
 audience: [faculty] # faculty | students | families | staff
 tags: [schoology, gradebook]
 sidebar_position: 2 # only where order matters within a folder
@@ -93,10 +93,9 @@ three places (and inevitably missing one).
   URL slugs still say `fusion-360` (e.g.
   `/learn/ondemand/curated/sheet-metal-with-fusion-360`); leave those alone,
   only the display text changes.
-- **June Peters' pronouns are they/them.** Never "she/her/herself."
-- Contact info (June's email, IT support, the Registrar) should point to one
-  canonical source rather than being retyped on every page, so a typo or a
-  staffing change is a one-line fix, not a site-wide hunt.
+- Contact info (the Academic Technology PM, IT support, the Registrar) should
+  point to one canonical source rather than being retyped on every page, so a
+  typo or a staffing change is a one-line fix, not a site-wide hunt.
 
 ## Policy and suggest-only pages
 

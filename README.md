@@ -6,7 +6,7 @@ Academic Tech / Makers wiki for students, faculty, and staff. It's a
 [Docusaurus](https://docusaurus.io/) site — content is written in Markdown/MDX,
 and Docusaurus builds it into a static site that's published to GitHub Pages.
 
-Maintained by June Peters (jpeters@universityprep.org).
+Maintained by the Academic Technology PM.
 
 ## How it works
 
@@ -73,7 +73,7 @@ description:
   One sentence summarizing the page, used in search results and by AI tools
   reading the site.
 owner: Academic Technology
-maintainer: June Peters
+maintainer: Academic Technology PM
 audience: [faculty]
 tags: [schoology]
 ---
@@ -154,5 +154,4 @@ uprep-academic-tech-docs/
 
 ## Questions
 
-Contact June Peters (jpeters@universityprep.org) for access or questions about
-site structure.
+Contact the Academic Technology PM for access or questions about site structure.
