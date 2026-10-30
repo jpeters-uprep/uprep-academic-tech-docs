@@ -1,6 +1,6 @@
 # Builds and deploys the Docusaurus site to GitHub Pages on every push to
 # main. This removes the single point of failure of "deploy only runs from
-# June's laptop" (see the root README's Deploying section).
+# one person's laptop" (see the root README's Deploying section).
 #
 # ONE-TIME SETUP REQUIRED before this workflow can publish anything:
 #   Repo Settings → Pages → Build and deployment → Source → "GitHub Actions"

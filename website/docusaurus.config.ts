@@ -345,8 +345,8 @@ const config: Config = {
           title: "Feedback or Questions?",
           items: [
             {
-              label: "Email June",
-              href: "mailto:jpeters@universityprep.org",
+              label: "Contact the Academic Technology PM",
+              to: "/about/who-owns-what",
             },
           ],
         },
@@ -376,7 +376,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} University Prep. Site managed by June Peters, Academic Technology Program Manager.`,
+      copyright: `Copyright © ${new Date().getFullYear()} University Prep. Site managed by the Academic Technology Program Manager.`,
     },
     prism: {
       theme: prismThemes.github,
